@@ -242,9 +242,23 @@ def espandi_spec(spec: str) -> str:
     return spec.replace(" ", "")
 
 
+def tabular_in_math(m: str) -> str:
+    """Un tabular dentro una formula (le note lo usano nei sistemi con cases):
+    MathJax non lo conosce, diventa un array e le celle perdono i $."""
+    while True:
+        k = m.find("\\begin{tabular}")
+        if k < 0:
+            return m
+        spec, j = read_group(m, k + len("\\begin{tabular}"))
+        e0, e1 = env_end(m, "tabular", j)
+        corpo = m[j:e0].replace("$", "")
+        m = m[:k] + "\\begin{array}{" + espandi_spec(spec) + "}" + corpo + "\\end{array}" + m[e1:]
+
+
 def sistema_array(m: str) -> str:
     """Le matrici aumentate delle note usano colonne di testo (C{2.2em}) con
     celle $2$: in MathJax diventano colonne c e i $ delle celle spariscono."""
+    m = tabular_in_math(m)
     out, i = [], 0
     while True:
         k = m.find("\\begin{array}", i)

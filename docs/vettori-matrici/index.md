@@ -20,27 +20,27 @@
 
     [:octicons-arrow-right-24: Leggi il capitolo](02-matrici.md)
 
--   **4.2. Matrix operations**
+-   **4.2. Operazioni sulle matrici**
 
     ---
 
-    Elementary row and column operations · Effect of elementary operations on the determinant · Pivoting and partial pivoting
+    Operazioni elementari di riga e di colonna · Effetto delle operazioni elementari sul determinante · Eliminazione di Gauss e forma a scala · Pivoting e pivoting parziale
 
     [:octicons-arrow-right-24: Leggi il capitolo](03-operazioni-elementari.md)
 
--   **4.3. Inversion of matrices**
+-   **4.3. Inversione di matrici**
 
     ---
 
-    Computation of the inverse
+    Proprietà della matrice inversa · Calcolo dell'inversa
 
     [:octicons-arrow-right-24: Leggi il capitolo](04-matrice-inversa.md)
 
--   **4.4. Factorization of matrices**
+-   **4.4. Fattorizzazione di matrici**
 
     ---
 
-    LU factorization
+    Fattorizzazione LU · Determinante dalla fattorizzazione PLU
 
     [:octicons-arrow-right-24: Leggi il capitolo](05-fattorizzazione-lu.md)
 

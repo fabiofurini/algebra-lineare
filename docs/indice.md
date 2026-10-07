@@ -9,9 +9,9 @@
 
 3. [Vettori](vettori-matrici/01-vettori.md)
 4.1. [Matrici](vettori-matrici/02-matrici.md)
-4.2. [Matrix operations](vettori-matrici/03-operazioni-elementari.md)
-4.3. [Inversion of matrices](vettori-matrici/04-matrice-inversa.md)
-4.4. [Factorization of matrices](vettori-matrici/05-fattorizzazione-lu.md)
+4.2. [Operazioni sulle matrici](vettori-matrici/03-operazioni-elementari.md)
+4.3. [Inversione di matrici](vettori-matrici/04-matrice-inversa.md)
+4.4. [Fattorizzazione di matrici](vettori-matrici/05-fattorizzazione-lu.md)
 4.5. [Autovalori e autovettori](vettori-matrici/06-autovalori.md)
 
 ## [Norme](norme/index.md)
@@ -20,7 +20,7 @@
 
 ## [Sistemi lineari](sistemi/index.md)
 
-6. [System of linear equations](sistemi/01-sistemi-lineari.md)
+6. [Sistemi di equazioni lineari](sistemi/01-sistemi-lineari.md)
 
 ## [Approfondimenti](approfondimenti/index.md)
 

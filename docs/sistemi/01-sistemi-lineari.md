@@ -1,8 +1,8 @@
 ---
-title: "System of linear equations"
+title: "Sistemi di equazioni lineari"
 ---
 
-# System of linear equations
+# Sistemi di equazioni lineari
 
 <div class="info-capitolo" markdown>
 
@@ -10,81 +10,93 @@ title: "System of linear equations"
 
 </div>
 
-## 1. Existence and uniqueness of solutions
+## 1. Esistenza e unicità delle soluzioni
 
 !!! chiave ""
 
-    Consider a system of $m$ linear equations with $n$ variables:
+    Consideriamo un sistema di $m$ equazioni lineari in $n$ variabili:
 
     $$
     {\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}
     $$
 
-    where:
+    dove:
 
-    - ${\boldsymbol A} \in \R^{m \times n}$ is the coefficient matrix ($m$ equations, $n$ variables)
+    - ${\boldsymbol A} \in \R^{m \times n}$ è la matrice dei coefficienti ($m$ equazioni, $n$ variabili)
 
-    - ${\boldsymbol x} \in \R^{n \times 1}$ is the vector of variables
+    - ${\boldsymbol x} \in \R^{n \times 1}$ è il vettore delle variabili
 
-    - ${\boldsymbol b} \in \R^{m \times 1}$ is the right-hand side vector
+    - ${\boldsymbol b} \in \R^{m \times 1}$ è il vettore dei termini noti
 
-    - $({\boldsymbol A} | {\boldsymbol b}) \in \R^{m \times (n+1)}$ is the augmented matrix
+    - $({\boldsymbol A} | {\boldsymbol b}) \in \R^{m \times (n+1)}$ è la matrice completa
 
-    The existence and uniqueness of solutions to the system ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ depend on the rank of the coefficient matrix ${\boldsymbol A}$ and the rank of the augmented matrix $({\boldsymbol A} | {\boldsymbol b})$.
+    <strong>Teorema di Rouché–Capelli.</strong> L'esistenza e l'unicità delle soluzioni del sistema ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ dipendono dal rango della matrice dei coefficienti ${\boldsymbol A}$ e dal rango della matrice completa $({\boldsymbol A} | {\boldsymbol b})$.
 
-    <strong>Case 1 - No solution (inconsistent system):</strong>
+    <strong>Caso 1 - Nessuna soluzione (sistema incompatibile):</strong>
 
     $$
     \text{rank}({\boldsymbol A}) < \text{rank}({\boldsymbol A} | {\boldsymbol b})
     $$
 
-    The system is inconsistent and has no solution.
+    Il sistema è incompatibile e non ha soluzioni.
 
-    <strong>Case 2 - Unique solution:</strong>
+    <strong>Caso 2 - Soluzione unica:</strong>
 
     $$
     \text{rank}({\boldsymbol A}) = \text{rank}({\boldsymbol A} | {\boldsymbol b}) = n
     $$
 
-    The system has a unique solution.
+    Il sistema ha un'unica soluzione.
 
-    <strong>Case 3 - Infinite solutions:</strong>
+    <strong>Caso 3 - Infinite soluzioni:</strong>
 
     $$
     \text{rank}({\boldsymbol A}) = \text{rank}({\boldsymbol A} | {\boldsymbol b}) < n
     $$
 
-    The system has infinitely many solutions with $n - \text{rank}({\boldsymbol A})$ degrees of freedom (free variables).
+    Il sistema ha infinite soluzioni con $n - \text{rank}({\boldsymbol A})$ gradi di libertà (variabili libere). Se $r=\text{rank}({\boldsymbol A})$, le soluzioni si possono descrivere mediante $n-r$ <strong>parametri liberi</strong>.
 
-## 2. Gaussian Elimination Method
+- Poiché $({\boldsymbol A} | {\boldsymbol b})$ si ottiene da ${\boldsymbol A}$ aggiungendo una colonna, si ha sempre
+
+    $$
+    \text{rank}({\boldsymbol A}) \le \text{rank}({\boldsymbol A} | {\boldsymbol b}) \le \text{rank}({\boldsymbol A}) + 1,
+    $$
+
+    quindi i tre casi precedenti coprono tutte le possibilità. In particolare, il sistema ha almeno una soluzione (è <strong>compatibile</strong>) se e solo se $\text{rank}({\boldsymbol A}) = \text{rank}({\boldsymbol A} | {\boldsymbol b})$.
+
+- Poiché $\text{rank}({\boldsymbol A}) \le \min\{m,n\}$, una soluzione unica è possibile solo se $m \ge n$.
+
+- Se ${\boldsymbol A} \in \R^{n \times n}$ è quadrata, ricordiamo che $\text{rank}({\boldsymbol A})=n$ se e solo se $\det({\boldsymbol A}) \neq 0$. Quindi, se $\det({\boldsymbol A}) \neq 0$, allora anche $\text{rank}({\boldsymbol A} | {\boldsymbol b})=n$ e il sistema ha un'unica soluzione, per ogni vettore dei termini noti ${\boldsymbol b}$.
+
+## 2. Metodo di eliminazione di Gauss
 
 !!! chiave ""
 
-    The <strong>Gaussian elimination method</strong> is an algorithm for solving systems of linear equations by transforming the augmented matrix $({\boldsymbol A} | {\boldsymbol b})$ into <strong>row echelon form</strong> (upper triangular form) through elementary row operations.
+    Il <strong>metodo di eliminazione di Gauss</strong> è un algoritmo per risolvere sistemi di equazioni lineari che trasforma la matrice completa $({\boldsymbol A} | {\boldsymbol b})$ in <strong>forma a scala</strong> (forma triangolare superiore) mediante operazioni elementari sulle righe.
 
-- Given the system of linear equations:
+- Dato il sistema di equazioni lineari:
 
     $$
     {\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}
     $$
 
-    we form the <strong>augmented matrix</strong>:
+    costruiamo la <strong>matrice completa</strong>:
 
     $$
     ({\boldsymbol A} | {\boldsymbol b})
     $$
 
-- The method consists of two phases:
+- Il metodo si compone di due fasi:
 
-    <strong>Phase 1 - Forward elimination:</strong> Transform the augmented matrix into upper triangular form using elementary row operations:
+    <strong>Fase 1 - Eliminazione in avanti:</strong> si trasforma la matrice completa in forma triangolare superiore mediante operazioni elementari sulle righe:
 
-    - Swap two rows
+    - Scambiare due righe
 
-    - Multiply a row by a non-zero scalar
+    - Moltiplicare una riga per uno scalare non nullo
 
-    - Add a multiple of one row to another row
+    - Sommare a una riga un multiplo di un'altra riga
 
-    The goal is to create zeros below the diagonal, obtaining:
+    L'obiettivo è creare zeri sotto la diagonale, ottenendo:
 
     $$
     \left(\begin{array}{cccc|c}
@@ -95,7 +107,7 @@ title: "System of linear equations"
     \end{array}\right)
     $$
 
-    <strong>Phase 2 - Backward substitution:</strong> Solve the upper triangular system from bottom to top:
+    <strong>Fase 2 - Sostituzione all'indietro:</strong> si risolve il sistema triangolare superiore dal basso verso l'alto (supponendo $\tilde{a}_{ii} \neq 0$ per ogni $i$):
 
     \begin{align*}
     x_n &= \frac{\tilde{b}_n}{\tilde{a}_{nn}}\\
@@ -106,21 +118,21 @@ title: "System of linear equations"
 
 !!! chiave ""
 
-    <strong>Elementary row operations:</strong>
+    <strong>Operazioni elementari sulle righe:</strong>
 
-    - $R_i \leftrightarrow R_j$ : swap row $i$ with row $j$
+    - $R_i \leftrightarrow R_j$ : scambia la riga $i$ con la riga $j$
 
-    - $R_i \leftarrow k \; R_i$ : multiply row $i$ by scalar $k \neq 0$
+    - $R_i \leftarrow k \; R_i$ : moltiplica la riga $i$ per lo scalare $k \neq 0$
 
-    - $R_i \leftarrow R_i + k \; R_j$ : add $k$ times row $j$ to row $i$
+    - $R_i \leftarrow R_i + k \; R_j$ : somma alla riga $i$ la riga $j$ moltiplicata per $k$
 
-    These operations do not change the solution set of the system.
+    Queste operazioni non cambiano l'insieme delle soluzioni del sistema.
 
 <a id="box-texexpbox1a-1"></a>
 
-!!! esempio "Esempio 1: Solving a system using Gaussian elimination - Part 1"
+!!! esempio "Esempio 1: Risoluzione di un sistema con l'eliminazione di Gauss - Parte 1"
 
-    Consider the system of linear equations:
+    Consideriamo il sistema di equazioni lineari:
 
     $$
     \left\{ \begin{array}{ll}
@@ -130,7 +142,7 @@ title: "System of linear equations"
     \end{array} \right.
     $$
 
-    <strong>Augmented matrix:</strong>
+    <strong>Matrice completa:</strong>
 
     $$
     ({\boldsymbol A} | {\boldsymbol b}) = 
@@ -141,9 +153,9 @@ title: "System of linear equations"
     \end{array}\right)
     $$
 
-    <strong>Step 1:</strong> Eliminate $x_1$ from rows 2 and 3
+    <strong>Passo 1:</strong> eliminiamo $x_1$ dalle righe 2 e 3
 
-    $R_2 \leftarrow R_2 - 2 \; R_1$ (subtract $2$ times row 1 from row 2):
+    $R_2 \leftarrow R_2 - 2 \; R_1$ (sottraiamo alla riga 2 la riga 1 moltiplicata per $2$):
 
     $$
     \left(\begin{array}{ccc|c}
@@ -153,7 +165,7 @@ title: "System of linear equations"
     \end{array}\right)
     $$
 
-    $R_3 \leftarrow R_3 - 4 \; R_1$ (subtract $4$ times row 1 from row 3):
+    $R_3 \leftarrow R_3 - 4 \; R_1$ (sottraiamo alla riga 3 la riga 1 moltiplicata per $4$):
 
     $$
     \left(\begin{array}{ccc|c}
@@ -163,9 +175,9 @@ title: "System of linear equations"
     \end{array}\right)
     $$
 
-    <strong>Step 2:</strong> Eliminate $x_2$ from row 3
+    <strong>Passo 2:</strong> eliminiamo $x_2$ dalla riga 3
 
-    $R_3 \leftarrow R_3 - 3 \; R_2$ (subtract $3$ times row 2 from row 3):
+    $R_3 \leftarrow R_3 - 3 \; R_2$ (sottraiamo alla riga 3 la riga 2 moltiplicata per $3$):
 
     $$
     \left(\begin{array}{ccc|c}
@@ -175,7 +187,7 @@ title: "System of linear equations"
     \end{array}\right)
     $$
 
-    <strong>Upper triangular form achieved!</strong> The corresponding system is:
+    <strong>Forma triangolare superiore ottenuta!</strong> Il sistema corrispondente è:
 
     $$
     \left\{ \begin{array}{ll}
@@ -187,29 +199,29 @@ title: "System of linear equations"
 
 <a id="box-texexpbox1c-2"></a>
 
-!!! esempio "Esempio 2: Solving a system using Gaussian elimination - Part 2"
+!!! esempio "Esempio 2: Risoluzione di un sistema con l'eliminazione di Gauss - Parte 2"
 
-    <strong>Backward substitution:</strong>
+    <strong>Sostituzione all'indietro:</strong>
 
-    From the third equation:
+    Dalla terza equazione:
 
     $$
     2 \; x_3 = 2 ~~\Longrightarrow~~ x_3 = 1
     $$
 
-    From the second equation:
+    Dalla seconda equazione:
 
     $$
     x_2 + x_3 = 2 ~~\Longrightarrow~~ x_2 = 2 - x_3 = 2 - 1 = 1
     $$
 
-    From the first equation:
+    Dalla prima equazione:
 
     $$
     2 \; x_1 + x_2 + x_3 = 4 ~~\Longrightarrow~~ 2 \; x_1 = 4 - x_2 - x_3 = 4 - 1 - 1 = 2 ~~\Longrightarrow~~ x_1 = 1
     $$
 
-    <strong>Solution:</strong>
+    <strong>Soluzione:</strong>
 
     $$
     {\boldsymbol x} = 
@@ -226,7 +238,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    <strong>Verification:</strong>
+    <strong>Verifica:</strong>
 
     $$
     {\boldsymbol A} \; {\boldsymbol x} = 
@@ -255,51 +267,357 @@ title: "System of linear equations"
     = {\boldsymbol b} \quad \checkmark
     $$
 
-## 3. LU Factorization Method
+## 3. Eliminazione di Gauss e teorema di Rouché–Capelli
+
+- L'eliminazione di Gauss si può applicare a qualunque sistema ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$, con ${\boldsymbol A} \in \R^{m \times n}$. In generale, l'eliminazione in avanti trasforma $({\boldsymbol A} | {\boldsymbol b})$ in <strong>forma a scala</strong>: in ogni riga non nulla, il primo elemento non nullo (detto <strong>pivot</strong>) si trova strettamente a destra del pivot della riga precedente, e le righe nulle (se ci sono) si trovano in fondo.
+
+- Le operazioni elementari sulle righe non cambiano l'insieme delle soluzioni del sistema, e non cambiano né il rango di ${\boldsymbol A}$ né il rango di $({\boldsymbol A} | {\boldsymbol b})$.
+
+- Il rango di una matrice in forma a scala è uguale al numero delle sue righe non nulle. Pertanto, al termine dell'eliminazione in avanti possiamo leggere $\text{rank}({\boldsymbol A})$ e $\text{rank}({\boldsymbol A} | {\boldsymbol b})$ e applicare il teorema di Rouché–Capelli:
+
+    - una riga della forma $\left(\begin{array}{ccc|c} 0 & \cdots & 0 & c \end{array}\right)$ con $c \neq 0$ corrisponde all'equazione impossibile $0=c$: allora $\text{rank}({\boldsymbol A}) < \text{rank}({\boldsymbol A} | {\boldsymbol b})$ e il sistema non ha soluzioni;
+
+    - altrimenti, le variabili le cui colonne contengono un pivot si calcolano con la sostituzione all'indietro, e le restanti $n-r$ variabili sono i <strong>parametri liberi</strong>.
 
 !!! chiave ""
 
-    The <strong>LU factorization</strong> (or <strong>LU decomposition</strong>) is a method for solving systems of linear equations by decomposing the coefficient matrix ${\boldsymbol A}$ into the product of two triangular matrices:
+    Quando il sistema ha infinite soluzioni con un parametro libero $t \in \R$, le soluzioni si possono scrivere in <strong>forma parametrica</strong>
+
+    $$
+    {\boldsymbol x} = {\boldsymbol x}_0 + t \; {\boldsymbol v}, \qquad t \in \R,
+    $$
+
+    dove ${\boldsymbol x}_0$ è una soluzione particolare (ottenuta per $t=0$) e ${\boldsymbol v}$ è un vettore non nullo tale che ${\boldsymbol A} \; {\boldsymbol v} = {\boldsymbol 0}$.
+
+<a id="box-texexpboxRCunique-3"></a>
+
+!!! esempio "Esempio 3: Rouché–Capelli: soluzione unica"
+
+    Consideriamo il sistema di equazioni lineari:
+
+    $$
+    \left\{ \begin{array}{ll}
+      \phantom{2 \; x_1 +{}} 1 \; x_2 + 1 \; x_3  & = 1\\[2ex]
+      1 \; x_1 + 1 \; x_2 + 1 \; x_3  & = 2\\[2ex]
+      2 \; x_1 + 1 \; x_2 + 3 \; x_3  & = 1
+    \end{array} \right.
+    \qquad
+    ({\boldsymbol A} | {\boldsymbol b}) =
+    \left(\begin{array}{ccc|c}
+    0 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 2 \\
+    2 & 1 & 3 & 1
+    \end{array}\right)
+    $$
+
+    L'elemento in posizione $(1,1)$ è nullo, quindi per prima cosa scambiamo le righe 1 e 2.
+
+    $R_1 \leftrightarrow R_2$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 1 & 1 & 2 \\
+    0 & 1 & 1 & 1 \\
+    2 & 1 & 3 & 1
+    \end{array}\right)
+    $$
+
+    $R_3 \leftarrow R_3 - 2 \; R_1$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 1 & 1 & 2 \\
+    0 & 1 & 1 & 1 \\
+    0 & -1 & 1 & -3
+    \end{array}\right)
+    $$
+
+    $R_3 \leftarrow R_3 + R_2$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 1 & 1 & 2 \\
+    0 & 1 & 1 & 1 \\
+    0 & 0 & 2 & -2
+    \end{array}\right)
+    $$
+
+    Ci sono $3$ righe non nulle sia in ${\boldsymbol A}$ sia in $({\boldsymbol A} | {\boldsymbol b})$: $\text{rank}({\boldsymbol A}) = \text{rank}({\boldsymbol A} | {\boldsymbol b}) = 3 = n$, quindi la soluzione è unica. Con la sostituzione all'indietro:
+
+    $$
+    2 \; x_3 = -2 ~~\Longrightarrow~~ x_3 = -1,
+    \qquad
+    x_2 = 1 - x_3 = 2,
+    \qquad
+    x_1 = 2 - x_2 - x_3 = 2 - 2 + 1 = 1,
+    $$
+
+    cioè
+
+    $$
+    {\boldsymbol x} =
+    \begin{pmatrix}
+    1 \\
+    2 \\
+    -1
+    \end{pmatrix}.
+    $$
+
+<a id="box-texexpboxRCinfinite-4"></a>
+
+!!! esempio "Esempio 4: Rouché–Capelli: infinite soluzioni"
+
+    Consideriamo il sistema di equazioni lineari:
+
+    $$
+    \left\{ \begin{array}{ll}
+      1 \; x_1 + 2 \; x_2 - 1 \; x_3  & = 1\\[2ex]
+      2 \; x_1 + 5 \; x_2 + 1 \; x_3  & = 4\\[2ex]
+      3 \; x_1 + 7 \; x_2 \phantom{{}+ 1 \; x_3}  & = 5
+    \end{array} \right.
+    \qquad
+    ({\boldsymbol A} | {\boldsymbol b}) =
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    2 & 5 & 1 & 4 \\
+    3 & 7 & 0 & 5
+    \end{array}\right)
+    $$
+
+    $R_2 \leftarrow R_2 - 2 \; R_1$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    0 & 1 & 3 & 2 \\
+    3 & 7 & 0 & 5
+    \end{array}\right)
+    $$
+
+    $R_3 \leftarrow R_3 - 3 \; R_1$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    0 & 1 & 3 & 2 \\
+    0 & 1 & 3 & 2
+    \end{array}\right)
+    $$
+
+    $R_3 \leftarrow R_3 - R_2$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    0 & 1 & 3 & 2 \\
+    0 & 0 & 0 & 0
+    \end{array}\right)
+    $$
+
+    Ci sono $2$ righe non nulle sia in ${\boldsymbol A}$ sia in $({\boldsymbol A} | {\boldsymbol b})$: $\text{rank}({\boldsymbol A}) = \text{rank}({\boldsymbol A} | {\boldsymbol b}) = 2 < 3 = n$, quindi ci sono infinite soluzioni con $n - r = 3 - 2 = 1$ parametro libero. I pivot sono nelle colonne di $x_1$ e $x_2$, quindi $x_3$ è libera: poniamo $x_3 = t$, $t \in \R$. Con la sostituzione all'indietro:
+
+    $$
+    x_2 = 2 - 3 \; x_3 = 2 - 3t,
+    \qquad
+    x_1 = 1 - 2 \; x_2 + x_3 = 1 - 4 + 6t + t = -3 + 7t.
+    $$
+
+    In forma parametrica:
+
+    $$
+    {\boldsymbol x} =
+    \begin{pmatrix}
+    -3 + 7t \\
+    2 - 3t \\
+    t
+    \end{pmatrix}
+    =
+    \underbrace{\begin{pmatrix}
+    -3 \\
+    2 \\
+    0
+    \end{pmatrix}}_{{\boldsymbol x}_0}
+    + t
+    \underbrace{\begin{pmatrix}
+    7 \\
+    -3 \\
+    1
+    \end{pmatrix}}_{{\boldsymbol v}},
+    \qquad t \in \R.
+    $$
+
+    <strong>Verifica:</strong> ${\boldsymbol A} \; {\boldsymbol x}_0 = (-3+4, \; -6+10, \; -9+14)' = (1, 4, 5)' = {\boldsymbol b}$ e ${\boldsymbol A} \; {\boldsymbol v} = (7-6-1, \; 14-15+1, \; 21-21)' = {\boldsymbol 0}$, quindi ${\boldsymbol A}({\boldsymbol x}_0 + t \; {\boldsymbol v}) = {\boldsymbol b}$ per ogni $t \in \R$ $\checkmark$
+
+<a id="box-texexpboxRCnone-5"></a>
+
+!!! esempio "Esempio 5: Rouché–Capelli: nessuna soluzione"
+
+    Cambiamo solo l'ultimo termine noto del sistema precedente:
+
+    $$
+    \left\{ \begin{array}{ll}
+      1 \; x_1 + 2 \; x_2 - 1 \; x_3  & = 1\\[2ex]
+      2 \; x_1 + 5 \; x_2 + 1 \; x_3  & = 4\\[2ex]
+      3 \; x_1 + 7 \; x_2 \phantom{{}+ 1 \; x_3}  & = 6
+    \end{array} \right.
+    \qquad
+    ({\boldsymbol A} | {\boldsymbol b}) =
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    2 & 5 & 1 & 4 \\
+    3 & 7 & 0 & 6
+    \end{array}\right)
+    $$
+
+    Con le stesse operazioni sulle righe $R_2 \leftarrow R_2 - 2 \; R_1$, $R_3 \leftarrow R_3 - 3 \; R_1$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    0 & 1 & 3 & 2 \\
+    0 & 1 & 3 & 3
+    \end{array}\right)
+    $$
+
+    $R_3 \leftarrow R_3 - R_2$:
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 1 \\
+    0 & 1 & 3 & 2 \\
+    0 & 0 & 0 & 1
+    \end{array}\right)
+    $$
+
+    L'ultima riga corrisponde all'equazione $0 \; x_1 + 0 \; x_2 + 0 \; x_3 = 1$, che è impossibile. Infatti ${\boldsymbol A}$ ha $2$ righe non nulle mentre $({\boldsymbol A} | {\boldsymbol b})$ ne ha $3$:
+
+    $$
+    \text{rank}({\boldsymbol A}) = 2 < 3 = \text{rank}({\boldsymbol A} | {\boldsymbol b}),
+    $$
+
+    quindi il sistema è incompatibile e <strong>non ha soluzioni</strong>.
+
+## 4. Sistemi omogenei
+
+<a id="box-defHomogeneous-6"></a>
+
+!!! definizione "Definizione 1: sistema omogeneo"
+
+    Un sistema di equazioni lineari ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ con ${\boldsymbol A} \in \R^{m \times n}$ si dice <strong>omogeneo</strong> se ${\boldsymbol b} = {\boldsymbol 0}$, cioè se ha la forma
+
+    $$
+    {\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol 0}.
+    $$
+
+<a id="box-obsHomogeneous-7"></a>
+
+!!! teorema "Osservazione 1: soluzioni di un sistema omogeneo"
+
+    Sia ${\boldsymbol A} \in \R^{m \times n}$. Allora:
+
+    - il sistema omogeneo ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol 0}$ ha sempre la soluzione ${\boldsymbol x} = {\boldsymbol 0}$, detta <strong>soluzione banale</strong>;
+
+    - ha soluzioni non banali (${\boldsymbol x} \neq {\boldsymbol 0}$) se e solo se $\text{rank}({\boldsymbol A}) < n$; in tal caso ha infinite soluzioni, con $n - \text{rank}({\boldsymbol A})$ parametri liberi;
+
+    - se ${\boldsymbol A} \in \R^{n \times n}$ è quadrata, ha soluzioni non banali se e solo se $\det({\boldsymbol A}) = 0$.
+
+??? dimostrazione "Dimostrazione (Dimostrazione)"
+
+    Aggiungere una colonna di zeri non cambia il rango, quindi $\text{rank}({\boldsymbol A} | {\boldsymbol 0}) = \text{rank}({\boldsymbol A})$ e il sistema è sempre compatibile (come mostra ${\boldsymbol x} = {\boldsymbol 0}$). Per il teorema di Rouché–Capelli, la soluzione ${\boldsymbol x} = {\boldsymbol 0}$ è l'unica se e solo se $\text{rank}({\boldsymbol A}) = n$; altrimenti ci sono infinite soluzioni con $n - \text{rank}({\boldsymbol A})$ parametri liberi. Per una matrice quadrata, $\text{rank}({\boldsymbol A}) < n$ se e solo se $\det({\boldsymbol A}) = 0$. <span class="qed">□</span>
+
+- In particolare, se $m < n$ (meno equazioni che variabili), allora $\text{rank}({\boldsymbol A}) \le m < n$ e il sistema omogeneo ha sempre soluzioni non banali.
+
+- Se ${\boldsymbol x}_0$ è una soluzione di ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ e ${\boldsymbol v}$ è una soluzione di ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol 0}$, allora ${\boldsymbol A}({\boldsymbol x}_0 + {\boldsymbol v}) = {\boldsymbol b} + {\boldsymbol 0} = {\boldsymbol b}$. Questo spiega la forma parametrica ${\boldsymbol x} = {\boldsymbol x}_0 + t \; {\boldsymbol v}$ dell'Esempio [Esempio 4](#box-texexpboxRCinfinite-4).
+
+<a id="box-texexpboxHomogeneous-8"></a>
+
+!!! esempio "Esempio 6: un sistema omogeneo"
+
+    Consideriamo il sistema omogeneo con la matrice dei coefficienti dell'Esempio [Esempio 4](#box-texexpboxRCinfinite-4):
+
+    $$
+    \left\{ \begin{array}{ll}
+      1 \; x_1 + 2 \; x_2 - 1 \; x_3  & = 0\\[2ex]
+      2 \; x_1 + 5 \; x_2 + 1 \; x_3  & = 0\\[2ex]
+      3 \; x_1 + 7 \; x_2 \phantom{{}+ 1 \; x_3}  & = 0
+    \end{array} \right.
+    $$
+
+    Con la regola di Sarrus,
+
+    $$
+    \det({\boldsymbol A}) = 1 \cdot 5 \cdot 0 + 2 \cdot 1 \cdot 3 + (-1) \cdot 2 \cdot 7 - (-1) \cdot 5 \cdot 3 - 2 \cdot 2 \cdot 0 - 1 \cdot 1 \cdot 7 = 0 + 6 - 14 + 15 - 0 - 7 = 0,
+    $$
+
+    quindi ci sono soluzioni non banali. Con le stesse operazioni sulle righe dell'Esempio [Esempio 4](#box-texexpboxRCinfinite-4) (l'ultima colonna resta nulla):
+
+    $$
+    \left(\begin{array}{ccc|c}
+    1 & 2 & -1 & 0 \\
+    0 & 1 & 3 & 0 \\
+    0 & 0 & 0 & 0
+    \end{array}\right)
+    $$
+
+    Ponendo $x_3 = t$: $x_2 = -3t$ e $x_1 = -2 \; x_2 + x_3 = 6t + t = 7t$. Quindi le soluzioni sono
+
+    $$
+    {\boldsymbol x} = t
+    \begin{pmatrix}
+    7 \\
+    -3 \\
+    1
+    \end{pmatrix},
+    \qquad t \in \R,
+    $$
+
+    e la soluzione banale si ottiene per $t = 0$.
+
+## 5. Metodo della fattorizzazione LU
+
+!!! chiave ""
+
+    La <strong>fattorizzazione LU</strong> (o <strong>decomposizione LU</strong>) è un metodo per risolvere sistemi di equazioni lineari che scompone la matrice dei coefficienti ${\boldsymbol A}$ nel prodotto di due matrici triangolari:
 
     $$
     {\boldsymbol A} = {\boldsymbol L} \; {\boldsymbol U}
     $$
 
-    where ${\boldsymbol L}$ is a <strong>lower triangular matrix</strong> (with 1's on the diagonal) and ${\boldsymbol U}$ is an <strong>upper triangular matrix</strong>.
+    dove ${\boldsymbol L}$ è una <strong>matrice triangolare inferiore</strong> (con elementi diagonali uguali a 1) e ${\boldsymbol U}$ è una <strong>matrice triangolare superiore</strong>.
 
-- Given the system of linear equations:
+- Dato il sistema di equazioni lineari:
 
     $$
     {\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}
     $$
 
-    if we have the LU factorization ${\boldsymbol A} = {\boldsymbol L} \; {\boldsymbol U}$, we can substitute:
+    se disponiamo della fattorizzazione LU ${\boldsymbol A} = {\boldsymbol L} \; {\boldsymbol U}$, possiamo sostituire:
 
     $$
     {\boldsymbol L} \; {\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol b}
     $$
 
-- We introduce the <strong>auxiliary variable</strong> ${\boldsymbol y}$ defined as:
+- Introduciamo la <strong>variabile ausiliaria</strong> ${\boldsymbol y}$ definita come:
 
     $$
     {\boldsymbol y} \;:=\; {\boldsymbol U} \; {\boldsymbol x}
     $$
 
-    so that ${\boldsymbol L} \; {\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol b}$ becomes ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$.
+    così che ${\boldsymbol L} \; {\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol b}$ diventa ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$.
 
-    <strong>Why does this work?</strong>  We are splitting the original system ${\boldsymbol A}\,{\boldsymbol x}={\boldsymbol b}$ into two simpler triangular systems:
+    <strong>Perché funziona?</strong>  Stiamo spezzando il sistema originale ${\boldsymbol A}\,{\boldsymbol x}={\boldsymbol b}$ in due sistemi triangolari più semplici:
 
-    1. Find ${\boldsymbol y}$ such that ${\boldsymbol L}\,{\boldsymbol y} = {\boldsymbol b}$.
+    1. Trovare ${\boldsymbol y}$ tale che ${\boldsymbol L}\,{\boldsymbol y} = {\boldsymbol b}$.
 
-    2. Find ${\boldsymbol x}$ such that ${\boldsymbol U}\,{\boldsymbol x} = {\boldsymbol y}$.
+    2. Trovare ${\boldsymbol x}$ tale che ${\boldsymbol U}\,{\boldsymbol x} = {\boldsymbol y}$.
 
-    If both steps succeed, then ${\boldsymbol A}\,{\boldsymbol x} = {\boldsymbol L}\,{\boldsymbol U}\,{\boldsymbol x} = {\boldsymbol L}\,{\boldsymbol y} = {\boldsymbol b}$, so ${\boldsymbol x}$ is indeed a solution of the original system. Since both ${\boldsymbol L}$ and ${\boldsymbol U}$ are triangular, each of the two systems can be solved in $O(n^2)$ operations by simple substitution.
+    Se entrambi i passi riescono, allora ${\boldsymbol A}\,{\boldsymbol x} = {\boldsymbol L}\,{\boldsymbol U}\,{\boldsymbol x} = {\boldsymbol L}\,{\boldsymbol y} = {\boldsymbol b}$, quindi ${\boldsymbol x}$ è effettivamente una soluzione del sistema originale. Poiché sia ${\boldsymbol L}$ sia ${\boldsymbol U}$ sono triangolari, ciascuno dei due sistemi si risolve in $O(n^2)$ operazioni per semplice sostituzione.
 
-- We then solve the system in two steps:
+- Risolviamo quindi il sistema in due passi:
 
-    <strong>Step 1 - Forward substitution:</strong> Solve ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$ for ${\boldsymbol y}$
+    <strong>Passo 1 - Sostituzione in avanti:</strong> risolvere ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$ rispetto a ${\boldsymbol y}$
 
-    Since ${\boldsymbol L}$ is lower triangular, we can solve this system easily from top to bottom:
+    Poiché ${\boldsymbol L}$ è triangolare inferiore, possiamo risolvere facilmente questo sistema dall'alto verso il basso:
 
     \begin{align*}
     y_1 &= b_1\\
@@ -309,9 +627,9 @@ title: "System of linear equations"
     y_i &= b_i - \sum_{j=1}^{i-1} \ell_{ij} \; y_j
     \end{align*}
 
-    <strong>Step 2 - Backward substitution:</strong> Solve ${\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol y}$ for ${\boldsymbol x}$
+    <strong>Passo 2 - Sostituzione all'indietro:</strong> risolvere ${\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol y}$ rispetto a ${\boldsymbol x}$
 
-    Since ${\boldsymbol U}$ is upper triangular, we can solve this system easily from bottom to top:
+    Poiché ${\boldsymbol U}$ è triangolare superiore, possiamo risolvere facilmente questo sistema dal basso verso l'alto:
 
     \begin{align*}
     x_n &= \frac{y_n}{u_{nn}}\\
@@ -322,19 +640,19 @@ title: "System of linear equations"
 
 !!! chiave ""
 
-    <strong>Advantages of LU factorization:</strong>
+    <strong>Vantaggi della fattorizzazione LU:</strong>
 
-    - Once the factorization ${\boldsymbol A} = {\boldsymbol L} \; {\boldsymbol U}$ is computed, we can solve the system for different right-hand sides ${\boldsymbol b}$ efficiently
+    - Una volta calcolata la fattorizzazione ${\boldsymbol A} = {\boldsymbol L} \; {\boldsymbol U}$, possiamo risolvere in modo efficiente il sistema per diversi vettori dei termini noti ${\boldsymbol b}$
 
-    - Both forward and backward substitution require only $O(n^2)$ operations
+    - Sia la sostituzione in avanti sia quella all'indietro richiedono solo $O(n^2)$ operazioni
 
-    - The factorization itself requires $O(n^3)$ operations, but it needs to be done only once
+    - La fattorizzazione richiede $O(n^3)$ operazioni, ma va calcolata una sola volta
 
-<a id="box-texexpbox2a-3"></a>
+<a id="box-texexpbox2a-9"></a>
 
-!!! esempio "Esempio 3: Solving a system using LU factorization - Part 1"
+!!! esempio "Esempio 7: Risoluzione di un sistema con la fattorizzazione LU - Parte 1"
 
-    Consider the system of linear equations:
+    Consideriamo il sistema di equazioni lineari:
 
     $$
     \left\{ \begin{array}{ll}
@@ -344,7 +662,7 @@ title: "System of linear equations"
     \end{array} \right.
     $$
 
-    In matrix form: ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ where
+    In forma matriciale: ${\boldsymbol A} \; {\boldsymbol x} = {\boldsymbol b}$ dove
 
     $$
     {\boldsymbol A} = 
@@ -362,7 +680,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    <strong>Given</strong> the LU factorization of ${\boldsymbol A}$:
+    <strong>Data</strong> la fattorizzazione LU di ${\boldsymbol A}$:
 
     $$
     {\boldsymbol L} = 
@@ -380,7 +698,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    <strong>Verification:</strong>
+    <strong>Verifica:</strong>
 
     $$
     {\boldsymbol L} \; {\boldsymbol U} = 
@@ -403,11 +721,11 @@ title: "System of linear equations"
     = {\boldsymbol A} \quad \checkmark
     $$
 
-<a id="box-texexpbox2b-4"></a>
+<a id="box-texexpbox2b-10"></a>
 
-!!! esempio "Esempio 4: Solving a system using LU factorization - Part 2"
+!!! esempio "Esempio 8: Risoluzione di un sistema con la fattorizzazione LU - Parte 2"
 
-    <strong>Step 1 - Forward substitution:</strong> Solve ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$
+    <strong>Passo 1 - Sostituzione in avanti:</strong> risolvere ${\boldsymbol L} \; {\boldsymbol y} = {\boldsymbol b}$
 
     $$
     \begin{pmatrix}
@@ -428,25 +746,25 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    From the first equation:
+    Dalla prima equazione:
 
     $$
     y_1 = 4
     $$
 
-    From the second equation:
+    Dalla seconda equazione:
 
     $$
     2 \; y_1 + y_2 = 10 ~~\Longrightarrow~~ y_2 = 10 - 2 \cdot 4 = 10 - 8 = 2
     $$
 
-    From the third equation:
+    Dalla terza equazione:
 
     $$
     4 \; y_1 + 3 \; y_2 + y_3 = 24 ~~\Longrightarrow~~ y_3 = 24 - 4 \cdot 4 - 3 \cdot 2 = 24 - 16 - 6 = 2
     $$
 
-    Thus:
+    Quindi:
 
     $$
     {\boldsymbol y} = 
@@ -457,7 +775,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    <strong>Step 2 - Backward substitution:</strong> Solve ${\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol y}$
+    <strong>Passo 2 - Sostituzione all'indietro:</strong> risolvere ${\boldsymbol U} \; {\boldsymbol x} = {\boldsymbol y}$
 
     $$
     \begin{pmatrix}
@@ -478,25 +796,25 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    From the third equation:
+    Dalla terza equazione:
 
     $$
     2 \; x_3 = 2 ~~\Longrightarrow~~ x_3 = 1
     $$
 
-    From the second equation:
+    Dalla seconda equazione:
 
     $$
     x_2 + x_3 = 2 ~~\Longrightarrow~~ x_2 = 2 - 1 = 1
     $$
 
-    From the first equation:
+    Dalla prima equazione:
 
     $$
     2 \; x_1 + x_2 + x_3 = 4 ~~\Longrightarrow~~ 2 \; x_1 = 4 - 1 - 1 = 2 ~~\Longrightarrow~~ x_1 = 1
     $$
 
-    <strong>Solution:</strong>
+    <strong>Soluzione:</strong>
 
     $$
     {\boldsymbol x} = 
@@ -513,7 +831,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    <strong>Verification:</strong>
+    <strong>Verifica:</strong>
 
     $$
     {\boldsymbol A} \; {\boldsymbol x} = 
@@ -542,13 +860,13 @@ title: "System of linear equations"
     = {\boldsymbol b} \quad \checkmark
     $$
 
-## 4. Cramer's rule
+## 6. Regola di Cramer
 
 !!! chiave ""
 
-    Cramer's rule is an explicit formula for the solution of a system of $m$ linear equations with $m$ variables (valid whenever the system has a unique solution).
+    La regola di Cramer è una formula esplicita per la soluzione di un sistema di $m$ equazioni lineari in $m$ variabili (valida quando il sistema ha un'unica soluzione).
 
-- Given a column vector ${\boldsymbol  b} \in \mathbb{\R}^{m \times 1}$ of $m$ rows, a matrix ${\boldsymbol  A } \in \mathbb{\R}^{m \times m}$ of $m$ rows and $m$ columns and a column vector ${\boldsymbol  x} \in \R^{m \times 1}$ of $m$ rows containing the $m$ variables:
+- Dati un vettore colonna ${\boldsymbol  b} \in \R^{m \times 1}$ di $m$ righe, una matrice ${\boldsymbol  A } \in \R^{m \times m}$ di $m$ righe e $m$ colonne e un vettore colonna ${\boldsymbol  x} \in \R^{m \times 1}$ di $m$ righe contenente le $m$ variabili:
 
     $$
     {\boldsymbol  A}=
@@ -564,7 +882,7 @@ title: "System of linear equations"
     b_{1} \\
     b_{2} \\
     \vdots  \\
-    b_{n} \\
+    b_{m} \\
     \end{pmatrix}
     \qquad
     {\boldsymbol  x}=
@@ -572,30 +890,30 @@ title: "System of linear equations"
     x_{1} \\
     x_{2} \\
     \vdots  \\
-    x_{n} \\
+    x_{m} \\
     \end{pmatrix}
     $$
 
-    if $\det({\boldsymbol  A}) \neq 0$, the solution ${\tilde{\boldsymbol  x}}$ of the system of $m$ linear equations:
+    se $\det({\boldsymbol  A}) \neq 0$, la soluzione ${\tilde{\boldsymbol  x}}$ del sistema di $m$ equazioni lineari:
 
     $$
     {\boldsymbol  A} \; {\boldsymbol  x}= {\boldsymbol  b}
     $$
 
-    is given by the formula:
+    è data dalla formula:
 
     \begin{equation}
     \label{CCCC}
     \tilde{x}_j = \frac{\det({\boldsymbol  A}_j) }{\det({\boldsymbol  A})},~~~~~ \forall j \in \{1,2,\dots,m\}
     \end{equation}
 
-    where ${\boldsymbol  A}_j$ is the matrix formed by replacing the $j$-th column of ${\boldsymbol  A}$ by the column vector ${\boldsymbol  b}$.
+    dove ${\boldsymbol  A}_j$ è la matrice ottenuta sostituendo la $j$-esima colonna di ${\boldsymbol  A}$ con il vettore colonna ${\boldsymbol  b}$.
 
-### 4.1 Systems of two equations and two variables
+### 6.1 Sistemi di due equazioni in due variabili
 
 !!! chiave ""
 
-    With $m=2$, we have:
+    Con $m=2$, si ha:
 
     $$
     {\boldsymbol  A}=
@@ -623,7 +941,7 @@ title: "System of linear equations"
     \end{pmatrix}
     $$
 
-    and
+    e
 
     \begin{align*}
     \det({\boldsymbol  A})   &= a_{11} \; a_{22} - a_{12} \; a_{21}\\[1ex]
@@ -631,7 +949,7 @@ title: "System of linear equations"
     \det({\boldsymbol  A}_2) &= a_{11}\;b_2  - b_{1} \; a_{21}
     \end{align*}
 
-    If $\det({\boldsymbol  A}) \neq 0$, we then have:
+    Se $\det({\boldsymbol  A}) \neq 0$, si ha allora:
 
     $$
     \left\{ \begin{array}{ll}
@@ -642,11 +960,11 @@ title: "System of linear equations"
     (\tilde{x}_1, \tilde{x}_2) = \left(~~{\frac{\det({\boldsymbol  A}_1)}{\det({\boldsymbol  A})},~~ \frac{\det({\boldsymbol  A}_2)}{\det({\boldsymbol  A})}} ~~\right)
     $$
 
-<a id="box-texexpbox1-5"></a>
+<a id="box-texexpbox1-11"></a>
 
-!!! esempio "Esempio 5: solution of a systems of two equations and two variables"
+!!! esempio "Esempio 9: soluzione di un sistema di due equazioni in due variabili"
 
-    - Given
+    - Dati
 
         $$
         {\boldsymbol  A}=
@@ -662,7 +980,7 @@ title: "System of linear equations"
         \end{pmatrix}
         $$
 
-        we have
+        si ha
 
         $$
         {\boldsymbol  A_1}=
@@ -678,7 +996,7 @@ title: "System of linear equations"
         \end{pmatrix}
         $$
 
-        and
+        e
 
         \begin{align*}
         \det({\boldsymbol  A})   &= (-1) \cdot 2  - 1 \cdot 8 =-10\\[1ex]
@@ -686,21 +1004,21 @@ title: "System of linear equations"
         \det({\boldsymbol  A}_2) &= (-1) \cdot 19  - 2 \cdot 8  = -35
         \end{align*}
 
-        Since $\det({\boldsymbol  A}) \neq 0$, we then have:
+        Poiché $\det({\boldsymbol  A}) \neq 0$, si ha allora:
 
         \begin{equation*}
         \begin{cases}
-                    \begin{tabular}{rrrrrrrrrrrrr}											
-        $-x_1$ & $+$ & $x_2$ & $=$ &$2$\\[2ex]
-        $8\;x_1$ & $+$ & $2\;x_2$ & $=$ &$19$
-                    \end{tabular}
+                    \begin{array}{rrrrrrrrrrrrr}											
+        -x_1 & + & x_2 & = &2\\[2ex]
+        8\;x_1 & + & 2\;x_2 & = &19
+                    \end{array}
                 \end{cases}
                 ~~\Longrightarrow~~
-        ({x}_1, {x}_2) 
+        (\tilde{x}_1, \tilde{x}_2) 
          = \left(\frac{-15}{-10}, \frac{-35}{-10}\right) = \left(\frac{3}{2}, \frac{7}{2}\right)
         \end{equation*}
 
-    - Given
+    - Dati
 
         $$
         {\boldsymbol  A}=
@@ -716,7 +1034,7 @@ title: "System of linear equations"
         \end{pmatrix}
         $$
 
-        we have
+        si ha
 
         $$
         {\boldsymbol  A_1}=
@@ -732,7 +1050,7 @@ title: "System of linear equations"
         \end{pmatrix}
         $$
 
-        and
+        e
 
         \begin{align*}
         \det({\boldsymbol  A})   &= (-1) \cdot (-1)   - (-1) \cdot 1 =2\\[1ex]
@@ -740,16 +1058,152 @@ title: "System of linear equations"
         \det({\boldsymbol  A}_2) &= (-1) \cdot 0  - (-2) \cdot 1  = 2
         \end{align*}
 
-        Since $\det({\boldsymbol  A}) \neq 0$, we then have:
+        Poiché $\det({\boldsymbol  A}) \neq 0$, si ha allora:
 
         \begin{equation*}
         \begin{cases}
-                    \begin{tabular}{rrrrrrrrrrrrr}											
-        $-x_1$ & $-$ & $x_2$ & $=$ &$-2$\\[2ex]
-        $x_1$ & $-$ & $x_2$ & $=$ &$0$
-                    \end{tabular}
+                    \begin{array}{rrrrrrrrrrrrr}											
+        -x_1 & - & x_2 & = &-2\\[2ex]
+        x_1 & - & x_2 & = &0
+                    \end{array}
                 \end{cases}
                 ~~\Longrightarrow~~
         (\tilde{x}_1, \tilde{x}_2) 
          = \left(\frac{2}{2}, \frac{2}{2}\right) = \left(1, 1\right)
         \end{equation*}
+
+### 6.2 Sistemi di tre equazioni in tre variabili
+
+!!! chiave ""
+
+    Con $m=3$, si ha:
+
+    $$
+    {\boldsymbol  A}=
+    \begin{pmatrix}
+    a_{11} & a_{12} & a_{13} \\[1ex]
+    a_{21} & a_{22} & a_{23} \\[1ex]
+    a_{31} & a_{32} & a_{33}
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  b}=
+    \begin{pmatrix}
+    b_{1} \\[1ex]
+    b_{2} \\[1ex]
+    b_{3}
+    \end{pmatrix}
+    $$
+
+    $$
+    {\boldsymbol  A}_1=
+    \begin{pmatrix}
+    b_{1} & a_{12} & a_{13} \\[1ex]
+    b_{2} & a_{22} & a_{23} \\[1ex]
+    b_{3} & a_{32} & a_{33}
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  A}_2=
+    \begin{pmatrix}
+    a_{11} & b_{1} & a_{13} \\[1ex]
+    a_{21} & b_{2} & a_{23} \\[1ex]
+    a_{31} & b_{3} & a_{33}
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  A}_3=
+    \begin{pmatrix}
+    a_{11} & a_{12} & b_{1} \\[1ex]
+    a_{21} & a_{22} & b_{2} \\[1ex]
+    a_{31} & a_{32} & b_{3}
+    \end{pmatrix}
+    $$
+
+    e (regola di Sarrus)
+
+    \begin{align*}
+    \det({\boldsymbol  A})   &= a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} -  a_{13} a_{22} a_{31} - a_{12} a_{21} a_{33} - a_{11} a_{23} a_{32}\\[1ex]
+    \det({\boldsymbol  A}_1)   &= b_1 a_{22} a_{33} + a_{12} a_{23} b_3 + a_{13} b_2 a_{32} -  a_{13} a_{22} b_3 - a_{12} b_2 a_{33} - b_1 a_{23} a_{32}\\[1ex]
+    \det({\boldsymbol  A}_2)   &= a_{11} b_2 a_{33} + b_1 a_{23} a_{31} + a_{13} a_{21} b_3 -  a_{13} b_2 a_{31} - b_1 a_{21} a_{33} - a_{11} a_{23} b_3\\[1ex]
+    \det({\boldsymbol  A}_3)   &= a_{11} a_{22} b_3 + a_{12} b_2 a_{31} + b_1 a_{21} a_{32} -  b_1 a_{22} a_{31} - a_{12} a_{21} b_3 - a_{11} b_2 a_{32}
+    \end{align*}
+
+    Se $\det({\boldsymbol  A}) \neq 0$, si ha allora:
+
+    $$
+    (\tilde{x}_1, \tilde{x}_2, \tilde{x}_3) = \left(~~{\frac{\det({\boldsymbol  A}_1)}{\det({\boldsymbol  A})},~~ \frac{\det({\boldsymbol  A}_2)}{\det({\boldsymbol  A})},~~ \frac{\det({\boldsymbol  A}_3)}{\det({\boldsymbol  A})}} ~~\right)
+    $$
+
+<a id="box-texexpboxCramer3-12"></a>
+
+!!! esempio "Esempio 10: soluzione di un sistema di tre equazioni in tre variabili"
+
+    Risolviamo con la regola di Cramer il sistema dell'Esempio [Esempio 1](#box-texexpbox1a-1):
+
+    $$
+    {\boldsymbol  A}=
+    \begin{pmatrix}
+    2 & 1 & 1 \\
+    4 & 3 & 3 \\
+    8 & 7 & 9
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  b}=
+    \begin{pmatrix}
+    4 \\
+    10 \\
+    24
+    \end{pmatrix}
+    $$
+
+    Si ha
+
+    $$
+    {\boldsymbol  A}_1=
+    \begin{pmatrix}
+    4 & 1 & 1 \\
+    10 & 3 & 3 \\
+    24 & 7 & 9
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  A}_2=
+    \begin{pmatrix}
+    2 & 4 & 1 \\
+    4 & 10 & 3 \\
+    8 & 24 & 9
+    \end{pmatrix}
+    \qquad
+    {\boldsymbol  A}_3=
+    \begin{pmatrix}
+    2 & 1 & 4 \\
+    4 & 3 & 10 \\
+    8 & 7 & 24
+    \end{pmatrix}
+    $$
+
+    e
+
+    \begin{align*}
+    \det({\boldsymbol  A})   &= 54 + 24 + 28 - 24 - 36 - 42 = 4\\[1ex]
+    \det({\boldsymbol  A}_1) &= 108 + 72 + 70 - 72 - 90 - 84 = 4\\[1ex]
+    \det({\boldsymbol  A}_2) &= 180 + 96 + 96 - 80 - 144 - 144 = 4\\[1ex]
+    \det({\boldsymbol  A}_3) &= 144 + 80 + 112 - 96 - 96 - 140 = 4
+    \end{align*}
+
+    Poiché $\det({\boldsymbol  A}) \neq 0$, si ha allora:
+
+    $$
+    (\tilde{x}_1, \tilde{x}_2, \tilde{x}_3) = \left(\frac{4}{4}, \frac{4}{4}, \frac{4}{4}\right) = (1, 1, 1),
+    $$
+
+    che è la soluzione trovata con l'eliminazione di Gauss.
+
+### 6.3 Costo computazionale
+
+- La regola di Cramer fornisce una formula esplicita, molto utile per sistemi piccoli ($m=2$ o $m=3$) e per scopi teorici. Tuttavia, <strong>non</strong> è un metodo pratico per sistemi grandi.
+
+- Per applicare la regola di Cramer servono $m+1$ determinanti di ordine $m$: $\det({\boldsymbol A})$, $\det({\boldsymbol A}_1)$, $\dots$, $\det({\boldsymbol A}_m)$. Se ogni determinante è calcolato con lo sviluppo di Laplace, il numero di operazioni aritmetiche cresce all'incirca come $m!$ per ciascun determinante.
+
+- L'eliminazione di Gauss, invece, risolve il sistema con un numero di operazioni che cresce all'incirca come $m^3$ (circa $\frac{2}{3} m^3$ operazioni).
+
+- Ad esempio, con $m=10$ si ha $10! = 3\,628\,800$, mentre $\frac{2}{3} \cdot 10^3 \approx 667$; con $m=20$, $20!$ è maggiore di $2 \cdot 10^{18}$, mentre $\frac{2}{3}\cdot 20^3 \approx 5\,333$.
+
+- Anche se i determinanti vengono calcolati in modo più efficiente (ad esempio con la stessa eliminazione di Gauss), la regola di Cramer ne richiede comunque $m+1$, e resta più costosa che risolvere direttamente il sistema con l'eliminazione di Gauss.

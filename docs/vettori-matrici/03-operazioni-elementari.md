@@ -1,8 +1,8 @@
 ---
-title: "Matrix operations"
+title: "Operazioni sulle matrici"
 ---
 
-# Matrix operations
+# Operazioni sulle matrici
 
 <div class="info-capitolo" markdown>
 
@@ -10,37 +10,37 @@ title: "Matrix operations"
 
 </div>
 
-## 1. Elementary row and column operations
+## 1. Operazioni elementari di riga e di colonna
 
-- Elementary row and column operations are fundamental tools in linear algebra. They are used in many algorithms, including Gaussian elimination, computation of the inverse matrix, and matrix factorizations (such as the LU decomposition)
+- Le operazioni elementari di riga e di colonna sono strumenti fondamentali dell'algebra lineare. Sono utilizzate in molti algoritmi, tra cui l'eliminazione di Gauss, il calcolo della matrice inversa e le fattorizzazioni di matrici (come la decomposizione LU)
 
 !!! chiave ""
 
-    Given a matrix \(\boldsymbol A \in \R^{m \times n}\), the <strong>elementary row operations</strong> are:
+    Data una matrice \(\boldsymbol A \in \R^{m \times n}\), le <strong>operazioni elementari di riga</strong> sono:
 
-    1. <strong>Row swap:</strong> Exchange rows \(i\) and \(k\).
+    1. <strong>Scambio di righe:</strong> si scambiano le righe \(i\) e \(k\).
 
         $$
         R_i \leftrightarrow R_k
         $$
 
-    2. <strong>Row scaling:</strong> Multiply row \(i\) by a nonzero scalar \(\lambda \neq 0\).
+    2. <strong>Moltiplicazione di una riga per uno scalare:</strong> si moltiplica la riga \(i\) per uno scalare non nullo \(\lambda \neq 0\).
 
         $$
         R_i \leftarrow \lambda R_i
         $$
 
-    3. <strong>Row addition:</strong> Replace row \(i\) by the sum of row \(i\) and \(\lambda\) times row \(k\) (with \(i \neq k\)).
+    3. <strong>Somma di righe:</strong> si sostituisce la riga \(i\) con la somma della riga \(i\) e di \(\lambda\) volte la riga \(k\) (con \(i \neq k\)).
 
         $$
         R_i \leftarrow R_i + \lambda R_k
         $$
 
-<a id="box-texexpbox1-1"></a>
+<a id="box-ex_row-swap-1"></a>
 
-!!! esempio "Esempio 1: Row swap"
+!!! esempio "Esempio 1: Scambio di righe"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -51,7 +51,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After swapping rows 1 and 3, i.e., \(R_1 \leftrightarrow R_3\), we obtain:
+    Scambiando le righe 1 e 3, cioè \(R_1 \leftrightarrow R_3\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -61,11 +61,11 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-<a id="box-texexpbox1-2"></a>
+<a id="box-ex_row-scaling-2"></a>
 
-!!! esempio "Esempio 2: Row scaling"
+!!! esempio "Esempio 2: Moltiplicazione di una riga per uno scalare"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -76,7 +76,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After multiplying row 2 by \(\lambda = -2\), i.e., \(R_2 \leftarrow -2R_2\), we obtain:
+    Moltiplicando la riga 2 per \(\lambda = -2\), cioè \(R_2 \leftarrow -2R_2\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -86,11 +86,11 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-<a id="box-texexpbox1-3"></a>
+<a id="box-ex_row-addition-3"></a>
 
-!!! esempio "Esempio 3: Row addition"
+!!! esempio "Esempio 3: Somma di righe"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -101,7 +101,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After replacing row 2 with row 2 minus 4 times row 1, i.e., \(R_2 \leftarrow R_2 - 4R_1\), we obtain:
+    Sostituendo la riga 2 con la riga 2 meno 4 volte la riga 1, cioè \(R_2 \leftarrow R_2 - 4R_1\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -111,7 +111,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Indeed:
+    Infatti:
 
     $$
     \begin{pmatrix}4 \\ 5 \\ 6\end{pmatrix} - 4\begin{pmatrix}1 \\ 2 \\ 3\end{pmatrix} = \begin{pmatrix}0 \\ -3 \\ -6\end{pmatrix}.
@@ -119,31 +119,31 @@ title: "Matrix operations"
 
 !!! chiave ""
 
-    Given a matrix \(\boldsymbol A \in \R^{m \times n}\), the <strong>elementary column operations</strong> are:
+    Data una matrice \(\boldsymbol A \in \R^{m \times n}\), le <strong>operazioni elementari di colonna</strong> sono:
 
-    1. <strong>Column swap:</strong> Exchange columns \(j\) and \(k\).
+    1. <strong>Scambio di colonne:</strong> si scambiano le colonne \(j\) e \(k\).
 
         $$
         C_j \leftrightarrow C_k
         $$
 
-    2. <strong>Column scaling:</strong> Multiply column \(j\) by a nonzero scalar \(\lambda \neq 0\).
+    2. <strong>Moltiplicazione di una colonna per uno scalare:</strong> si moltiplica la colonna \(j\) per uno scalare non nullo \(\lambda \neq 0\).
 
         $$
         C_j \leftarrow \lambda C_j
         $$
 
-    3. <strong>Column addition:</strong> Replace column \(j\) by the sum of column \(j\) and \(\lambda\) times column \(k\) (with \(j \neq k\)).
+    3. <strong>Somma di colonne:</strong> si sostituisce la colonna \(j\) con la somma della colonna \(j\) e di \(\lambda\) volte la colonna \(k\) (con \(j \neq k\)).
 
         $$
         C_j \leftarrow C_j + \lambda C_k
         $$
 
-<a id="box-texexpbox1-4"></a>
+<a id="box-ex_col-swap-4"></a>
 
-!!! esempio "Esempio 4: Column swap"
+!!! esempio "Esempio 4: Scambio di colonne"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -154,7 +154,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After swapping columns 1 and 3, i.e., \(C_1 \leftrightarrow C_3\), we obtain:
+    Scambiando le colonne 1 e 3, cioè \(C_1 \leftrightarrow C_3\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -164,11 +164,11 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-<a id="box-texexpbox1-5"></a>
+<a id="box-ex_col-scaling-5"></a>
 
-!!! esempio "Esempio 5: Column scaling"
+!!! esempio "Esempio 5: Moltiplicazione di una colonna per uno scalare"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -179,7 +179,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After multiplying column 2 by \(\lambda = 3\), i.e., \(C_2 \leftarrow 3C_2\), we obtain:
+    Moltiplicando la colonna 2 per \(\lambda = 3\), cioè \(C_2 \leftarrow 3C_2\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -189,11 +189,11 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-<a id="box-texexpbox1-6"></a>
+<a id="box-ex_col-addition-6"></a>
 
-!!! esempio "Esempio 6: Column addition"
+!!! esempio "Esempio 6: Somma di colonne"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -204,7 +204,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    After replacing column 3 with column 3 plus 2 times column 1, i.e., \(C_3 \leftarrow C_3 + 2C_1\), we obtain:
+    Sostituendo la colonna 3 con la colonna 3 più 2 volte la colonna 1, cioè \(C_3 \leftarrow C_3 + 2C_1\), otteniamo:
 
     $$
     \begin{pmatrix}
@@ -214,41 +214,41 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Indeed:
+    Infatti:
 
     $$
     \begin{pmatrix}3 \\ 6 \\ 9\end{pmatrix} + 2\begin{pmatrix}1 \\ 4 \\ 7\end{pmatrix} = \begin{pmatrix}5 \\ 14 \\ 23\end{pmatrix}.
     $$
 
-## 2. Effect of elementary operations on the determinant
+## 2. Effetto delle operazioni elementari sul determinante
 
 !!! chiave ""
 
-    Let \(\boldsymbol A \in \R^{n \times n}\) be a square matrix. The elementary row operations affect the determinant as follows:
+    Sia \(\boldsymbol A \in \R^{n \times n}\) una matrice quadrata. Le operazioni elementari di riga agiscono sul determinante nel modo seguente:
 
-    1. <strong>Row swap:</strong> \(R_i \leftrightarrow R_k\) changes the sign of the determinant.
-
-        $$
-        \det(\text{new matrix}) = -\det(\boldsymbol A)
-        $$
-
-    2. <strong>Row scaling:</strong> \(R_i \leftarrow \lambda R_i\) (with \(\lambda \neq 0\)) multiplies the determinant by \(\lambda\).
+    1. <strong>Scambio di righe:</strong> \(R_i \leftrightarrow R_k\) cambia il segno del determinante.
 
         $$
-        \det(\text{new matrix}) = \lambda \det(\boldsymbol A)
+        \det(\text{nuova matrice}) = -\det(\boldsymbol A)
         $$
 
-    3. <strong>Row addition:</strong> \(R_i \leftarrow R_i + \lambda R_k\) (with \(i \neq k\)) does not change the determinant.
+    2. <strong>Moltiplicazione di una riga per uno scalare:</strong> \(R_i \leftarrow \lambda R_i\) (con \(\lambda \neq 0\)) moltiplica il determinante per \(\lambda\).
 
         $$
-        \det(\text{new matrix}) = \det(\boldsymbol A)
+        \det(\text{nuova matrice}) = \lambda \det(\boldsymbol A)
         $$
 
-<a id="box-texexpbox1-7"></a>
+    3. <strong>Somma di righe:</strong> \(R_i \leftarrow R_i + \lambda R_k\) (con \(i \neq k\)) non cambia il determinante.
 
-!!! esempio "Esempio 7: Effect of row swap on determinant"
+        $$
+        \det(\text{nuova matrice}) = \det(\boldsymbol A)
+        $$
 
-    Consider the matrix
+<a id="box-ex_det-row-swap-7"></a>
+
+!!! esempio "Esempio 7: Effetto dello scambio di righe sul determinante"
+
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -258,13 +258,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 1 \cdot 4 - 2 \cdot 3 = -2.
     $$
 
-    After swapping rows 1 and 2, i.e., \(R_1 \leftrightarrow R_2\), we obtain:
+    Scambiando le righe 1 e 2, cioè \(R_1 \leftrightarrow R_2\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -274,17 +274,17 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 3 \cdot 2 - 4 \cdot 1 = 2 = -\det(\boldsymbol A).
     $$
 
-<a id="box-texexpbox1-8"></a>
+<a id="box-ex_det-row-scaling-8"></a>
 
-!!! esempio "Esempio 8: Effect of row scaling on determinant"
+!!! esempio "Esempio 8: Effetto della moltiplicazione di una riga per uno scalare sul determinante"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -294,13 +294,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 2 \cdot 3 - 1 \cdot 0 = 6.
     $$
 
-    After multiplying row 1 by \(\lambda = 2\), i.e., \(R_1 \leftarrow 2R_1\), we obtain:
+    Moltiplicando la riga 1 per \(\lambda = 2\), cioè \(R_1 \leftarrow 2R_1\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -310,17 +310,17 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 4 \cdot 3 - 2 \cdot 0 = 12 = 2 \cdot \det(\boldsymbol A) = \lambda \det(\boldsymbol A).
     $$
 
-<a id="box-texexpbox1-9"></a>
+<a id="box-ex_det-row-addition-9"></a>
 
-!!! esempio "Esempio 9: Effect of row addition on determinant"
+!!! esempio "Esempio 9: Effetto della somma di righe sul determinante"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -330,13 +330,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 1 \cdot 4 - 2 \cdot 3 = -2.
     $$
 
-    After replacing row 2 with row 2 minus 3 times row 1, i.e., \(R_2 \leftarrow R_2 - 3R_1\), we obtain:
+    Sostituendo la riga 2 con la riga 2 meno 3 volte la riga 1, cioè \(R_2 \leftarrow R_2 - 3R_1\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -346,7 +346,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 1 \cdot (-2) - 2 \cdot 0 = -2 = \det(\boldsymbol A).
@@ -354,31 +354,31 @@ title: "Matrix operations"
 
 !!! chiave ""
 
-    Let \(\boldsymbol A \in \R^{n \times n}\) be a square matrix. The elementary column operations affect the determinant as follows:
+    Sia \(\boldsymbol A \in \R^{n \times n}\) una matrice quadrata. Le operazioni elementari di colonna agiscono sul determinante nel modo seguente:
 
-    1. <strong>Column swap:</strong> \(C_j \leftrightarrow C_k\) changes the sign of the determinant.
-
-        $$
-        \det(\text{new matrix}) = -\det(\boldsymbol A)
-        $$
-
-    2. <strong>Column scaling:</strong> \(C_j \leftarrow \lambda C_j\) (with \(\lambda \neq 0\)) multiplies the determinant by \(\lambda\).
+    1. <strong>Scambio di colonne:</strong> \(C_j \leftrightarrow C_k\) cambia il segno del determinante.
 
         $$
-        \det(\text{new matrix}) = \lambda \det(\boldsymbol A)
+        \det(\text{nuova matrice}) = -\det(\boldsymbol A)
         $$
 
-    3. <strong>Column addition:</strong> \(C_j \leftarrow C_j + \lambda C_k\) (with \(j \neq k\)) does not change the determinant.
+    2. <strong>Moltiplicazione di una colonna per uno scalare:</strong> \(C_j \leftarrow \lambda C_j\) (con \(\lambda \neq 0\)) moltiplica il determinante per \(\lambda\).
 
         $$
-        \det(\text{new matrix}) = \det(\boldsymbol A)
+        \det(\text{nuova matrice}) = \lambda \det(\boldsymbol A)
         $$
 
-<a id="box-texexpbox1-10"></a>
+    3. <strong>Somma di colonne:</strong> \(C_j \leftarrow C_j + \lambda C_k\) (con \(j \neq k\)) non cambia il determinante.
 
-!!! esempio "Esempio 10: Effect of column swap on determinant"
+        $$
+        \det(\text{nuova matrice}) = \det(\boldsymbol A)
+        $$
 
-    Consider the matrix
+<a id="box-ex_det-col-swap-10"></a>
+
+!!! esempio "Esempio 10: Effetto dello scambio di colonne sul determinante"
+
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -388,13 +388,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 1 \cdot 4 - 2 \cdot 3 = -2.
     $$
 
-    After swapping columns 1 and 2, i.e., \(C_1 \leftrightarrow C_2\), we obtain:
+    Scambiando le colonne 1 e 2, cioè \(C_1 \leftrightarrow C_2\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -404,17 +404,17 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 2 \cdot 3 - 1 \cdot 4 = 2 = -\det(\boldsymbol A).
     $$
 
-<a id="box-texexpbox1-11"></a>
+<a id="box-ex_det-col-scaling-11"></a>
 
-!!! esempio "Esempio 11: Effect of column scaling on determinant"
+!!! esempio "Esempio 11: Effetto della moltiplicazione di una colonna per uno scalare sul determinante"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -424,13 +424,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 1 \cdot 4 - 2 \cdot 3 = -2.
     $$
 
-    After multiplying column 2 by \(\lambda = 3\), i.e., \(C_2 \leftarrow 3C_2\), we obtain:
+    Moltiplicando la colonna 2 per \(\lambda = 3\), cioè \(C_2 \leftarrow 3C_2\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -440,17 +440,17 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 1 \cdot 12 - 6 \cdot 3 = -6 = 3 \cdot (-2) = \lambda \det(\boldsymbol A).
     $$
 
-<a id="box-texexpbox1-12"></a>
+<a id="box-ex_det-col-addition-12"></a>
 
-!!! esempio "Esempio 12: Effect of column addition on determinant"
+!!! esempio "Esempio 12: Effetto della somma di colonne sul determinante"
 
-    Consider the matrix
+    Consideriamo la matrice
 
     $$
     \boldsymbol A=
@@ -460,13 +460,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant is:
+    Il determinante è:
 
     $$
     \det(\boldsymbol A) = 1 \cdot 4 - 2 \cdot 3 = -2.
     $$
 
-    After replacing column 2 with column 2 plus 2 times column 1, i.e., \(C_2 \leftarrow C_2 + 2C_1\), we obtain:
+    Sostituendo la colonna 2 con la colonna 2 più 2 volte la colonna 1, cioè \(C_2 \leftarrow C_2 + 2C_1\), otteniamo:
 
     $$
     \boldsymbol A'=
@@ -476,41 +476,149 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The determinant of the new matrix is:
+    Il determinante della nuova matrice è:
 
     $$
     \det(\boldsymbol A') = 1 \cdot 10 - 4 \cdot 3 = -2 = \det(\boldsymbol A).
     $$
 
-- These properties follow from the fact that \(\det(\boldsymbol A') = \det(\boldsymbol A)\), so column operations have the same effect on the determinant as the corresponding row operations.
+- Queste proprietà discendono dal fatto che il determinante di una matrice è uguale al determinante della sua trasposta (si vedano le proprietà dei determinanti nel capitolo sulle matrici) e che un'operazione di colonna su una matrice corrisponde alla relativa operazione di riga sulla sua trasposta. Di conseguenza, le operazioni di colonna hanno sul determinante lo stesso effetto delle corrispondenti operazioni di riga.
 
-- These results are fundamental for understanding how determinants behave under elementary operations, which is crucial in algorithms such as Gaussian elimination and matrix factorization.
+- Questi risultati sono fondamentali per comprendere come si comporta il determinante rispetto alle operazioni elementari, aspetto cruciale in algoritmi come l'eliminazione di Gauss e la fattorizzazione di matrici.
 
-## 3. Pivoting and partial pivoting
+## 3. Eliminazione di Gauss e forma a scala
 
-- In numerical algorithms such as matrix factorizations and row reduction methods, pivoting is a technique used to improve numerical stability and avoid division by zero.
+- Le operazioni elementari di riga permettono di trasformare qualsiasi matrice in una matrice con una struttura “a scala”, dalla quale si possono leggere facilmente molte proprietà della matrice originale (per esempio, il suo determinante). La procedura sistematica che realizza questa trasformazione si chiama <strong>eliminazione di Gauss</strong>.
 
-- The pivot element is the element used as the divisor in the elimination process.
+<a id="box-defRowEchelonForm-13"></a>
 
-### 3.1 Pivoting
+!!! definizione "Definizione 1: Forma a scala per righe"
+
+    Una matrice \(\boldsymbol U \in \R^{m \times n}\) è in <strong>forma a scala (per righe)</strong> se:
+
+    1. tutte le sue righe nulle (se presenti) si trovano sotto tutte le sue righe non nulle;
+
+    2. il primo elemento non nullo di ogni riga non nulla (detto <strong>pivot</strong> della riga) si trova strettamente a destra del pivot della riga precedente.
+
+- Di conseguenza, tutti gli elementi sotto un pivot sono uguali a zero.
+
+- Una matrice quadrata in forma a scala è triangolare superiore.
 
 !!! chiave ""
 
-    <strong>Pivoting</strong> is the process of selecting a suitable pivot element in a matrix to perform elimination steps in row reduction algorithms.
+    <strong>Eliminazione di Gauss.</strong> Data \(\boldsymbol A \in \R^{m \times n}\), si esaminano le colonne da sinistra verso destra. A ogni passo, considerando le righe non ancora utilizzate come righe pivot:
 
-    When performing row elimination on a matrix \(\boldsymbol A \in \R^{n \times n}\), at step \(k\):
+    1. si individua la prima colonna che contiene un elemento non nullo in queste righe; se necessario, si porta tale elemento nella prima di queste righe con uno scambio di righe \(R_k \leftrightarrow R_i\) (questo elemento non nullo è il pivot);
 
-    - The <strong>pivot element</strong> is the entry \(a_{kk}\) (the diagonal element in position \((k,k)\)).
+    2. per ogni riga \(i\) sotto la riga pivot \(k\), si crea uno zero sotto il pivot con la somma di righe
 
-    - If \(a_{kk} = 0\), we cannot use it as a divisor, so we must swap row \(k\) with a row \(i > k\) such that \(a_{ik} \neq 0\).
+        $$
+        R_i \leftarrow R_i - \frac{a_{ij}}{a_{kj}}\, R_k,
+        $$
 
-    - This row swap is called <strong>pivoting</strong>.
+        dove \(a_{kj}\) è il pivot e \(a_{ij}\) è l'elemento da eliminare (nella matrice corrente);
 
-<a id="box-texexpbox1-13"></a>
+    3. si ripete il procedimento sulle righe rimanenti.
 
-!!! esempio "Esempio 13: Pivoting in row elimination"
+    Al termine, la matrice è in forma a scala. Si utilizzano soltanto scambi di righe e somme di righe.
 
-    Consider the matrix:
+<a id="box-obsDetGauss-14"></a>
+
+!!! teorema "Osservazione 1: Determinante tramite eliminazione di Gauss"
+
+    Sia \(\boldsymbol A \in \R^{n \times n}\) e sia \(\boldsymbol U\) una forma a scala di \(\boldsymbol A\) ottenuta con l'eliminazione di Gauss mediante \(s\) scambi di righe (e un numero qualsiasi di somme di righe). Allora
+
+    $$
+    \det(\boldsymbol A) = (-1)^{s} \prod_{i=1}^{n} u_{ii}.
+    $$
+
+    In particolare, \(\det(\boldsymbol A) = 0\) se e solo se \(\boldsymbol U\) ha uno zero sulla diagonale.
+
+??? dimostrazione "Dimostrazione"
+
+    Ogni somma di righe non cambia il determinante e ogni scambio di righe ne cambia il segno. Quindi \(\det(\boldsymbol U) = (-1)^{s}\det(\boldsymbol A)\), cioè \(\det(\boldsymbol A) = (-1)^{s}\det(\boldsymbol U)\). Poiché \(\boldsymbol U\) è quadrata e in forma a scala, essa è triangolare superiore, e il suo determinante è il prodotto degli elementi diagonali. <span class="qed">□</span>
+
+<a id="box-ex_det-gauss-15"></a>
+
+!!! esempio "Esempio 13: Determinante tramite eliminazione di Gauss"
+
+    Consideriamo
+
+    $$
+    \boldsymbol A=
+    \begin{pmatrix}
+    0 & 1 & 2\\
+    1 & 1 & 1\\
+    2 & 1 & 3
+    \end{pmatrix}.
+    $$
+
+    Riduciamo \(\boldsymbol A\) in forma a scala con l'eliminazione di Gauss.
+
+    \begin{align*}
+    &\left(
+    \begin{array}{ccc}
+     0 & 1 & 2 \\
+     1 & 1 & 1 \\
+     2 & 1 & 3 \\
+    \end{array}
+    \right) \\[2ex]
+    &\left(
+    \begin{array}{ccc}
+     1 & 1 & 1 \\
+     0 & 1 & 2 \\
+     2 & 1 & 3 \\
+    \end{array}
+    \right) \hspace{1em} \text{(} R_1 \leftrightarrow R_2 \text{)} \\[2ex]
+    &\left(
+    \begin{array}{ccc}
+     1 & 1 & 1 \\
+     0 & 1 & 2 \\
+     0 & -1 & 1 \\
+    \end{array}
+    \right) \hspace{1em} \text{(} R_3 \leftarrow R_3 - 2R_1 \text{)} \\[2ex]
+    &\left(
+    \begin{array}{ccc}
+     1 & 1 & 1 \\
+     0 & 1 & 2 \\
+     0 & 0 & 3 \\
+    \end{array}
+    \right) \hspace{1em} \text{(} R_3 \leftarrow R_3 + R_2 \text{)}
+    \end{align*}
+
+    La matrice è ora in forma a scala. Abbiamo effettuato \(s=1\) scambio di righe, quindi
+
+    $$
+    \det(\boldsymbol A) = (-1)^{1}\cdot 1 \cdot 1 \cdot 3 = -3.
+    $$
+
+    Infatti, con lo sviluppo di Laplace lungo la prima riga: \(\det(\boldsymbol A) = 0\cdot(3-1) - 1\cdot(3-2) + 2\cdot(1-2) = -3\).
+
+## 4. Pivoting e pivoting parziale
+
+- Negli algoritmi numerici, come le fattorizzazioni di matrici e i metodi di riduzione per righe, il pivoting è una tecnica utilizzata per migliorare la stabilità numerica ed evitare divisioni per zero.
+
+- L'elemento pivot è l'elemento utilizzato come divisore nel processo di eliminazione.
+
+### 4.1 Pivoting
+
+!!! chiave ""
+
+    Il <strong>pivoting</strong> è il procedimento con cui si sceglie un opportuno elemento pivot in una matrice per eseguire i passi di eliminazione negli algoritmi di riduzione per righe.
+
+    Quando si esegue l'eliminazione per righe su una matrice \(\boldsymbol A \in \R^{n \times n}\), al passo \(k\):
+
+    - L'<strong>elemento pivot</strong> è l'elemento \(a_{kk}\) (l'elemento diagonale in posizione \((k,k)\)).
+
+    - Se \(a_{kk} = 0\), non possiamo usarlo come divisore, quindi dobbiamo scambiare la riga \(k\) con una riga \(i > k\) tale che \(a_{ik} \neq 0\).
+
+    - Questo scambio di righe si chiama <strong>pivoting</strong>.
+
+<a id="box-ex_pivoting-16"></a>
+
+!!! esempio "Esempio 14: Pivoting nell'eliminazione per righe"
+
+    Consideriamo la matrice:
 
     $$
     \boldsymbol A=
@@ -521,9 +629,9 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    We cannot use \(a_{11} = 0\) as the first pivot. We need to swap row 1 with a row that has a nonzero element in the first column.
+    Non possiamo usare \(a_{11} = 0\) come primo pivot. Dobbiamo scambiare la riga 1 con una riga che abbia un elemento non nullo nella prima colonna.
 
-    We swap rows 1 and 2 (i.e., \(R_1 \leftrightarrow R_2\)):
+    Scambiamo le righe 1 e 2 (cioè \(R_1 \leftrightarrow R_2\)):
 
     $$
     \begin{pmatrix}
@@ -533,7 +641,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Now \(a_{11} = 1 \neq 0\) and we can proceed with the elimination:
+    Ora \(a_{11} = 1 \neq 0\) e possiamo procedere con l'eliminazione:
 
     $$
     R_3 \leftarrow R_3 - 2R_1:
@@ -545,7 +653,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Now we use \(a_{22} = 2\) as the second pivot:
+    Usiamo ora \(a_{22} = 2\) come secondo pivot:
 
     $$
     R_3 \leftarrow R_3 - \frac{3}{2}R_2:
@@ -557,35 +665,35 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The matrix is now in upper triangular form.
+    La matrice è ora in forma triangolare superiore.
 
-### 3.2 Partial pivoting
+### 4.2 Pivoting parziale
 
 !!! chiave ""
 
-    <strong>Partial pivoting</strong> is a strategy to improve numerical stability by choosing the largest available pivot in absolute value.
+    Il <strong>pivoting parziale</strong> è una strategia per migliorare la stabilità numerica che consiste nello scegliere come pivot l'elemento disponibile di valore assoluto massimo.
 
-    At step \(k\) of Gaussian elimination:
+    Al passo \(k\) dell'eliminazione di Gauss:
 
-    1. Find the row \(i \ge k\) such that \(|a_{ik}|\) is maximum among all \(|a_{jk}|\) for \(j \ge k\).
+    1. Si trova la riga \(i \ge k\) tale che \(|a_{ik}|\) sia massimo tra tutti i \(|a_{jk}|\) con \(j \ge k\).
 
-    2. Swap row \(k\) with row \(i\) (i.e., \(R_k \leftrightarrow R_i\)).
+    2. Si scambia la riga \(k\) con la riga \(i\) (cioè \(R_k \leftrightarrow R_i\)).
 
-    3. Use the new \(a_{kk}\) as the pivot.
+    3. Si usa il nuovo \(a_{kk}\) come pivot.
 
-    This ensures that:
+    In questo modo:
 
-    - The pivot is the largest element in absolute value in its column (below the diagonal).
+    - Il pivot è l'elemento di valore assoluto massimo nella sua colonna, tra gli elementi sulla diagonale o sotto di essa.
 
-    - Division by a larger number reduces round-off errors in floating-point arithmetic.
+    - La divisione per un numero più grande riduce gli errori di arrotondamento nell'aritmetica in virgola mobile.
 
-    - The method is numerically more stable.
+    - Il metodo è numericamente più stabile.
 
-<a id="box-texexpbox1-14"></a>
+<a id="box-ex_partial-pivoting-17"></a>
 
-!!! esempio "Esempio 14: Partial pivoting in row elimination"
+!!! esempio "Esempio 15: Pivoting parziale nell'eliminazione per righe"
 
-    Consider the matrix:
+    Consideriamo la matrice:
 
     $$
     \boldsymbol A=
@@ -596,13 +704,13 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    <strong>Step 1:</strong> Find the largest element in absolute value in the first column.
+    <strong>Passo 1:</strong> troviamo l'elemento di valore assoluto massimo nella prima colonna.
 
     $$
     |a_{11}| = 1, \quad |a_{21}| = 3, \quad |a_{31}| = 2.
     $$
 
-    The maximum is \(|a_{21}| = 3\), so we swap rows 1 and 2:
+    Il massimo è \(|a_{21}| = 3\), quindi scambiamo le righe 1 e 2:
 
     $$
     R_1 \leftrightarrow R_2:
@@ -614,7 +722,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Now eliminate below the pivot \(a_{11} = 3\):
+    Eliminiamo ora gli elementi sotto il pivot \(a_{11} = 3\):
 
     \begin{align*}
     &R_2 \leftarrow R_2 - \frac{1}{3}R_1:
@@ -633,7 +741,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     \end{align*}
 
-    <strong>Step 2:</strong> Find the largest element in absolute value in the second column (rows 2 and 3).
+    <strong>Passo 2:</strong> troviamo l'elemento di valore assoluto massimo nella seconda colonna (righe 2 e 3).
 
     $$
     \left|\frac{7}{3}\right| = \frac{7}{3}, 
@@ -641,7 +749,7 @@ title: "Matrix operations"
     \left|\frac{11}{3}\right| = \frac{11}{3}.
     $$
 
-    The maximum is \(\left|\frac{11}{3}\right|\), so we swap rows 2 and 3:
+    Il massimo è \(\left|\frac{11}{3}\right|\), quindi scambiamo le righe 2 e 3:
 
     $$
     R_2 \leftrightarrow R_3:
@@ -653,7 +761,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Eliminate below the pivot \(a_{22} = \frac{11}{3}\):
+    Eliminiamo l'elemento sotto il pivot \(a_{22} = \frac{11}{3}\):
 
     $$
     R_3 \leftarrow R_3 - \frac{7}{11}R_2:
@@ -661,17 +769,17 @@ title: "Matrix operations"
     \begin{pmatrix}
     3 & -1 & 2\\[0.5ex]
     0 & \frac{11}{3} & -\frac{7}{3}\\[0.5ex]
-    0 & 0 & \frac{18}{11}
+    0 & 0 & \frac{20}{11}
     \end{pmatrix}.
     $$
 
-    The matrix is now in upper triangular form (row echelon form).
+    La matrice è ora in forma triangolare superiore (forma a scala).
 
-<a id="box-texexpbox1-15"></a>
+<a id="box-ex_pivoting-comparison-18"></a>
 
-!!! esempio "Esempio 15: Comparison: without and with partial pivoting"
+!!! esempio "Esempio 16: Confronto: senza e con pivoting parziale"
 
-    Consider the matrix:
+    Consideriamo la matrice:
 
     $$
     \boldsymbol A =
@@ -681,15 +789,15 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    <strong>Without partial pivoting:</strong>
+    <strong>Senza pivoting parziale:</strong>
 
-    Using \(a_{11} = \frac{1}{10000}\) as the pivot:
+    Usando \(a_{11} = \frac{1}{10000}\) come pivot:
 
     $$
     R_2 \leftarrow R_2 - 10000\,R_1.
     $$
 
-    This gives:
+    Si ottiene:
 
     $$
     \begin{pmatrix}
@@ -703,11 +811,11 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The large multiplier \(10000\) can cause significant round-off errors in floating-point arithmetic.
+    Il moltiplicatore elevato \(10000\) può causare errori di arrotondamento significativi nell'aritmetica in virgola mobile.
 
-    <strong>With partial pivoting:</strong>
+    <strong>Con pivoting parziale:</strong>
 
-    Since \(|a_{21}| = 1 > |a_{11}| = \frac{1}{10000}\), we swap rows:
+    Poiché \(|a_{21}| = 1 > |a_{11}| = \frac{1}{10000}\), scambiamo le righe:
 
     $$
     R_1 \leftrightarrow R_2:
@@ -718,7 +826,7 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    Now eliminate using \(a_{11} = 1\) as the pivot:
+    Eliminiamo ora usando \(a_{11} = 1\) come pivot:
 
     $$
     R_2 \leftarrow R_2 - \frac{1}{10000}R_1:
@@ -734,10 +842,10 @@ title: "Matrix operations"
     \end{pmatrix}.
     $$
 
-    The multiplier \(\frac{1}{10000}\) is much smaller, leading to better numerical stability.
+    Il moltiplicatore \(\frac{1}{10000}\) è molto più piccolo, e ciò porta a una migliore stabilità numerica.
 
-- Partial pivoting is crucial in numerical linear algebra to ensure that algorithms produce accurate results, especially when dealing with matrices that have a wide range of magnitudes.
+- Il pivoting parziale è cruciale nell'algebra lineare numerica per garantire che gli algoritmi producano risultati accurati, specialmente quando si lavora con matrici i cui elementi hanno ordini di grandezza molto diversi.
 
-- Most modern numerical software (such as MATLAB, NumPy, CPLEX, Gurobi) automatically uses partial pivoting in Gaussian elimination and LU factorization.
+- La maggior parte dei software numerici moderni (come MATLAB, NumPy, CPLEX, Gurobi) utilizza automaticamente il pivoting parziale nell'eliminazione di Gauss e nella fattorizzazione LU.
 
-- The computational cost of partial pivoting is minimal compared to the benefit of improved numerical stability.
+- Il costo computazionale del pivoting parziale è minimo rispetto al beneficio in termini di stabilità numerica.
