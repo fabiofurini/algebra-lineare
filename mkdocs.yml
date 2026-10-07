@@ -1,0 +1,169 @@
+# Modello di mkdocs.yml: la nav dei capitoli la inserisce genera_sito.py.
+# Non modificare mkdocs.yml a mano: si modifica questo file e si rigenera.
+site_name: Algebra Lineare · Fabio Furini
+site_description: >-
+  Algebra Lineare: la dispensa del corso online, con definizioni,
+  esempi svolti, esercizi e un laboratorio di calcolo interattivo
+  (Gauss, determinanti, inverse, sistemi lineari, fattorizzazione LU).
+site_author: Fabio Furini
+site_url: https://fabiofurini.github.io/algebra-lineare/
+repo_url: https://github.com/fabiofurini/algebra-lineare
+copyright: >-
+  &copy; 2026 Fabio Furini — testi, figure e dati con licenza
+  <a href="https://creativecommons.org/licenses/by/4.0/deed.it">CC BY 4.0</a>,
+  codice con licenza
+  <a href="https://github.com/fabiofurini/algebra-lineare/blob/main/LICENSE-CODE">MIT</a>
+
+theme:
+  name: material
+  language: it
+  icon:
+    logo: material/matrix
+  font:
+    text: Source Sans 3
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      toggle:
+        icon: material/weather-night
+        name: Tema scuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Tema chiaro
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search:
+      lang: it
+
+extra:
+  social:
+    - icon: material/web
+      link: https://sites.google.com/view/fabiofurini/home-page
+      name: Fabio Furini — sito personale
+    - icon: material/school
+      link: https://www.diag.uniroma1.it/
+      name: DIAG — Sapienza Università di Roma
+    - icon: fontawesome/brands/github
+      link: https://github.com/fabiofurini
+      name: GitHub
+    - icon: material/chart-timeline-variant
+      link: https://fabiofurini.github.io/laboratorio-ricerca-operativa/
+      name: Laboratorio di Ricerca Operativa
+    - icon: material/vector-polygon
+      link: https://fabiofurini.github.io/modellazione-mip/
+      name: Modellazione MIP
+    - icon: material/function-variant
+      link: https://fabiofurini.github.io/analisi-matematica-1/
+      name: Analisi Matematica 1
+  alternate:
+    - name: Italiano
+      link: https://fabiofurini.github.io/algebra-lineare/
+      lang: it
+    - name: English
+      link: https://fabiofurini.github.io/linear-algebra/
+      lang: en
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraph.css
+  - stylesheets/interattivi.css
+  - stylesheets/laboratorio.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - footnotes
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      title: In questa pagina
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/jsxgraph@1.10.1/distrib/jsxgraphcore.js
+  - javascripts/interattivi.js
+  - javascripts/algebra.js
+  - javascripts/laboratorio.js
+
+nav:
+  - Home: index.md
+  - Somme e produttorie:
+      - somme/index.md
+      - "1. Sommatorie": somme/01-sommatorie.md
+      - "2. Produttorie": somme/02-produttorie.md
+  - Vettori e matrici:
+      - vettori-matrici/index.md
+      - "3. Vettori": vettori-matrici/01-vettori.md
+      - "4.1. Matrici": vettori-matrici/02-matrici.md
+      - "4.2. Matrix operations": vettori-matrici/03-operazioni-elementari.md
+      - "4.3. Inversion of matrices": vettori-matrici/04-matrice-inversa.md
+      - "4.4. Factorization of matrices": vettori-matrici/05-fattorizzazione-lu.md
+      - "4.5. Autovalori e autovettori": vettori-matrici/06-autovalori.md
+  - Norme:
+      - norme/index.md
+      - "5. Norme": norme/01-norme.md
+  - Sistemi lineari:
+      - sistemi/index.md
+      - "6. System of linear equations": sistemi/01-sistemi-lineari.md
+  - Approfondimenti:
+      - approfondimenti/index.md
+      - "A.1. Valore assoluto": approfondimenti/01-valore-assoluto.md
+      - "A.2. Aritmetica modulare": approfondimenti/02-aritmetica-modulare.md
+  - Esercizi:
+      - esercizi/index.md
+      - Somme e produttorie:
+          - "Sommatorie": esercizi/es-somme-01-sommatorie.md
+          - "Produttorie": esercizi/es-somme-02-produttorie.md
+      - Vettori e matrici:
+          - "Vettori": esercizi/es-vettori-matrici-01-vettori.md
+          - "Matrici": esercizi/es-vettori-matrici-02-matrici.md
+      - Norme:
+          - "Norme": esercizi/es-norme-01-norme.md
+      - Approfondimenti:
+          - "Valore assoluto": esercizi/es-approfondimenti-01-valore-assoluto.md
+          - "Aritmetica modulare": esercizi/es-approfondimenti-02-aritmetica-modulare.md
+  - Laboratorio:
+      - laboratorio/index.md
+      - Metodo di Gauss: laboratorio/gauss.md
+      - Rango: laboratorio/rango.md
+      - Determinante: laboratorio/determinante.md
+      - Matrice inversa: laboratorio/inversa.md
+      - Fattorizzazione LU: laboratorio/lu.md
+      - Sistemi lineari: laboratorio/sistemi.md
+      - Autovalori e definitezza: laboratorio/autovalori.md
+      - Prodotto di matrici: laboratorio/prodotto.md
+      - Somme e produttorie: laboratorio/somme.md
+      - Norme: laboratorio/norme.md
+      - Perché serve il pivoting: laboratorio/pivoting.md
+  - Il corso:
+      - organizzazione.md
+      - Indice completo: indice.md
