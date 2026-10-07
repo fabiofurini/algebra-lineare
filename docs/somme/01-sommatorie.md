@@ -236,3 +236,10 @@ title: "Sommatorie"
     \end{align*}
 
     <p class="qed-riga"><span class="qed">□</span></p>
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="somme" data-f="k^2" data-tipo="sum"></div>
+

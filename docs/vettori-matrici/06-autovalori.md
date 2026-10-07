@@ -297,7 +297,7 @@ title: "Autovalori e autovettori"
 
 ??? dimostrazione "Dimostrazione (Idea della dimostrazione)"
 
-    Ponendo \( \lambda=0 \) in \( p(\lambda)=(\lambda_1-\lambda)\cdots(\lambda_n-\lambda) \) si ottiene \( \det(\boldsymbol Q)=p(0)=\lambda_1\,\lambda_2\cdots\lambda_n \). Per la traccia, confrontiamo i coefficienti di \( \lambda^{n-1} \): nel prodotto \( (\lambda_1-\lambda)\cdots(\lambda_n-\lambda) \) tale coefficiente è \( (-1)^{n-1}\sum_{i=1}^n\lambda_i \), mentre in \( \det(\boldsymbol Q-\lambda\boldsymbol I) \) la potenza \( \lambda^{n-1} \) proviene solo dal prodotto \( (q_{11}-\lambda)\cdots(q_{nn}-\lambda) \) degli elementi diagonali, e il suo coefficiente è \( (-1)^{n-1}\sum_{i=1}^n q_{ii} \). <span class="qed">□</span>
+    Per il determinante basta porre \( \lambda=0 \) in \( p(\lambda)=(\lambda_1-\lambda)\cdots(\lambda_n-\lambda) \): si ottiene \( \det(\boldsymbol Q)=p(0)=\lambda_1\,\lambda_2\cdots\lambda_n \). Per la traccia, confrontiamo i coefficienti di \( \lambda^{n-1} \): nel prodotto \( (\lambda_1-\lambda)\cdots(\lambda_n-\lambda) \) tale coefficiente è \( (-1)^{n-1}\sum_{i=1}^n\lambda_i \), mentre in \( \det(\boldsymbol Q-\lambda\boldsymbol I) \) la potenza \( \lambda^{n-1} \) proviene solo dal prodotto \( (q_{11}-\lambda)\cdots(q_{nn}-\lambda) \) degli elementi diagonali, e il suo coefficiente è \( (-1)^{n-1}\sum_{i=1}^n q_{ii} \). <span class="qed">□</span>
 
 <a id="box-texexpboxTraceDet-7"></a>
 
@@ -701,3 +701,10 @@ title: "Autovalori e autovettori"
     $$
 
     Il minore principale \( q_{22}=-1 \) (che non è di guida) lo rivela. In effetti, gli autovalori sono \( 0 \) e \( -1 \), e \( \boldsymbol Q \) è semidefinita negativa.
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="autovalori" data-matrix="2,-1;-1,2"></div>
+

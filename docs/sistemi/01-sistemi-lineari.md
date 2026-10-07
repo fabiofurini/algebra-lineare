@@ -497,6 +497,12 @@ title: "Sistemi di equazioni lineari"
 
     quindi il sistema è incompatibile e <strong>non ha soluzioni</strong>.
 
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="sistema" data-matrix="1,1,1;2,-1,1;1,2,-1" data-b="6,3,2"></div>
+
 ## 4. Sistemi omogenei
 
 <a id="box-defHomogeneous-6"></a>
@@ -1207,3 +1213,10 @@ title: "Sistemi di equazioni lineari"
 - Ad esempio, con $m=10$ si ha $10! = 3\,628\,800$, mentre $\frac{2}{3} \cdot 10^3 \approx 667$; con $m=20$, $20!$ è maggiore di $2 \cdot 10^{18}$, mentre $\frac{2}{3}\cdot 20^3 \approx 5\,333$.
 
 - Anche se i determinanti vengono calcolati in modo più efficiente (ad esempio con la stessa eliminazione di Gauss), la regola di Cramer ne richiede comunque $m+1$, e resta più costosa che risolvere direttamente il sistema con l'eliminazione di Gauss.
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="sistema" data-matrix="-1,1;8,2" data-b="2,19"></div>
+

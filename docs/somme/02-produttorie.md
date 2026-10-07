@@ -201,3 +201,10 @@ title: "Produttorie"
     $$
     \frac{100!}{98!}= \frac{100!}{(100-2)!}=\prod_{j=1}^{2} (100-j+1)=100 \cdot 99  = 9.900
     $$
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="somme" data-f="k" data-tipo="prod"></div>
+

@@ -594,6 +594,12 @@ title: "Operazioni sulle matrici"
 
     Infatti, con lo sviluppo di Laplace lungo la prima riga: \(\det(\boldsymbol A) = 0\cdot(3-1) - 1\cdot(3-2) + 2\cdot(1-2) = -3\).
 
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="gauss" data-matrix="0,2,1;1,-1,0;2,1,3"></div>
+
 ## 4. Pivoting e pivoting parziale
 
 - Negli algoritmi numerici, come le fattorizzazioni di matrici e i metodi di riduzione per righe, il pivoting è una tecnica utilizzata per migliorare la stabilità numerica ed evitare divisioni per zero.
@@ -849,3 +855,10 @@ title: "Operazioni sulle matrici"
 - La maggior parte dei software numerici moderni (come MATLAB, NumPy, CPLEX, Gurobi) utilizza automaticamente il pivoting parziale nell'eliminazione di Gauss e nella fattorizzazione LU.
 
 - Il costo computazionale del pivoting parziale è minimo rispetto al beneficio in termini di stabilità numerica.
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="pivoting"></div>
+

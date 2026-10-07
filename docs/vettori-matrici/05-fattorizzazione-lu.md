@@ -418,6 +418,12 @@ title: "Fattorizzazione di matrici"
 
 - Senza scambiare i moltiplicatori al Passo 2 otterremmo la matrice errata \(\widetilde{\boldsymbol L}\) con \(\tilde\ell_{21}=2\) e \(\tilde\ell_{31}=-1\), e \(\widetilde{\boldsymbol L}\boldsymbol U \neq \boldsymbol P\boldsymbol A\) (la sua seconda riga sarebbe \((4,\,6,\,4)\)).
 
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="lu" data-matrix="2,1,1;4,3,3;8,7,9"></div>
+
 ## 2. Determinante dalla fattorizzazione PLU
 
 <a id="box-obsDetPLU-6"></a>

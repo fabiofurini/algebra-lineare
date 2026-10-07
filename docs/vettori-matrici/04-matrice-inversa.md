@@ -632,3 +632,10 @@ title: "Inversione di matrici"
     che è la matrice ottenuta con il metodo di Gauss–Jordan nell'Esempio [Esempio 2](#box-ex_inv-gj-3x3-4).
 
 - Per \(n=2\) (e spesso per \(n=3\)) la formula della matrice aggiunta è comoda per i calcoli a mano. Per matrici di dimensioni maggiori, il metodo di Gauss–Jordan richiede molte meno operazioni.
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="inversa" data-matrix="2,1;1,1"></div>
+

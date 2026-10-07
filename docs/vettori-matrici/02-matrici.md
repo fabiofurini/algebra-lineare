@@ -567,6 +567,12 @@ $$
     \label{mat_prod_6}
     \end{equation}
 
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="prodotto" data-matrix="1,2,0;-1,3,1" data-b="2,1;0,-1;4,3"></div>
+
 ## 4. Matrici speciali
 
 <a id="box-defSquareMatrix-9"></a>
@@ -1535,6 +1541,12 @@ $$
 
     Una matrice \( \boldsymbol A \) è invertibile se e solo se \( \det(\boldsymbol A)\neq 0 \).
 
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="det" data-matrix="1,2,0;3,1,4;2,-1,1"></div>
+
 ## 6. Rango
 
 <a id="box-defRank-35"></a>
@@ -1622,3 +1634,10 @@ $$
     $$
 
     Coerentemente, sviluppando lungo la prima riga, \(\det(\boldsymbol A)=1\cdot(1\cdot 1-3\cdot 1)-0+1\cdot(2\cdot 1-1\cdot 0)=-2+2=0\).
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="rango" data-matrix="1,2,3;2,4,6"></div>
+

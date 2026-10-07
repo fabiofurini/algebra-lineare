@@ -1358,3 +1358,10 @@ title: "Norme"
 - In due dimensioni, le disuguaglianze \(\|{\boldsymbol x}\|_\infty \le \|{\boldsymbol x}\|_2 \le \|{\boldsymbol x}\|_1\) significano che le tre palle unitarie sono annidate: il rombo \(\ell_1\) è contenuto nel cerchio unitario \(\ell_2\), che a sua volta è contenuto nel quadrato \(\ell_\infty\).
 
 ![Figura 14](../img/norme-01-norme/fig14.svg){ .fig .ovale loading=lazy style="width:55%" }
+
+!!! interattivo "Provalo nel laboratorio"
+
+    lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
+
+<div class="la-tool" data-tool="norme" data-x="3,-4,12"></div>
+
