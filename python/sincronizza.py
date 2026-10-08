@@ -13,7 +13,8 @@ CONDIVISI = [
     "docs/stylesheets/extra.css", "docs/stylesheets/interattivi.css", "docs/stylesheets/laboratorio.css",
     "docs/javascripts/mathjax.js", "docs/javascripts/algebra.js", "docs/javascripts/laboratorio.js",
     "LICENSE", "LICENSE-CODE", ".gitignore",
-    ".github/workflows/pubblica.yml",
+    # il workflow NON si copia: in en/ si chiama publish.yml ed è in inglese
+    # (due workflow uguali si annullerebbero a vicenda sulla stessa concorrenza)
 ]
 
 if __name__ == "__main__":

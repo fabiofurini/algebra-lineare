@@ -244,7 +244,7 @@ title: "{tit}"
 
 {sub} *{rif}*
 
-<div class="la-tool" data-tool="{tool}"></div>
+<div class="la-tool" data-tool="{tool}" data-url="1"></div>
 """)
 
 
