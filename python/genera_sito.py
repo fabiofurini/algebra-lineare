@@ -89,6 +89,8 @@ def rinvio(key, nome, num, slug):
     """Il vecchio indirizzo della parte (/norme/) rimanda al suo unico capitolo:
     i link già salvati non si rompono. La pagina non è nel menu né nella ricerca."""
     dest = f"{num:02d}-{slug}/"
+    testo = (f"This part of the course has a single chapter: you are being taken there." if EN
+             else f"Questa parte del corso ha un solo capitolo: ti stiamo portando lì.")
     (DOCS / key / "index.md").write_text(f"""---
 title: "{nome}"
 search:
@@ -98,7 +100,11 @@ search:
 <meta http-equiv="refresh" content="0; url={dest}">
 <script>location.replace("{dest}" + location.hash);</script>
 
-[{nome} :octicons-arrow-right-24:]({num:02d}-{slug}.md)
+# {nome}
+
+{testo}
+
+[:octicons-arrow-right-24: {etichetta(key, num)}. {titolo(key, num, slug)}]({num:02d}-{slug}.md){{ .md-button .md-button--primary }}
 """)
 
 
