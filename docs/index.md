@@ -26,7 +26,8 @@ LU — con la stessa notazione delle dispense.
 ## Le matrici, passo dopo passo
 
 Guarda come una matrice diventa triangolare superiore con semplici operazioni
-sulle righe: gli zeri compaiono sotto la diagonale un passo alla volta.
+sulle righe: premi «Passo successivo» e gli zeri compaiono sotto la diagonale,
+un passo alla volta (oppure ▶ per vederla scorrere da sola).
 
 <div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
@@ -138,4 +139,14 @@ colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto
     [:octicons-arrow-right-24: Organizzazione](organizzazione.md) · [Indice completo](indice.md)
 
 </div>
+
+---
+
+Materiale didattico di **[Fabio Furini](https://sites.google.com/view/fabiofurini/home-page)** —
+[DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma. Fa parte della
+stessa collana del [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/),
+di [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/) e di
+[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/).
+
+*This website is also available in [English](https://fabiofurini.github.io/linear-algebra/).*
 

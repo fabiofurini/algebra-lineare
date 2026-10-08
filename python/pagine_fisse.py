@@ -170,8 +170,9 @@ with the same notation as the notes.
 
 ## Matrices, step by step
 
-Watch how a matrix becomes upper triangular with simple row operations: the
-zeros appear below the diagonal one step at a time.
+Watch how a matrix becomes upper triangular with simple row operations: press
+«Next step» and the zeros appear below the diagonal, one step at a time (or ▶
+to let it run by itself).
 
 <div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
@@ -210,6 +211,16 @@ zeros appear below the diagonal one step at a time.
     [:octicons-arrow-right-24: Organization](organization.md) · [Full index](index-full.md)
 
 </div>
+
+---
+
+Teaching material by **[Fabio Furini](https://sites.google.com/view/fabiofurini/home-page)** —
+[DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome. Part of the same
+series as the [Operations Research Lab](https://fabiofurini.github.io/operations-research-lab/),
+[MIP Modelling](https://fabiofurini.github.io/mip-modelling/) and
+[Mathematical Analysis 1](https://fabiofurini.github.io/mathematical-analysis-1/).
+
+*Questo sito è disponibile anche in [italiano](https://fabiofurini.github.io/algebra-lineare/).*
 """
     else:
         testo = f"""
@@ -241,7 +252,8 @@ LU — con la stessa notazione delle dispense.
 ## Le matrici, passo dopo passo
 
 Guarda come una matrice diventa triangolare superiore con semplici operazioni
-sulle righe: gli zeri compaiono sotto la diagonale un passo alla volta.
+sulle righe: premi «Passo successivo» e gli zeri compaiono sotto la diagonale,
+un passo alla volta (oppure ▶ per vederla scorrere da sola).
 
 <div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
@@ -280,6 +292,16 @@ sulle righe: gli zeri compaiono sotto la diagonale un passo alla volta.
     [:octicons-arrow-right-24: Organizzazione](organizzazione.md) · [Indice completo](indice.md)
 
 </div>
+
+---
+
+Materiale didattico di **[Fabio Furini](https://sites.google.com/view/fabiofurini/home-page)** —
+[DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma. Fa parte della
+stessa collana del [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/),
+di [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/) e di
+[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/).
+
+*This website is also available in [English](https://fabiofurini.github.io/linear-algebra/).*
 """
     scrivi("index.md", testo)
 
