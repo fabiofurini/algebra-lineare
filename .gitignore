@@ -28,3 +28,6 @@ python/dispense_config.py
 python/dispensa_preambolo_*.tex
 python/ritocchi_*.py
 python/overflow_dispensa.py
+
+# note rivedute da cui si generano dispense e sito (private: sul sito solo i PDF)
+note/

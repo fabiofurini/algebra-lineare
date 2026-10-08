@@ -1,6 +1,6 @@
 """Registro dei capitoli: da dove viene ogni pagina del sito.
 
-Ogni capitolo è una dispensa di `materiale_sorgente/NOTES_IT` (italiano) o
+Ogni capitolo è una dispensa di `it/note/NOTES_IT` (italiano) o
 `NOTES_EN` (inglese): copie delle note originali, che restano intatte in
 `01_TOPICS/1_PRELIMINARIES/1_LINEAR_ALGEBRA/`.
 
@@ -12,7 +12,7 @@ from pathlib import Path
 LINGUA = os.environ.get("LINGUA", "it")
 EN = LINGUA == "en"
 MODULO = Path(__file__).resolve().parents[2]
-NOTE = MODULO / "materiale_sorgente" / ("NOTES_EN" if EN else "NOTES_IT")
+NOTE = MODULO / ("en" if EN else "it") / "note" / ("NOTES_EN" if EN else "NOTES_IT")
 SORGENTE = NOTE / "1_PRELIMINARIES" / "1_LINEAR_ALGEBRA"
 SORGENTE_ES = SORGENTE
 IT = MODULO / LINGUA          # radice del repository della lingua (it/ o en/)
