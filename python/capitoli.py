@@ -26,11 +26,11 @@ PARTI = [
     ("somme", "Somme e produttorie", "material/sigma",
      "Il simbolo di sommatoria e di produttoria, le loro proprietà, le somme notevoli, il fattoriale.", "1–2"),
     ("vettori-matrici", "Vettori e matrici", "material/matrix",
-     "Vettori, matrici e determinanti; operazioni elementari, inversa, fattorizzazione LU, autovalori.", "3–4"),
+     "Vettori e indipendenza lineare, matrici, determinanti e rango; operazioni elementari ed eliminazione di Gauss, matrice inversa, fattorizzazione LU, autovalori e criterio di Sylvester.", "3–4"),
     ("norme", "Norme", "material/vector-line",
      "Le norme ℓ₁, ℓ₂, ℓ∞ e ℓ₂ generalizzata, la disuguaglianza di Cauchy–Schwarz e la disuguaglianza triangolare.", "5"),
     ("sistemi", "Sistemi lineari", "material/equal-box",
-     "Esistenza e unicità delle soluzioni, eliminazione di Gauss, metodo LU, regola di Cramer.", "6"),
+     "Esistenza e unicità delle soluzioni, teorema di Rouché–Capelli, eliminazione di Gauss, sistemi omogenei, metodo LU, regola di Cramer.", "6"),
     ("approfondimenti", "Approfondimenti", "material/plus-circle-outline",
      "Valore assoluto e aritmetica modulare.", "A"),
 ]
@@ -55,11 +55,11 @@ PARTI_EN = {
     "somme": ("sums-products", "Sums and products",
               "Summation and product notation, their properties, closed-form sums, the factorial."),
     "vettori-matrici": ("vectors-matrices", "Vectors and matrices",
-                        "Vectors, matrices and determinants; elementary operations, inverse, LU factorization, eigenvalues."),
+                        "Vectors and linear independence, matrices, determinants and rank; elementary operations and Gaussian elimination, inverse matrix, LU factorization, eigenvalues and Sylvester's criterion."),
     "norme": ("norms", "Norms",
               "The ℓ₁, ℓ₂, ℓ∞ and generalized ℓ₂ norms, the Cauchy–Schwarz inequality and the triangle inequality."),
     "sistemi": ("systems", "Linear systems",
-                "Existence and uniqueness of solutions, Gaussian elimination, the LU method, Cramer's rule."),
+                "Existence and uniqueness of solutions, the Rouché–Capelli theorem, Gaussian elimination, homogeneous systems, the LU method, Cramer's rule."),
     "approfondimenti": ("extras", "Further topics", "Absolute value and modular arithmetic."),
 }
 SLUG_EN = {

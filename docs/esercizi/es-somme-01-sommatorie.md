@@ -6,7 +6,7 @@ title: "Sommatorie"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Somme e produttorie** · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-somme-01-sommatorie.pdf)
+**Esercizi · Somme e produttorie** · capitolo [1 · Sommatorie](../somme/01-sommatorie.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-somme-01-sommatorie.pdf)
 
 </div>
 

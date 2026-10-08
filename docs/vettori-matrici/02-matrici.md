@@ -1641,3 +1641,10 @@ $$
 
 <div class="la-tool" data-tool="rango" data-matrix="1,2,3;2,4,6"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 12 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-02-matrici.md)
+- :material-calculator-variant: **Laboratorio** · [Prodotto di matrici](../laboratorio/prodotto.md) — Riga per colonna, un elemento alla volta.
+- :material-calculator-variant: **Laboratorio** · [Determinante](../laboratorio/determinante.md) — sviluppo di Laplace lungo la riga o colonna che scegli, oppure regola di Sarrus
+- :material-calculator-variant: **Laboratorio** · [Rango](../laboratorio/rango.md) — Il rango come numero di pivot della forma a scala.
+

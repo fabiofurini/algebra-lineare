@@ -6,7 +6,7 @@ title: "Norme"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Norme** · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-norme-01-norme.pdf)
+**Esercizi · Norme** · capitolo [5 · Norme](../norme/01-norme.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-norme-01-norme.pdf)
 
 </div>
 

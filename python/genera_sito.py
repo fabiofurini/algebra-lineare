@@ -58,8 +58,9 @@ def esercizi():
             testo = (DOCS / CARTELLA_ES / f"{cid}.md").read_text()
             t = re.search(r'^title: "(.*)"$', testo, re.M).group(1)
             n = len(re.findall(r'^!!! esercizio ', testo, re.M))
-            voci.append(f'          - "{t}": {CARTELLA_ES}/{cid}.md')
-            righe.append(f"    - [{t}]({cid}.md) · {n} " + ("exercises" if EN else "esercizi"))
+            lab = etichetta(e[0], e[1])   # lo stesso numero del capitolo
+            voci.append(f'          - "{lab}. {t}": {CARTELLA_ES}/{cid}.md')
+            righe.append(f"    - **{lab}.** [{t}]({cid}.md) · {n} " + ("exercises" if EN else "esercizi"))
         righe.append("")
     righe += ["</div>", ""]
     if len(voci) == 2:
@@ -84,12 +85,38 @@ def versiona(yml: str) -> str:
     return _re.sub(r"^(  - )((?:javascripts|stylesheets)/[\w.-]+\.(?:js|css))$", sost, yml, flags=_re.M)
 
 
+def rinvio(key, nome, num, slug):
+    """Il vecchio indirizzo della parte (/norme/) rimanda al suo unico capitolo:
+    i link già salvati non si rompono. La pagina non è nel menu né nella ricerca."""
+    dest = f"{num:02d}-{slug}/"
+    (DOCS / key / "index.md").write_text(f"""---
+title: "{nome}"
+search:
+  exclude: true
+---
+
+<meta http-equiv="refresh" content="0; url={dest}">
+<script>location.replace("{dest}" + location.hash);</script>
+
+[{nome} :octicons-arrow-right-24:]({num:02d}-{slug}.md)
+""")
+
+
 def main():
     nav_parti = []
     indice = ["# Full index" if EN else "# Indice completo", ""]
     for key, nome, icona, descr, np in PARTI:
         caps = [c for c in CAPITOLI if c[0] == key and titolo(*c[:3])]
         if not caps:
+            continue
+        if len(caps) == 1:
+            # una parte con un solo capitolo (Norme, Sistemi lineari): niente pagina
+            # di passaggio, la scheda del menu apre direttamente il capitolo
+            parte, num, slug, *_ = caps[0]
+            t, rel = titolo(parte, num, slug), pagina(parte, num, slug)
+            nav_parti.append(f"  - {nome}: {rel}")
+            indice += [f"## [{nome}]({rel})", "", f"- **{etichetta(parte, num)}.** [{t}]({rel})", ""]
+            rinvio(key, nome, num, slug)
             continue
         voci = [f"      - {key}/index.md"]
         card = [f"# {nome}", "", (f"*Chapters {np} of the lecture notes.* " if EN else f"*Capitoli {np} delle dispense.* ") + descr, "",
@@ -103,7 +130,9 @@ def main():
             card += [f"-   **{etichetta(parte, num)}. {t}**", "", "    ---", "",
                      f"    {sommario(parte, num, slug)}", "",
                      f"    [:octicons-arrow-right-24: {'Read the chapter' if EN else 'Leggi il capitolo'}]({num:02d}-{slug}.md)", ""]
-            indice.append(f"{etichetta(parte, num)}. [{t}]({rel})")
+            # elenco puntato con il numero scritto: un elenco numerato di Markdown
+            # ripartirebbe da 1 in ogni parte (3. Vettori diventerebbe 1.)
+            indice.append(f"- **{etichetta(parte, num)}.** [{t}]({rel})")
         card += ["</div>", ""]
         indice.append("")
         (DOCS / key / "index.md").write_text("\n".join(card))

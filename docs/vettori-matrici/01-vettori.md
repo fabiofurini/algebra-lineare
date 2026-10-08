@@ -635,3 +635,8 @@ $$
     +
     1\begin{pmatrix}1\\-1\end{pmatrix}.
     $$
+
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 10 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-01-vettori.md)
+

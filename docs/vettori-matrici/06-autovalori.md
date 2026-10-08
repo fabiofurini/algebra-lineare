@@ -708,3 +708,8 @@ title: "Autovalori e autovettori"
 
 <div class="la-tool" data-tool="autovalori" data-matrix="2,-1;-1,2"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 10 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-06-autovalori.md)
+- :material-calculator-variant: **Laboratorio** · [Autovalori e definitezza](../laboratorio/autovalori.md) — Polinomio caratteristico, autovettori e criterio di Sylvester.
+

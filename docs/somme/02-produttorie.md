@@ -208,3 +208,8 @@ title: "Produttorie"
 
 <div class="la-tool" data-tool="somme" data-f="k" data-tipo="prod"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 9 esercizi con le soluzioni svolte](../esercizi/es-somme-02-produttorie.md)
+- :material-calculator-variant: **Laboratorio** · [Somme e produttorie](../laboratorio/somme.md) — scegli «Produttoria Π»: per esempio \(\prod_{k=1}^{n} k = n!\)
+

@@ -6,7 +6,7 @@ title: "Matrici"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-vettori-matrici-02-matrici.pdf)
+**Esercizi · Vettori e matrici** · capitolo [4.1 · Matrici](../vettori-matrici/02-matrici.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-vettori-matrici-02-matrici.pdf)
 
 </div>
 

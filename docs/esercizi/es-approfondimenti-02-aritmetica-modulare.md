@@ -6,7 +6,7 @@ title: "Aritmetica modulare"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Approfondimenti** · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-approfondimenti-02-aritmetica-modulare.pdf)
+**Esercizi · Approfondimenti** · capitolo [A.2 · Aritmetica modulare](../approfondimenti/02-aritmetica-modulare.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-approfondimenti-02-aritmetica-modulare.pdf)
 
 </div>
 

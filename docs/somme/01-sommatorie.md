@@ -243,3 +243,8 @@ title: "Sommatorie"
 
 <div class="la-tool" data-tool="somme" data-f="k^2" data-tipo="sum"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 12 esercizi con le soluzioni svolte](../esercizi/es-somme-01-sommatorie.md)
+- :material-calculator-variant: **Laboratorio** · [Somme e produttorie](../laboratorio/somme.md) — scrivi il termine generale e confronta con le somme notevoli di questo capitolo
+

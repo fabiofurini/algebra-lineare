@@ -1145,9 +1145,9 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
         "",
         f'<div class="info-capitolo" markdown>',
         "",
-        ((f"**Exercises · {PARTI_ES[_parte_it(parte)][1]}** · with worked solutions · "
+        ((f"**Exercises · {PARTI_ES[_parte_it(parte)][1]}** · chapter {capitolo_di(parte, num)} · with worked solutions · "
           f"[:material-file-pdf-box: PDF](../pdf/{cid}.pdf)") if EN else
-         (f"**Esercizi · {PARTI_ES[_parte_it(parte)][0]}** · con le soluzioni svolte · "
+         (f"**Esercizi · {PARTI_ES[_parte_it(parte)][0]}** · capitolo {capitolo_di(parte, num)} · con le soluzioni svolte · "
           f"[:material-file-pdf-box: PDF](../pdf/{cid}.pdf)")) if esercizi else
         (f"**{nome_parte(parte)} · Chapter {lab}** · lecture notes by {chi} · "
          f"[:material-file-pdf-box: Chapter PDF](../pdf/{cid}.pdf)") if EN else
@@ -1162,6 +1162,9 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
         note = "\n\n" + "\n".join(f"[^{k}]: {t}" for k, t in enumerate(st.note, 1))
     from interattivi_capitoli import inserisci
     md = inserisci(ident_it(cid) if not esercizi else ident_es_it(cid), md, EN)
+    if not esercizi:
+        from interattivi_capitoli import fine_capitolo
+        md += "\n\n" + fine_capitolo(ident_it(cid), parte, num, EN)
     out = "\n".join(testa) + "\n" + md + note + "\n"
     out = re.sub(r"\n{3,}", "\n\n", out)
     dest = DOCS / CARTELLA_ES / f"{cid}.md" if esercizi else DOCS / pagina(parte, num, slug)
@@ -1172,6 +1175,17 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
     from collections import Counter
     (rep / f"{cid}.txt").write_text("\n".join(f"{v:4d}  {k}" for k, v in Counter(st.avvisi).most_common()))
     return {"id": cid, "titolo": titolo, "figure": st.figure, "avvisi": len(st.avvisi), "autori": chi}
+
+
+def capitolo_di(parte: str, num: int) -> str:
+    """«4.3 · Inversione di matrici», con il link al capitolo (dalle pagine degli esercizi)."""
+    from capitoli import CAPITOLI, etichetta
+    for c in CAPITOLI:
+        if c[0] == parte and c[1] == num:
+            p = DOCS / pagina(*c[:3])
+            t = re.search(r'^title: "(.*)"$', p.read_text(), re.M).group(1) if p.exists() else c[2]
+            return f"[{etichetta(parte, num)} · {t}](../{pagina(*c[:3])})"
+    return str(num)
 
 
 def _parte_it(parte: str) -> str:

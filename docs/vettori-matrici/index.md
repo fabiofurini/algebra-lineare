@@ -1,6 +1,6 @@
 # Vettori e matrici
 
-*Capitoli 3–4 delle dispense.* Vettori, matrici e determinanti; operazioni elementari, inversa, fattorizzazione LU, autovalori.
+*Capitoli 3–4 delle dispense.* Vettori e indipendenza lineare, matrici, determinanti e rango; operazioni elementari ed eliminazione di Gauss, matrice inversa, fattorizzazione LU, autovalori e criterio di Sylvester.
 
 <div class="grid cards" markdown>
 

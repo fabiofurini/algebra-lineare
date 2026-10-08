@@ -126,3 +126,8 @@ title: "Aritmetica modulare"
 !!! esempio "Esempio 1: congruenza modulo $5$"
 
     Per esempio, $23$ e $13$ sono congruenti modulo $5$ e si ha $23 \equiv 13 \tpmod{5}$
+
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 8 esercizi con le soluzioni svolte](../esercizi/es-approfondimenti-02-aritmetica-modulare.md)
+

@@ -83,7 +83,7 @@ extra:
 
 extra_css:
   - stylesheets/extra.css?v=6b95240421
-  - stylesheets/laboratorio.css?v=17741bc836
+  - stylesheets/laboratorio.css?v=8761e2795e
 
 markdown_extensions:
   - admonition
@@ -108,7 +108,7 @@ extra_javascript:
   - javascripts/mathjax.js?v=7f7ddb8e83
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - javascripts/algebra.js?v=351bd892dc
-  - javascripts/laboratorio.js?v=d8eb73e188
+  - javascripts/laboratorio.js?v=b10fd9cc89
 
 nav:
   - Home: index.md
@@ -124,12 +124,8 @@ nav:
       - "4.3. Inversione di matrici": vettori-matrici/04-matrice-inversa.md
       - "4.4. Fattorizzazione di matrici": vettori-matrici/05-fattorizzazione-lu.md
       - "4.5. Autovalori e autovettori": vettori-matrici/06-autovalori.md
-  - Norme:
-      - norme/index.md
-      - "5. Norme": norme/01-norme.md
-  - Sistemi lineari:
-      - sistemi/index.md
-      - "6. Sistemi di equazioni lineari": sistemi/01-sistemi-lineari.md
+  - Norme: norme/01-norme.md
+  - Sistemi lineari: sistemi/01-sistemi-lineari.md
   - Approfondimenti:
       - approfondimenti/index.md
       - "A.1. Valore assoluto": approfondimenti/01-valore-assoluto.md
@@ -137,22 +133,22 @@ nav:
   - Esercizi:
       - esercizi/index.md
       - Somme e produttorie:
-          - "Sommatorie": esercizi/es-somme-01-sommatorie.md
-          - "Produttorie": esercizi/es-somme-02-produttorie.md
+          - "1. Sommatorie": esercizi/es-somme-01-sommatorie.md
+          - "2. Produttorie": esercizi/es-somme-02-produttorie.md
       - Vettori e matrici:
-          - "Vettori": esercizi/es-vettori-matrici-01-vettori.md
-          - "Matrici": esercizi/es-vettori-matrici-02-matrici.md
-          - "Operazioni sulle matrici": esercizi/es-vettori-matrici-03-operazioni-elementari.md
-          - "Inversione di matrici": esercizi/es-vettori-matrici-04-matrice-inversa.md
-          - "Fattorizzazione di matrici": esercizi/es-vettori-matrici-05-fattorizzazione-lu.md
-          - "Autovalori e autovettori": esercizi/es-vettori-matrici-06-autovalori.md
+          - "3. Vettori": esercizi/es-vettori-matrici-01-vettori.md
+          - "4.1. Matrici": esercizi/es-vettori-matrici-02-matrici.md
+          - "4.2. Operazioni sulle matrici": esercizi/es-vettori-matrici-03-operazioni-elementari.md
+          - "4.3. Inversione di matrici": esercizi/es-vettori-matrici-04-matrice-inversa.md
+          - "4.4. Fattorizzazione di matrici": esercizi/es-vettori-matrici-05-fattorizzazione-lu.md
+          - "4.5. Autovalori e autovettori": esercizi/es-vettori-matrici-06-autovalori.md
       - Norme:
-          - "Norme": esercizi/es-norme-01-norme.md
+          - "5. Norme": esercizi/es-norme-01-norme.md
       - Sistemi lineari:
-          - "Sistemi di equazioni lineari": esercizi/es-sistemi-01-sistemi-lineari.md
+          - "6. Sistemi di equazioni lineari": esercizi/es-sistemi-01-sistemi-lineari.md
       - Approfondimenti:
-          - "Valore assoluto": esercizi/es-approfondimenti-01-valore-assoluto.md
-          - "Aritmetica modulare": esercizi/es-approfondimenti-02-aritmetica-modulare.md
+          - "A.1. Valore assoluto": esercizi/es-approfondimenti-01-valore-assoluto.md
+          - "A.2. Aritmetica modulare": esercizi/es-approfondimenti-02-aritmetica-modulare.md
   - Laboratorio:
       - laboratorio/index.md
       - Metodo di Gauss: laboratorio/gauss.md

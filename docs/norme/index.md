@@ -1,15 +1,10 @@
-# Norme
+---
+title: "Norme"
+search:
+  exclude: true
+---
 
-*Capitoli 5 delle dispense.* Le norme ℓ₁, ℓ₂, ℓ∞ e ℓ₂ generalizzata, la disuguaglianza di Cauchy–Schwarz e la disuguaglianza triangolare.
+<meta http-equiv="refresh" content="0; url=01-norme/">
+<script>location.replace("01-norme/" + location.hash);</script>
 
-<div class="grid cards" markdown>
-
--   **5. Norme**
-
-    ---
-
-    Introduzione alle norme · Norma … · Norma … · Norma … generalizzata · …
-
-    [:octicons-arrow-right-24: Leggi il capitolo](01-norme.md)
-
-</div>
+[Norme :octicons-arrow-right-24:](01-norme.md)

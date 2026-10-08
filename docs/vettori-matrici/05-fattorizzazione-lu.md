@@ -457,3 +457,10 @@ title: "Fattorizzazione di matrici"
     - Esempio [Esempio 3](#box-ex_plu-2x2-4): uno scambio di righe (\(s=1\)), quindi \(\det(\boldsymbol A) = -(1\cdot 1) = -1\). Infatti, \(\det(\boldsymbol A) = 0\cdot 1 - 1\cdot 1 = -1\).
 
     - Esempio [Esempio 4](#box-ex_plu-3x3-5): uno scambio di righe (\(s=1\)), quindi \(\det(\boldsymbol A) = -(2\cdot 4\cdot 1) = -8\). Infatti, sviluppando con Laplace lungo la prima riga, \(\det(\boldsymbol A) = 2\cdot(2-9) - 1\cdot(4+6) + 1\cdot(12+4) = -14 - 10 + 16 = -8\).
+
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 7 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-05-fattorizzazione-lu.md)
+- :material-calculator-variant: **Laboratorio** · [Fattorizzazione LU](../laboratorio/lu.md) — I moltiplicatori che riempiono \(\boldsymbol L\), gli scambi che riempiono \(\boldsymbol P\).
+- :material-calculator-variant: **Laboratorio** · [Sistemi lineari](../laboratorio/sistemi.md) — scegli «Con la fattorizzazione LU»: sostituzione in avanti e all'indietro
+

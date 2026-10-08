@@ -639,3 +639,8 @@ title: "Inversione di matrici"
 
 <div class="la-tool" data-tool="inversa" data-matrix="2,1;1,1"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 10 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-04-matrice-inversa.md)
+- :material-calculator-variant: **Laboratorio** · [Matrice inversa](../laboratorio/inversa.md) — Gauss–Jordan su \((\boldsymbol A \mid \boldsymbol I)\) oppure la formula con i cofattori.
+

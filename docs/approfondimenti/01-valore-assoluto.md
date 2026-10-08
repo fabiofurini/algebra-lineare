@@ -152,3 +152,8 @@ title: "Valore assoluto"
     |b\:c| = |b| \: |c|, \qquad \left| \frac{b}{c}\right|= \frac{|b|}{|c|}, \qquad |-b|=|b| \qquad \forall  b,c \in \mathbb{R} ~ (c \neq 0 {\rm ~nel~quoziente}).
     \label{ass_7}
     \end{equation}
+
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 8 esercizi con le soluzioni svolte](../esercizi/es-approfondimenti-01-valore-assoluto.md)
+

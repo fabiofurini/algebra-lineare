@@ -862,3 +862,10 @@ title: "Operazioni sulle matrici"
 
 <div class="la-tool" data-tool="pivoting"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 10 esercizi con le soluzioni svolte](../esercizi/es-vettori-matrici-03-operazioni-elementari.md)
+- :material-calculator-variant: **Laboratorio** · [Metodo di Gauss](../laboratorio/gauss.md) — Porta una matrice in forma a scala (o ridotta) mostrando ogni operazione elementare.
+- :material-calculator-variant: **Laboratorio** · [Determinante](../laboratorio/determinante.md) — scegli il metodo «Eliminazione di Gauss»: l'effetto di ogni operazione elementare sul determinante
+- :material-calculator-variant: **Laboratorio** · [Perché serve il pivoting](../laboratorio/pivoting.md) — Lo stesso sistema con e senza pivoting parziale, in virgola mobile.
+

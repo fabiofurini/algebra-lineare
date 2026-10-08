@@ -1220,3 +1220,9 @@ title: "Sistemi di equazioni lineari"
 
 <div class="la-tool" data-tool="sistema" data-matrix="-1,1;8,2" data-b="2,19"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 11 esercizi con le soluzioni svolte](../esercizi/es-sistemi-01-sistemi-lineari.md)
+- :material-calculator-variant: **Laboratorio** · [Sistemi lineari](../laboratorio/sistemi.md) — Gauss e sostituzione all'indietro, Rouché–Capelli, Cramer, oppure la fattorizzazione LU.
+- :material-calculator-variant: **Laboratorio** · [Rango](../laboratorio/rango.md) — il rango di \(\boldsymbol A\) e della matrice completa \((\boldsymbol A\mid\boldsymbol b)\) per Rouché–Capelli
+

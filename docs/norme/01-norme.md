@@ -1365,3 +1365,8 @@ title: "Norme"
 
 <div class="la-tool" data-tool="norme" data-x="3,-4,12"></div>
 
+## Esercizi e laboratorio
+
+- :material-pencil-box-multiple: **Esercizi** · [il foglio di esercizi di questo capitolo: 12 esercizi con le soluzioni svolte](../esercizi/es-norme-01-norme.md)
+- :material-calculator-variant: **Laboratorio** · [Norme](../laboratorio/norme.md) — Le norme \(\ell_1\), \(\ell_2\), \(\ell_\infty\) e quella generalizzata da \(\boldsymbol Q\).
+

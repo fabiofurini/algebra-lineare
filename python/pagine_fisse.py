@@ -51,7 +51,96 @@ def scrivi(rel, testo):
     p.write_text(testo.lstrip() + "\n", encoding="utf-8")
 
 
+def parti_del_corso():
+    """Le schede delle parti: titolo con i numeri dei capitoli, descrizione e link.
+    Vengono dal registro dei capitoli, così home, menu e indice non divergono."""
+    from capitoli import CAPITOLI, pagina
+    righe = ['<div class="grid cards" markdown>', ""]
+    for key, nome, icona, descr, np in PARTI:
+        icona_md = ":" + icona.replace("/", "-") + ":"
+        caps = [c for c in CAPITOLI if c[0] == key]
+        # una parte con un solo capitolo porta direttamente al capitolo
+        if len(caps) == 1:
+            link, testo = pagina(*caps[0][:3]), ("The chapter" if EN else "Il capitolo")
+        else:
+            link, testo = f"{key}/index.md", ("The chapters" if EN else "I capitoli")
+        righe += [f"-   {icona_md} **{np} · {nome}**", "", "    ---", "", f"    {descr}", "",
+                  f"    [:octicons-arrow-right-24: {testo}]({link})", ""]
+    righe += ["</div>", ""]
+    return "\n".join(righe)
+
+
+def legenda():
+    """Come si leggono le dispense: i box che compaiono davvero nei capitoli,
+    con le classi (e quindi i colori) che usa il sito."""
+    if EN:
+        return """## How each chapter is organized
+
+Each chapter is one of the course notes, with the same numbers and the same
+colours as the PDF: on the website and on paper you find everything in the
+same place.
+
+<div class="grid" markdown>
+
+!!! definizione "Definition"
+    The precise meaning of a new concept.
+
+!!! teorema "Observation, Proposition, Theorem"
+    A result to remember, with its hypotheses. In these notes most results are
+    **Observations**: they share the theorems' red box and often come with a proof.
+
+!!! esempio "Example"
+    A computation worked out in full, one step at a time.
+
+!!! chiave ""
+    **In green** the key point to take away: rules, methods, summaries.
+
+</div>
+
+??? dimostrazione "Proof — opens with a click"
+    All proofs are there, but folded: first read the statement, then open the
+    proof when you want to study it.
+
+!!! interattivo "Try it in the lab"
+    In the chapters with computations, the same example can be redone step by
+    step in the lab: change the matrix and watch the steps change.
+"""
+    return """## Come è fatto ogni capitolo
+
+Ogni capitolo è una delle dispense del corso, con gli stessi numeri e gli stessi
+colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto.
+
+<div class="grid" markdown>
+
+!!! definizione "Definizione"
+    Il significato preciso di un concetto nuovo.
+
+!!! teorema "Osservazione, Proposizione, Teorema"
+    Un risultato da ricordare, con le sue ipotesi. In queste dispense la
+    maggior parte dei risultati sono **Osservazioni**: hanno lo stesso box rosso
+    dei teoremi e spesso la loro dimostrazione.
+
+!!! esempio "Esempio"
+    Un calcolo svolto per intero, un passaggio alla volta.
+
+!!! chiave ""
+    **In verde** il punto chiave da portarsi via: regole, metodi, riepiloghi.
+
+</div>
+
+??? dimostrazione "Dimostrazione — si apre con un clic"
+    Le dimostrazioni sono tutte presenti, ma chiuse: prima si legge
+    l'enunciato, poi si apre la dimostrazione quando la si vuole studiare.
+
+!!! interattivo "Provalo nel laboratorio"
+    Nei capitoli con i calcoli, lo stesso esempio si rifà passo per passo nel
+    laboratorio: cambia la matrice e guarda come cambiano i passaggi.
+"""
+
+
 def home():
+    pdf = "pdf/lecture-notes-linear-algebra.pdf" if EN else "pdf/dispense-algebra-lineare.pdf"
+    assert (DOCS / pdf).exists(), f"manca {pdf}: niente link a file inesistenti"
     if EN:
         testo = f"""
 ---
@@ -75,46 +164,50 @@ with the same notation as the notes.
 
 [Start with sums :material-arrow-right:](sums-products/index.md){{ .md-button .md-button--primary }}
 [Try the lab](lab/index.md){{ .md-button }}
+[:material-download: Download all the lecture notes (PDF)]({pdf}){{ .md-button }}
 
 </div>
 
-## Try it right now
+## Matrices, step by step
 
-Type a matrix and watch every row operation, in exact fractions.
+Watch how a matrix becomes upper triangular with simple row operations: the
+zeros appear below the diagonal one step at a time.
 
-<div class="la-tool" data-tool="gauss" data-matrix="0,2,1;1,-1,0;2,1,3"></div>
+<div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
-## What you will find here
+## The parts of the course
+
+{parti_del_corso()}
+{legenda()}
+## Don't miss
 
 <div class="grid cards" markdown>
 
--   **The lecture notes**
+-   :material-calculator-variant: **The computation lab**
 
     ---
 
-    Every chapter of the course, with the same boxes and the same numbers as
-    the PDF: definitions, observations, proofs you can unfold, worked examples.
+    Eleven tools that show the steps, the way you would write them by hand,
+    with exercises generated for you.
 
--   **The computation lab**
+    [:octicons-arrow-right-24: The tools](lab/index.md)
 
-    ---
-
-    Eleven tools that do not only give the answer: they show the steps, the way
-    you would write them by hand.
-
--   **Exercises with solutions**
+-   :material-pencil-box-multiple: **Exercises with solutions**
 
     ---
 
-    One sheet per chapter, with the full solution one click away, plus endless
-    generated exercises in the lab's *Practice* tab.
+    One sheet per chapter, with the full solution one click away.
 
--   **It is a propaedeutic course**
+    [:octicons-arrow-right-24: The exercises](exercises/index.md)
+
+-   :material-school: **The course**
 
     ---
 
-    Everything here is used in the [Operations Research Lab](https://fabiofurini.github.io/operations-research-lab/)
-    and in [MIP Modelling](https://fabiofurini.github.io/mip-modelling/).
+    How to use the site, where these topics come back in the Operations
+    Research courses, the full index of the chapters.
+
+    [:octicons-arrow-right-24: Organization](organization.md) · [Full index](index-full.md)
 
 </div>
 """
@@ -141,47 +234,50 @@ LU — con la stessa notazione delle dispense.
 
 [Inizia dalle somme :material-arrow-right:](somme/index.md){{ .md-button .md-button--primary }}
 [Prova il laboratorio](laboratorio/index.md){{ .md-button }}
+[:material-download: Scarica tutte le dispense (PDF)]({pdf}){{ .md-button }}
 
 </div>
 
-## Provalo subito
+## Le matrici, passo dopo passo
 
-Scrivi una matrice e guarda ogni operazione di riga, in frazioni esatte.
+Guarda come una matrice diventa triangolare superiore con semplici operazioni
+sulle righe: gli zeri compaiono sotto la diagonale un passo alla volta.
 
-<div class="la-tool" data-tool="gauss" data-matrix="0,2,1;1,-1,0;2,1,3"></div>
+<div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
-## Che cosa trovi qui
+## Le parti del corso
+
+{parti_del_corso()}
+{legenda()}
+## Da non perdere
 
 <div class="grid cards" markdown>
 
--   **Le dispense**
+-   :material-calculator-variant: **Il laboratorio di calcolo**
 
     ---
 
-    Tutti i capitoli del corso, con gli stessi box e gli stessi numeri del PDF:
-    definizioni, osservazioni, dimostrazioni che si aprono con un clic, esempi
-    svolti.
+    Undici strumenti che mostrano i passaggi, come li scriveresti a mano, con
+    gli esercizi generati per te.
 
--   **Il laboratorio di calcolo**
+    [:octicons-arrow-right-24: Gli strumenti](laboratorio/index.md)
 
-    ---
-
-    Undici strumenti che non danno solo il risultato: mostrano i passaggi, come
-    li scriveresti a mano.
-
--   **Esercizi con le soluzioni**
+-   :material-pencil-box-multiple: **Esercizi con le soluzioni**
 
     ---
 
-    Un foglio per capitolo, con lo svolgimento a un clic di distanza, più gli
-    esercizi generati all'infinito nella scheda *Esercitati* del laboratorio.
+    Un foglio per capitolo, con lo svolgimento a un clic di distanza.
 
--   **È un corso propedeutico**
+    [:octicons-arrow-right-24: Gli esercizi](esercizi/index.md)
+
+-   :material-school: **Il corso**
 
     ---
 
-    Tutto quello che c'è qui serve nel [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)
-    e in [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/).
+    Come usare il sito, dove questi argomenti tornano nei corsi di Ricerca
+    Operativa, l'indice completo dei capitoli.
+
+    [:octicons-arrow-right-24: Organizzazione](organizzazione.md) · [Indice completo](indice.md)
 
 </div>
 """

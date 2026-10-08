@@ -19,47 +19,123 @@ LU — con la stessa notazione delle dispense.
 
 [Inizia dalle somme :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
 [Prova il laboratorio](laboratorio/index.md){ .md-button }
+[:material-download: Scarica tutte le dispense (PDF)](pdf/dispense-algebra-lineare.pdf){ .md-button }
 
 </div>
 
-## Provalo subito
+## Le matrici, passo dopo passo
 
-Scrivi una matrice e guarda ogni operazione di riga, in frazioni esatte.
+Guarda come una matrice diventa triangolare superiore con semplici operazioni
+sulle righe: gli zeri compaiono sotto la diagonale un passo alla volta.
 
-<div class="la-tool" data-tool="gauss" data-matrix="0,2,1;1,-1,0;2,1,3"></div>
+<div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
 
-## Che cosa trovi qui
+## Le parti del corso
 
 <div class="grid cards" markdown>
 
--   **Le dispense**
+-   :material-sigma: **1–2 · Somme e produttorie**
 
     ---
 
-    Tutti i capitoli del corso, con gli stessi box e gli stessi numeri del PDF:
-    definizioni, osservazioni, dimostrazioni che si aprono con un clic, esempi
-    svolti.
+    Il simbolo di sommatoria e di produttoria, le loro proprietà, le somme notevoli, il fattoriale.
 
--   **Il laboratorio di calcolo**
+    [:octicons-arrow-right-24: I capitoli](somme/index.md)
 
-    ---
-
-    Undici strumenti che non danno solo il risultato: mostrano i passaggi, come
-    li scriveresti a mano.
-
--   **Esercizi con le soluzioni**
+-   :material-matrix: **3–4 · Vettori e matrici**
 
     ---
 
-    Un foglio per capitolo, con lo svolgimento a un clic di distanza, più gli
-    esercizi generati all'infinito nella scheda *Esercitati* del laboratorio.
+    Vettori e indipendenza lineare, matrici, determinanti e rango; operazioni elementari ed eliminazione di Gauss, matrice inversa, fattorizzazione LU, autovalori e criterio di Sylvester.
 
--   **È un corso propedeutico**
+    [:octicons-arrow-right-24: I capitoli](vettori-matrici/index.md)
+
+-   :material-vector-line: **5 · Norme**
 
     ---
 
-    Tutto quello che c'è qui serve nel [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)
-    e in [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/).
+    Le norme ℓ₁, ℓ₂, ℓ∞ e ℓ₂ generalizzata, la disuguaglianza di Cauchy–Schwarz e la disuguaglianza triangolare.
+
+    [:octicons-arrow-right-24: Il capitolo](norme/01-norme.md)
+
+-   :material-equal-box: **6 · Sistemi lineari**
+
+    ---
+
+    Esistenza e unicità delle soluzioni, teorema di Rouché–Capelli, eliminazione di Gauss, sistemi omogenei, metodo LU, regola di Cramer.
+
+    [:octicons-arrow-right-24: Il capitolo](sistemi/01-sistemi-lineari.md)
+
+-   :material-plus-circle-outline: **A · Approfondimenti**
+
+    ---
+
+    Valore assoluto e aritmetica modulare.
+
+    [:octicons-arrow-right-24: I capitoli](approfondimenti/index.md)
+
+</div>
+
+## Come è fatto ogni capitolo
+
+Ogni capitolo è una delle dispense del corso, con gli stessi numeri e gli stessi
+colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto.
+
+<div class="grid" markdown>
+
+!!! definizione "Definizione"
+    Il significato preciso di un concetto nuovo.
+
+!!! teorema "Osservazione, Proposizione, Teorema"
+    Un risultato da ricordare, con le sue ipotesi. In queste dispense la
+    maggior parte dei risultati sono **Osservazioni**: hanno lo stesso box rosso
+    dei teoremi e spesso la loro dimostrazione.
+
+!!! esempio "Esempio"
+    Un calcolo svolto per intero, un passaggio alla volta.
+
+!!! chiave ""
+    **In verde** il punto chiave da portarsi via: regole, metodi, riepiloghi.
+
+</div>
+
+??? dimostrazione "Dimostrazione — si apre con un clic"
+    Le dimostrazioni sono tutte presenti, ma chiuse: prima si legge
+    l'enunciato, poi si apre la dimostrazione quando la si vuole studiare.
+
+!!! interattivo "Provalo nel laboratorio"
+    Nei capitoli con i calcoli, lo stesso esempio si rifà passo per passo nel
+    laboratorio: cambia la matrice e guarda come cambiano i passaggi.
+
+## Da non perdere
+
+<div class="grid cards" markdown>
+
+-   :material-calculator-variant: **Il laboratorio di calcolo**
+
+    ---
+
+    Undici strumenti che mostrano i passaggi, come li scriveresti a mano, con
+    gli esercizi generati per te.
+
+    [:octicons-arrow-right-24: Gli strumenti](laboratorio/index.md)
+
+-   :material-pencil-box-multiple: **Esercizi con le soluzioni**
+
+    ---
+
+    Un foglio per capitolo, con lo svolgimento a un clic di distanza.
+
+    [:octicons-arrow-right-24: Gli esercizi](esercizi/index.md)
+
+-   :material-school: **Il corso**
+
+    ---
+
+    Come usare il sito, dove questi argomenti tornano nei corsi di Ricerca
+    Operativa, l'indice completo dei capitoli.
+
+    [:octicons-arrow-right-24: Organizzazione](organizzazione.md) · [Indice completo](indice.md)
 
 </div>
 

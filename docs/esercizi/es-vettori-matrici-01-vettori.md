@@ -6,7 +6,7 @@ title: "Vettori"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-vettori-matrici-01-vettori.pdf)
+**Esercizi · Vettori e matrici** · capitolo [3 · Vettori](../vettori-matrici/01-vettori.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-vettori-matrici-01-vettori.pdf)
 
 </div>
 
