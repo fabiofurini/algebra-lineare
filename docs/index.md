@@ -9,7 +9,7 @@ hide:
 
 # Algebra Lineare
 
-Materiale didattico ideato e sviluppato da **[Fabio Furini](https://sites.google.com/view/fabiofurini/home-page)**, professore
+Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
 **Le dispense del corso, online**: definizioni, esempi svolti, esercizi con le
@@ -142,7 +142,7 @@ colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto
 
 ---
 
-Materiale didattico di **[Fabio Furini](https://sites.google.com/view/fabiofurini/home-page)** —
+Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma. Fa parte della
 stessa collana del [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/),
 di [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/) e di

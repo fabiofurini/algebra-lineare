@@ -228,10 +228,10 @@ def frontespizio(en: bool, vol: dict) -> str:
     \small """ + vol["descrizione"][i] + r"""
   \end{tcolorbox}
   \vfill
-  {\Large\bfseries \href{https://sites.google.com/view/fabiofurini/home-page}{Fabio Furini}\par}
+  {\Large\bfseries \href{https://fabiofurini.github.io/}{Fabio Furini}\par}
   \vspace{0.15cm}
-  {\footnotesize \href{https://sites.google.com/view/fabiofurini/home-page}%
-   {sites.google.com/view/fabiofurini}\par}
+  {\footnotesize \href{https://fabiofurini.github.io/}%
+   {fabiofurini.github.io}\par}
   \vspace{0.15cm}
   {\small \href{https://www.diag.uniroma1.it/}{""" + (
         "Department of Computer, Control and Management Engineering} --- Sapienza University of Rome\\par}"
