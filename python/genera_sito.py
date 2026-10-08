@@ -68,6 +68,22 @@ def esercizi():
     return "\n".join(voci)
 
 
+def versiona(yml: str) -> str:
+    """Aggiunge ?v=<impronta del file> a css e js del sito: quando un file cambia
+    cambia anche il suo indirizzo, e il browser non usa la copia vecchia."""
+    import hashlib
+    import re as _re
+
+    def sost(m):
+        rel = m.group(2)
+        f = DOCS / rel
+        if not f.exists():
+            return m.group(0)
+        v = hashlib.sha1(f.read_bytes()).hexdigest()[:10]
+        return f"{m.group(1)}{rel}?v={v}"
+    return _re.sub(r"^(  - )((?:javascripts|stylesheets)/[\w.-]+\.(?:js|css))$", sost, yml, flags=_re.M)
+
+
 def main():
     nav_parti = []
     indice = ["# Full index" if EN else "# Indice completo", ""]
@@ -99,6 +115,7 @@ def main():
 
     yml = (Path(__file__).parent / ("mkdocs_modello_en.yml" if EN else "mkdocs_modello.yml")).read_text()
     yml = yml.replace("  # NAV_PARTI", "\n".join(nav_parti))
+    yml = versiona(yml)
     (IT / "mkdocs.yml").write_text(yml)
     (DOCS / "img").mkdir(exist_ok=True)
     print(f"[{LINGUA}] mkdocs.yml, indice e pagine delle parti aggiornati")

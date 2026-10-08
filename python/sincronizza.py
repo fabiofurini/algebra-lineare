@@ -10,7 +10,7 @@ IT = Path(__file__).resolve().parents[1]
 EN = IT.parent / "en"
 
 CONDIVISI = [
-    "docs/stylesheets/extra.css", "docs/stylesheets/interattivi.css", "docs/stylesheets/laboratorio.css",
+    "docs/stylesheets/extra.css", "docs/stylesheets/laboratorio.css",
     "docs/javascripts/mathjax.js", "docs/javascripts/algebra.js", "docs/javascripts/laboratorio.js",
     "LICENSE", "LICENSE-CODE", ".gitignore",
     # il workflow NON si copia: in en/ si chiama publish.yml ed è in inglese
