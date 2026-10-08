@@ -6,7 +6,7 @@ title: "Sistemi di equazioni lineari"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Sistemi lineari** · capitolo [6 · Sistemi di equazioni lineari](../sistemi/01-sistemi-lineari.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-sistemi-01-sistemi-lineari.pdf)
+**Esercizi · Sistemi lineari** · capitolo [6 · Sistemi di equazioni lineari](../sistemi/01-sistemi-lineari.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

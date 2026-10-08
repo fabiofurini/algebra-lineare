@@ -6,7 +6,7 @@ title: "Inversione di matrici"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 4.3** · dalle dispense di Fabio Furini · [:material-file-pdf-box: PDF del capitolo](../pdf/vettori-matrici-04-matrice-inversa.pdf)
+**Vettori e matrici · Capitolo 4.3** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

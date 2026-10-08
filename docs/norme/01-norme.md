@@ -6,7 +6,7 @@ title: "Norme"
 
 <div class="info-capitolo" markdown>
 
-**Norme · Capitolo 5** · dalle dispense di Fabio Furini · [:material-file-pdf-box: PDF del capitolo](../pdf/norme-01-norme.pdf)
+**Norme · Capitolo 5** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

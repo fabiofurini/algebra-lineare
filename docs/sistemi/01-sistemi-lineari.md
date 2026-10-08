@@ -6,7 +6,7 @@ title: "Sistemi di equazioni lineari"
 
 <div class="info-capitolo" markdown>
 
-**Sistemi lineari · Capitolo 6** · dalle dispense di Fabio Furini · [:material-file-pdf-box: PDF del capitolo](../pdf/sistemi-01-sistemi-lineari.pdf)
+**Sistemi lineari · Capitolo 6** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

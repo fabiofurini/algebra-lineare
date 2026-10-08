@@ -457,8 +457,93 @@ Le dispense sono di **Fabio Furini**. Testi, figure e dati hanno licenza
         scrivi("organizzazione.md", testo)
 
 
+# slide dei capitoli: file nel sito e titolo (IT, EN); compaiono solo se il PDF esiste
+SLIDE = [
+    ("slide-01-sommatorie", "slides-01-sums", "1. Sommatorie", "1. Sums"),
+    ("slide-02-produttorie", "slides-02-products", "2. Produttorie", "2. Products"),
+    ("slide-03-vettori", "slides-03-vectors", "3. Vettori", "3. Vectors"),
+    ("slide-04-1-matrici", "slides-04-1-matrices", "4.1 Matrici", "4.1 Matrices"),
+    ("slide-04-2-operazioni", "slides-04-2-operations", "4.2 Operazioni sulle matrici", "4.2 Matrix operations"),
+    ("slide-04-3-inversa", "slides-04-3-inverse", "4.3 Inversione di matrici", "4.3 Inversion of matrices"),
+    ("slide-04-4-fattorizzazione", "slides-04-4-factorization", "4.4 Fattorizzazione di matrici", "4.4 Factorization of matrices"),
+    ("slide-04-5-autovalori", "slides-04-5-eigenvalues", "4.5 Autovalori e autovettori", "4.5 Eigenvalues and eigenvectors"),
+    ("slide-05-norme", "slides-05-norms", "5. Norme", "5. Norms"),
+    ("slide-06-sistemi", "slides-06-systems", "6. Sistemi lineari", "6. Linear systems"),
+    ("slide-A1-valore-assoluto", "slides-A1-absolute-value", "A.1 Valore assoluto", "A.1 Absolute value"),
+    ("slide-A2-aritmetica-modulare", "slides-A2-modular-arithmetic", "A.2 Aritmetica modulare", "A.2 Modular arithmetic"),
+]
+
+
+def materiale():
+    from dispense_config import VOLUMI
+    vol = VOLUMI[0]
+    pdf = vol["pdf_en"] if EN else vol["pdf_it"]
+    assert (DOCS / "pdf" / pdf).exists(), f"manca {pdf}"
+    slide = [(f"{(s_en if EN else s_it)}.pdf", t_en if EN else t_it) for s_it, s_en, t_it, t_en in SLIDE
+             if (DOCS / "pdf" / f"{s_en if EN else s_it}.pdf").exists()]
+    if EN:
+        testo = f"""
+---
+title: Downloads
+---
+
+# Downloads
+
+All the course material as PDF, updated at every publication of the site.
+Text and figures are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en).
+
+## The lecture notes
+
+<div class="grid cards" markdown>
+
+-   :material-book-open-variant: **{vol['titolo'][1]}** — {vol['sottotitolo'][1]}
+
+    ---
+
+    {vol['descrizione'][1]}
+
+    [:octicons-download-24: {pdf}](pdf/{pdf})
+
+</div>
+"""
+        if slide:
+            testo += "\n## The slides\n\nOne deck per chapter, with the same numbering as the lecture notes.\n\n"
+            testo += "\n".join(f"- [:octicons-download-24: {t}](pdf/{f})" for f, t in slide) + "\n"
+        scrivi("downloads.md", testo)
+    else:
+        testo = f"""
+---
+title: Materiale scaricabile
+---
+
+# Materiale scaricabile
+
+Tutto il materiale del corso, in PDF, aggiornato a ogni pubblicazione del sito.
+Testi e figure sono sotto licenza [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.it).
+
+## La dispensa
+
+<div class="grid cards" markdown>
+
+-   :material-book-open-variant: **{vol['titolo'][0]}** — {vol['sottotitolo'][0]}
+
+    ---
+
+    {vol['descrizione'][0]}
+
+    [:octicons-download-24: {pdf}](pdf/{pdf})
+
+</div>
+"""
+        if slide:
+            testo += "\n## Le slide\n\nUna presentazione per capitolo, con la stessa numerazione della dispensa.\n\n"
+            testo += "\n".join(f"- [:octicons-download-24: {t}](pdf/{f})" for f, t in slide) + "\n"
+        scrivi("materiale.md", testo)
+
+
 if __name__ == "__main__":
     home()
     laboratorio()
     organizzazione()
+    materiale()
     print(f"[{'en' if EN else 'it'}] home, {len(STRUMENTI)} pagine del laboratorio, organizzazione")

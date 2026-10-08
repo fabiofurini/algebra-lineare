@@ -26,6 +26,8 @@ from capitoli import CAPITOLI, DOCS, IT, LINGUA, SORGENTE, ident, ident_it, pagi
 EN = LINGUA == "en"
 
 BUILD = IT / "build"
+# un solo PDF: la dispensa nel formato della collana (genera_dispensa.py)
+PDF_DISPENSA = "lecture-notes-linear-algebra.pdf" if EN else "dispense-algebra-lineare.pdf"
 
 # ---------------------------------------------------------------------------
 # utilità di parsing
@@ -1146,13 +1148,13 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
         f'<div class="info-capitolo" markdown>',
         "",
         ((f"**Exercises · {PARTI_ES[_parte_it(parte)][1]}** · chapter {capitolo_di(parte, num)} · with worked solutions · "
-          f"[:material-file-pdf-box: PDF](../pdf/{cid}.pdf)") if EN else
+          f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})") if EN else
          (f"**Esercizi · {PARTI_ES[_parte_it(parte)][0]}** · capitolo {capitolo_di(parte, num)} · con le soluzioni svolte · "
-          f"[:material-file-pdf-box: PDF](../pdf/{cid}.pdf)")) if esercizi else
+          f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})")) if esercizi else
         (f"**{nome_parte(parte)} · Chapter {lab}** · lecture notes by {chi} · "
-         f"[:material-file-pdf-box: Chapter PDF](../pdf/{cid}.pdf)") if EN else
+         f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})") if EN else
         (f"**{nome_parte(parte)} · Capitolo {lab}** · dalle dispense di {chi} · "
-         f"[:material-file-pdf-box: PDF del capitolo](../pdf/{cid}.pdf)"),
+         f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})"),
         "",
         "</div>",
         "",

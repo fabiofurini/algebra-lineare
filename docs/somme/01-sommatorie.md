@@ -6,7 +6,7 @@ title: "Sommatorie"
 
 <div class="info-capitolo" markdown>
 
-**Somme e produttorie · Capitolo 1** · dalle dispense di Fabio Furini · [:material-file-pdf-box: PDF del capitolo](../pdf/somme-01-sommatorie.pdf)
+**Somme e produttorie · Capitolo 1** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

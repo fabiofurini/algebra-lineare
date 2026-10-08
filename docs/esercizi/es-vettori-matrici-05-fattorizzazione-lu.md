@@ -6,7 +6,7 @@ title: "Fattorizzazione di matrici"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [4.4 · Fattorizzazione di matrici](../vettori-matrici/05-fattorizzazione-lu.md) · con le soluzioni svolte · [:material-file-pdf-box: PDF](../pdf/es-vettori-matrici-05-fattorizzazione-lu.pdf)
+**Esercizi · Vettori e matrici** · capitolo [4.4 · Fattorizzazione di matrici](../vettori-matrici/05-fattorizzazione-lu.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 

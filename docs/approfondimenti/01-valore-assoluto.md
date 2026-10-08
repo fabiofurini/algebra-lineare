@@ -6,7 +6,7 @@ title: "Valore assoluto"
 
 <div class="info-capitolo" markdown>
 
-**Approfondimenti · Capitolo A.1** · dalle dispense di Fabio Furini · [:material-file-pdf-box: PDF del capitolo](../pdf/approfondimenti-01-valore-assoluto.pdf)
+**Approfondimenti · Capitolo A.1** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
 </div>
 
