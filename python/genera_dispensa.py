@@ -372,11 +372,33 @@ def blocco(voce: dict, sorgente: Path, scendi: int, figure: Path, titolo_forzato
 
 def accenti_in_formula(testo: str) -> str:
     """{\\rm è} dentro una formula: con i font della collana il carattere
-    accentato sparisce (il font matematico non lo ha). \\textrm usa il font del
-    testo, che lo ha, e funziona sia nel testo sia nelle formule. Si applica
-    dopo i ritocchi, che sono scritti sul testo convertito."""
-    # {\\rm parola}, {\\rm~parola}: tutti i {\\rm non seguiti da una lettera
-    return re.sub(r"\{\\rm(?![A-Za-z])[ \t\n]?", lambda m: "\\textrm{", testo)
+    accentato sparisce (il font matematico non lo ha). Solo i gruppi {\\rm ...}
+    che contengono lettere accentate (e niente matematica) diventano \\textrm{...},
+    che usa il font del testo: gli altri restano come nelle note, perché {\\rm}
+    può contenere anche formule. Si applica dopo i ritocchi."""
+    out, i = [], 0
+    pat = re.compile(r"\{\\rm(?![A-Za-z])")
+    while True:
+        m = pat.search(testo, i)
+        if not m:
+            out.append(testo[i:])
+            break
+        try:
+            fine = chiusa(testo, m.start())
+        except ValueError:
+            out.append(testo[i:])
+            break
+        dentro = testo[m.end():fine]
+        out.append(testo[i:m.start()])
+        if re.search(r"[àèéìòùÀÈÉÌÒÙ]", dentro) and not re.search(r"\\(?!,|;|:| )[A-Za-z]|[_^]", dentro):
+            out.append("\\textrm{" + dentro.lstrip(" \t\n") + "}")
+        elif re.search(r"[àèéìòùÀÈÉÌÒÙ]", dentro):
+            # accenti e matematica nello stesso gruppo: solo le lettere accentate in \\text
+            out.append("{\\rm" + re.sub(r"([àèéìòùÀÈÉÌÒÙ])", r"\\text{\1}", dentro) + "}")
+        else:
+            out.append(testo[m.start():fine + 1])
+        i = fine + 1
+    return "".join(out)
 
 
 def nome_principale(vol: dict, radice: Path) -> str:
