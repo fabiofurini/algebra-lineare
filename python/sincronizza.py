@@ -11,7 +11,7 @@ EN = IT.parent / "en"
 
 CONDIVISI = [
     "docs/stylesheets/extra.css", "docs/stylesheets/laboratorio.css",
-    "docs/javascripts/mathjax.js", "docs/javascripts/algebra.js", "docs/javascripts/laboratorio.js",
+    "docs/javascripts/cloudflare-analytics.js", "docs/javascripts/mathjax.js", "docs/javascripts/algebra.js", "docs/javascripts/laboratorio.js",
     "LICENSE", "LICENSE-CODE", ".gitignore",
     # il workflow NON si copia: in en/ si chiama publish.yml ed è in inglese
     # (due workflow uguali si annullerebbero a vicenda sulla stessa concorrenza)
