@@ -1152,9 +1152,9 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
          (f"**Esercizi · {PARTI_ES[_parte_it(parte)][0]}** · capitolo {capitolo_di(parte, num)} · con le soluzioni svolte · "
           f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})")) if esercizi else
         (f"**{nome_parte(parte)} · Chapter {lab}** · lecture notes by {chi} · "
-         f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})") if EN else
+         f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})" + link_slide(cid)) if EN else
         (f"**{nome_parte(parte)} · Capitolo {lab}** · dalle dispense di {chi} · "
-         f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})"),
+         f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})" + link_slide(cid)),
         "",
         "</div>",
         "",
@@ -1177,6 +1177,18 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
     from collections import Counter
     (rep / f"{cid}.txt").write_text("\n".join(f"{v:4d}  {k}" for k, v in Counter(st.avvisi).most_common()))
     return {"id": cid, "titolo": titolo, "figure": st.figure, "avvisi": len(st.avvisi), "autori": chi}
+
+
+def link_slide(cid: str) -> str:
+    """« · Slide (PDF)» se il PDF delle slide del capitolo è sul sito."""
+    from capitoli import CAPITOLI
+    from pagine_fisse import SLIDE
+    for k, c in enumerate(CAPITOLI):
+        if ident(*c[:3]) == cid and k < len(SLIDE):
+            nome = (SLIDE[k][1] if EN else SLIDE[k][0]) + ".pdf"
+            if (DOCS / "pdf" / nome).exists():
+                return f" · [:material-presentation: {'Slides' if EN else 'Slide'} (PDF)](../pdf/{nome})"
+    return ""
 
 
 def capitolo_di(parte: str, num: int) -> str:

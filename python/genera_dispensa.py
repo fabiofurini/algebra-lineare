@@ -145,6 +145,9 @@ def converti_corpo(corpo: str, sid: str, scendi: int, cartella: Path, figure_out
     s = re.sub(r"\\newcommand(\*?)(?=\s*\{?\\)", r"\\DeclareRobustCommand\1", s)
     # 4. ambienti
     s = ambienti(s, sid)
+    # 4b. le tabelle larghe non devono uscire dal testo né dai box: la pagina della
+    #     collana è più stretta di quella delle note. Si riducono solo se servono.
+    s = tabelle_adattate(s)
     # 5. etichette con il prefisso della nota
     s = re.sub(r"\\label\{([^}]*)\}", lambda m: "\\label{" + sid + ":" + m.group(1) + "}", s)
     s = re.sub(r"\\(ref|eqref|pageref|autoref|cref|Cref)\{([^}]*)\}",
@@ -168,6 +171,45 @@ def converti_corpo(corpo: str, sid: str, scendi: int, cartella: Path, figure_out
     s = re.sub(r"\\includegraphics(\[[^\]]*\])?\{([^}]*)\}", fig, s)
     s = re.sub(r"\n{3,}", "\n\n", s)
     return s.strip() + "\n"
+
+
+MATEMATICA = re.compile(r"\\begin\{(equation\*?|align\*?|gather\*?|multline\*?|eqnarray\*?|displaymath|math)\}|"
+                        r"\\end\{(equation\*?|align\*?|gather\*?|multline\*?|eqnarray\*?|displaymath|math)\}|"
+                        r"\\\[|\\\]|\$\$")
+
+
+def in_matematica(s: str, pos: int) -> bool:
+    """La posizione pos è dentro una formula a blocco?"""
+    d = 0
+    dollari = False
+    for m in MATEMATICA.finditer(s, 0, pos):
+        t = m.group(0)
+        if t == "$$":
+            dollari = not dollari
+        elif t.startswith("\\begin") or t == "\\[":
+            d += 1
+        else:
+            d = max(0, d - 1)
+    return d > 0 or dollari
+
+
+def tabelle_adattate(s: str) -> str:
+    out, i = [], 0
+    pat = re.compile(r"\\begin\{(tabular|tabularx|tabular\*)\}")
+    while True:
+        m = pat.search(s, i)
+        if not m:
+            out.append(s[i:])
+            break
+        e0, e1 = fine_ambiente(s, m.group(1), m.end())
+        out.append(s[i:m.start()])
+        blocco = s[m.start():e1]
+        if in_matematica(s, m.start()):
+            out.append(blocco)
+        else:
+            out.append("\\begin{adjustbox}{max width=\\linewidth}" + blocco + "\\end{adjustbox}")
+        i = e1
+    return "".join(out)
 
 
 def rif(x: str, sid: str) -> str:

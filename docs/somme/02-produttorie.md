@@ -6,7 +6,7 @@ title: "Produttorie"
 
 <div class="info-capitolo" markdown>
 
-**Somme e produttorie · Capitolo 2** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Somme e produttorie · Capitolo 2** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-02-produttorie.pdf)
 
 </div>
 

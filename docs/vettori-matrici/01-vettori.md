@@ -6,7 +6,7 @@ title: "Vettori"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 3** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Vettori e matrici · Capitolo 3** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-03-vettori.pdf)
 
 </div>
 
@@ -382,7 +382,7 @@ $$
 
 !!! definizione "Definizione 4: Vettori linearmente indipendenti"
 
-    The vectors \(\boldsymbol v_1,\boldsymbol v_2,\dots,\boldsymbol v_k\in\R^{n}\) sono <strong>linearmente indipendenti</strong> se l'unica combinazione lineare uguale al vettore nullo è quella banale, cioè
+    I vettori \(\boldsymbol v_1,\boldsymbol v_2,\dots,\boldsymbol v_k\in\R^{n}\) sono <strong>linearmente indipendenti</strong> se l'unica combinazione lineare uguale al vettore nullo è quella banale, cioè
 
     \begin{equation}
     \lambda_1\boldsymbol v_1+\lambda_2\boldsymbol v_2+\dots+\lambda_k\boldsymbol v_k=\boldsymbol 0
@@ -541,7 +541,7 @@ $$
 
 !!! definizione "Definizione 6: Base di \(\R^n\)"
 
-    The vectors \(\boldsymbol v_1,\boldsymbol v_2,\dots,\boldsymbol v_k\in\R^{n}\) formano una <strong>base</strong> di \(\R^{n}\) se
+    I vettori \(\boldsymbol v_1,\boldsymbol v_2,\dots,\boldsymbol v_k\in\R^{n}\) formano una <strong>base</strong> di \(\R^{n}\) se
 
     - sono linearmente indipendenti, e
 

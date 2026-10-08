@@ -21,3 +21,20 @@ Testi e figure sono sotto licenza [CC BY 4.0](https://creativecommons.org/licens
 
 </div>
 
+## Le slide
+
+Una presentazione per capitolo, con la stessa numerazione della dispensa.
+
+- [:octicons-download-24: 1. Sommatorie](pdf/slide-01-sommatorie.pdf)
+- [:octicons-download-24: 2. Produttorie](pdf/slide-02-produttorie.pdf)
+- [:octicons-download-24: 3. Vettori](pdf/slide-03-vettori.pdf)
+- [:octicons-download-24: 4.1 Matrici](pdf/slide-04-1-matrici.pdf)
+- [:octicons-download-24: 4.2 Operazioni sulle matrici](pdf/slide-04-2-operazioni.pdf)
+- [:octicons-download-24: 4.3 Inversione di matrici](pdf/slide-04-3-inversa.pdf)
+- [:octicons-download-24: 4.4 Fattorizzazione di matrici](pdf/slide-04-4-fattorizzazione.pdf)
+- [:octicons-download-24: 4.5 Autovalori e autovettori](pdf/slide-04-5-autovalori.pdf)
+- [:octicons-download-24: 5. Norme](pdf/slide-05-norme.pdf)
+- [:octicons-download-24: 6. Sistemi lineari](pdf/slide-06-sistemi.pdf)
+- [:octicons-download-24: A.1 Valore assoluto](pdf/slide-A1-valore-assoluto.pdf)
+- [:octicons-download-24: A.2 Aritmetica modulare](pdf/slide-A2-aritmetica-modulare.pdf)
+

@@ -6,7 +6,7 @@ title: "Autovalori e autovettori"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 4.5** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Vettori e matrici · Capitolo 4.5** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-04-5-autovalori.pdf)
 
 </div>
 
