@@ -33,6 +33,8 @@ def es(cart: str, nome: str) -> str:
 
 VOLUMI = [{
     "file": "algebra-lineare",
+    "tex_it": "dispensa_algebra_lineare",
+    "tex_en": "notes_linear_algebra",
     "pdf_it": "dispense-algebra-lineare.pdf",
     "pdf_en": "lecture-notes-linear-algebra.pdf",
     "titolo": ("Algebra Lineare", "Linear Algebra"),

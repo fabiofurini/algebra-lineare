@@ -41,6 +41,25 @@ EN = LINGUA == "en"
 TEOREMI = ("Definition", "Theorem", "Corollary", "Proposition", "Observation", "Lemma",
            "Definizione", "Teorema", "Corollario", "Proposizione", "Osservazione")
 
+# Etichette già usate nel volume: le note ripetono spesso la stessa etichetta
+# (esempi ed esercizi copiati da un modello, box senza etichetta). Nel libro
+# ogni etichetta deve essere unica: le ripetizioni ricevono un suffisso -2, -3…
+# e i \ref puntano alla prima, come nella nota compilata da sola.
+USATE: set = set()
+AUTO = [0]
+
+
+def unica(lab: str, spazio: str = "") -> str:
+    chiave = spazio + lab
+    if chiave not in USATE:
+        USATE.add(chiave)
+        return lab
+    k = 2
+    while f"{chiave}-{k}" in USATE:
+        k += 1
+    USATE.add(f"{chiave}-{k}")
+    return f"{lab}-{k}"
+
 
 # ---------------------------------------------------------------- utilità LaTeX
 def maschera_commenti(s: str) -> str:
@@ -120,6 +139,7 @@ def corpo_nota(tex: str) -> str:
 
 
 def titolo_nota(tex: str) -> str:
+    tex = maschera_commenti(tex)
     m = re.search(r"\{\s*\\huge\s*\\bf(.*?)\}\s*\\vspace", tex, re.S)
     t = m.group(1) if m else ""
     t = re.sub(r"\\\\(\[[^\]]*\])?", " ", t)
@@ -131,6 +151,7 @@ def converti_corpo(corpo: str, sid: str, scendi: int, cartella: Path, figure_out
     s = corpo
     # 1. niente salti pagina degli article: l'impaginazione è del libro
     s = re.sub(r"\\(newpage|clearpage)\b", "", s)
+    s = re.sub(r"\\begin\{comment\}.*?\\end\{comment\}", "", s, flags=re.S)
     s = re.sub(r"\\renewcommand\{\\proofname\}\{[^}]*\}", "", s)
     s = re.sub(r"\\pagestyle\{[^}]*\}|\\setcounter\{page\}\{\d+\}", "", s)
     # 2. i livelli delle sezioni scendono di `scendi`
@@ -145,11 +166,10 @@ def converti_corpo(corpo: str, sid: str, scendi: int, cartella: Path, figure_out
     s = re.sub(r"\\newcommand(\*?)(?=\s*\{?\\)", r"\\DeclareRobustCommand\1", s)
     # 4. ambienti
     s = ambienti(s, sid)
-    # 4b. le tabelle larghe non devono uscire dal testo né dai box: la pagina della
-    #     collana è più stretta di quella delle note. Si riducono solo se servono.
+    # tabelle larghe: ridotte solo se più larghe del testo (la pagina della collana è più stretta)
     s = tabelle_adattate(s)
     # 5. etichette con il prefisso della nota
-    s = re.sub(r"\\label\{([^}]*)\}", lambda m: "\\label{" + sid + ":" + m.group(1) + "}", s)
+    s = re.sub(r"\\label\{([^}]*)\}", lambda m: "\\label{" + unica(sid + ":" + m.group(1)) + "}", s)
     s = re.sub(r"\\(ref|eqref|pageref|autoref|cref|Cref)\{([^}]*)\}",
                lambda m: "\\" + m.group(1) + "{" + ",".join(rif(x.strip(), sid) for x in m.group(2).split(",")) + "}", s)
     # 6. figure: copiate in figure/<nota>/
@@ -175,7 +195,7 @@ def converti_corpo(corpo: str, sid: str, scendi: int, cartella: Path, figure_out
 
 MATEMATICA = re.compile(r"\\begin\{(equation\*?|align\*?|gather\*?|multline\*?|eqnarray\*?|displaymath|math)\}|"
                         r"\\end\{(equation\*?|align\*?|gather\*?|multline\*?|eqnarray\*?|displaymath|math)\}|"
-                        r"\\\[|\\\]|\$\$")
+                        r"(?<!\\)\\\[|(?<!\\)\\\]|\$\$")   # \[ e \] ma non gli a capo \\[2ex]
 
 
 def in_matematica(s: str, pos: int) -> bool:
@@ -238,7 +258,10 @@ def ambienti(s: str, sid: str) -> str:
             lab, k = gruppo(dentro, k)
             env = {"Definizione": "Definition", "Teorema": "Theorem", "Corollario": "Corollary",
                    "Proposizione": "Proposition", "Osservazione": "Observation"}.get(nome, nome)
-            lab2 = f"{sid}-{lab.strip()}" if lab and lab.strip() else f"{sid}-x{len(out)}"
+            if not (lab and lab.strip()):
+                AUTO[0] += 1
+                lab = f"x{AUTO[0]}"
+            lab2 = unica(f"{sid}-{lab.strip()}", "mytheorem:")
             out.append(f"\\begin{{{env}}}{{{tit or ''}}}{{{lab2}}}" + ambienti(dentro[k:], sid) + f"\\end{{{env}}}")
         elif nome == "texercise":
             opt, k = opzionale(dentro, 0)
@@ -253,23 +276,31 @@ def ambienti(s: str, sid: str) -> str:
             if me:
                 tit, fine = gruppo(opt, me.end() - 1)
                 lab, _ = gruppo(opt, fine)
-                out.append(f"\\begin{{esempion}}{{{tit}}}{{{sid}:{(lab or '').strip()}}}" + corpo + "\\end{esempion}")
+                el = unica(f"{sid}:{(lab or '').strip() or 'esempio'}")
+                out.append(f"\\begin{{esempion}}{{{tit}}}{{{el}}}" + corpo + "\\end{esempion}")
             elif "green" in opt:
                 out.append("\\begin{riquadro}" + corpo + "\\end{riquadro}")
             elif "blue" in opt and "colback=blue" in opt.replace(" ", ""):
                 out.append("\\begin{soluzione}" + corpo + "\\end{soluzione}")
             else:
                 pulita = re.sub(r",?\s*text width=[^,\]]*", "", opt).strip(", ")
+                pulita = re.sub(r",\s*,", ",", pulita)
+                if "breakable" not in pulita:   # i box lunghi (dimostrazioni) vanno a capo pagina
+                    pulita = "enhanced, breakable, " + pulita
                 out.append(f"\\begin{{tcolorbox}}[{pulita}]" + corpo + "\\end{tcolorbox}")
         i = e1
     r = "".join(out)
     # un box che era centrato con center: il center non serve più
-    r = re.sub(r"\\begin\{center\}\s*(\\begin\{(riquadro|soluzione)\}.*?\\end\{\2\})\s*\\end\{center\}", r"\1", r, flags=re.S)
+    # (il corpo non deve contenere altri center: la sostituzione resta dentro un solo blocco)
+    r = re.sub(r"\\begin\{center\}\s*(\\begin\{(riquadro|soluzione|tcolorbox)\}(?:(?!\\(?:begin|end)\{center\}).)*?\\end\{\2\})\s*\\end\{center\}",
+               r"\1", r, flags=re.S)
     return r
 
 
 # ---------------------------------------------------------------- un volume
 def genera_volume(vol: dict, radice: Path, compila: bool):
+    USATE.clear()
+    AUTO[0] = 0
     radice.mkdir(parents=True, exist_ok=True)
     (radice / "capitoli").mkdir(exist_ok=True)
     figure = radice / "figure"
@@ -285,6 +316,8 @@ def genera_volume(vol: dict, radice: Path, compila: bool):
             righe_main.append("\\appendix")
         elif parte.get("titolo"):
             righe_main.append(f"\\part{{{parte['titolo'][1 if EN else 0]}}}")
+        if parte.get("riparti"):   # la parte numera i capitoli da 1, come le note
+            righe_main.append("\\setcounter{chapter}{0}")
         for cap in parte["capitoli"]:
             ncap += 1
             nome_file = cap["file"]
@@ -295,26 +328,31 @@ def genera_volume(vol: dict, radice: Path, compila: bool):
                 if cap.get("intro"):
                     pezzi.append(cap["intro"][1 if EN else 0] + "\n")
                 for sez in cap["sezioni"]:
-                    pezzi.append(blocco(sez, sorgente, 1, figure, sez["titolo"][1 if EN else 0], "section"))
+                    tsez = sez["titolo"][1 if EN else 0] if sez.get("titolo") else None
+                    pezzi.append(blocco(sez, sorgente, 1, figure, tsez, "section"))
             else:
                 pezzi.append(blocco(cap, sorgente, 0, figure, None, "chapter"))
-            (radice / "capitoli" / f"{nome_file}.tex").write_text("\n".join(pezzi), encoding="utf-8")
+            testo_cap = accenti_in_formula(ritocca(nome_file, "\n".join(pezzi)))
+            (radice / "capitoli" / f"{nome_file}.tex").write_text(testo_cap, encoding="utf-8")
             righe_main.append(f"\\include{{capitoli/{nome_file}}}")
     main = (f"\\documentclass[11pt,a4paper,oneside]{{book}}\n\\input{{preambolo}}\n\n"
             f"\\title{{{vol['titolo'][1 if EN else 0]}}}\n\\author{{Fabio Furini}}\n\n"
             "\\begin{document}\n\\input{frontespizio}\n\\tableofcontents\n\n" +
             "\n".join(righe_main) + "\n\n\\end{document}\n")
-    (radice / "main.tex").write_text(main, encoding="utf-8")
+    nome = nome_principale(vol, radice)
+    for vecchio in radice.glob("main.*"):   # i file del vecchio nome generico
+        vecchio.unlink()
+    (radice / f"{nome}.tex").write_text(main, encoding="utf-8")
     print(f"[{LINGUA}] {vol['file']}: {ncap} capitoli → {radice}")
     if compila:
-        return compila_volume(radice)
+        return compila_volume(radice, nome)
     return None
 
 
 def blocco(voce: dict, sorgente: Path, scendi: int, figure: Path, titolo_forzato, livello: str) -> str:
     f = sorgente / voce["note"]
     tex = f.read_text(encoding="utf-8", errors="replace")
-    titolo = titolo_forzato or titolo_nota(tex)
+    titolo = titolo_forzato or getattr(CFG, "pulisci_titolo", lambda t, en: t)(titolo_nota(tex), EN)
     sid = voce["id"]
     testa = f"\\{livello}{{{titolo}}}\\label{{{'cap' if livello == 'chapter' else 'sec'}:{sid}}}\n\n"
     corpo = converti_corpo(corpo_nota(tex), sid, scendi, f.parent, figure)
@@ -331,15 +369,50 @@ def blocco(voce: dict, sorgente: Path, scendi: int, figure: Path, titolo_forzato
     return testa + corpo
 
 
-def compila_volume(radice: Path):
+
+def accenti_in_formula(testo: str) -> str:
+    """{\\rm è} dentro una formula: con i font della collana il carattere
+    accentato sparisce (il font matematico non lo ha). \\textrm usa il font del
+    testo, che lo ha, e funziona sia nel testo sia nelle formule. Si applica
+    dopo i ritocchi, che sono scritti sul testo convertito."""
+    # {\\rm parola}, {\\rm~parola}: tutti i {\\rm non seguiti da una lettera
+    return re.sub(r"\{\\rm(?![A-Za-z])[ \t\n]?", lambda m: "\\textrm{", testo)
+
+
+def nome_principale(vol: dict, radice: Path) -> str:
+    """Il file principale ha il nome della dispensa (come in MIP), non main.tex."""
+    return vol.get("tex_en" if EN else "tex_it") or radice.name
+
+
+def ritocca(nome_file: str, testo: str) -> str:
+    """Ritocchi di impaginazione per il libro (equazioni lunghe spezzate su più
+    righe, ...): stanno in ritocchi_dispensa.py e non toccano le note. Se una
+    nota cambia e il testo da ritoccare non c'è più, lo si segnala."""
+    import importlib.util
+    voci = []
+    for f in sorted(QUI.glob("ritocchi_*.py")):     # un file per volume: ritocchi_vol1.py, ...
+        spec = importlib.util.spec_from_file_location(f.stem, f)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        voci += [v + (f.stem,) for v in getattr(mod, "RITOCCHI", [])]
+    for cap, lingua, vecchio, nuovo, *_ in voci:
+        if cap != nome_file or lingua not in ("*", LINGUA):
+            continue
+        if vecchio not in testo:
+            print(f"   ! ritocco non applicato ({cap}, {lingua}): {vecchio[:60]!r}")
+            continue
+        testo = testo.replace(vecchio, nuovo, 1)
+    return testo
+
+def compila_volume(radice: Path, nome: str):
     for _ in range(3):
-        r = subprocess.run(["pdflatex", "-interaction=nonstopmode", "main.tex"], cwd=radice,
+        r = subprocess.run(["pdflatex", "-interaction=nonstopmode", f"{nome}.tex"], cwd=radice,
                            capture_output=True, text=True, errors="replace", timeout=1800)
-    log = (radice / "main.log").read_text(errors="replace")
+    log = (radice / f"{nome}.log").read_text(errors="replace")
     errori = re.findall(r"^! .*", log, re.M)
     indef = len(re.findall(r"Reference `[^']*' on page \d+ undefined", log))
     multiple = len(re.findall(r"multiply defined", log))
-    pdf = radice / "main.pdf"
+    pdf = radice / f"{nome}.pdf"
     pagine = None
     if pdf.exists():
         info = subprocess.run(["pdfinfo", str(pdf)], capture_output=True, text=True).stdout
