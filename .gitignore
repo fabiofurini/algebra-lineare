@@ -21,3 +21,10 @@ notes/
 # varie
 .DS_Store
 test/casi.json
+
+# generatore delle dispense: resta privato (contiene LaTeX delle note)
+python/genera_dispensa.py
+python/dispense_config.py
+python/dispensa_preambolo_*.tex
+python/ritocchi_*.py
+python/overflow_dispensa.py
