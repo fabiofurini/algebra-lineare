@@ -38,4 +38,6 @@ Le dispense sono di **Fabio Furini**. Testi, figure e dati hanno licenza
 - [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)
 - [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)
 - [Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)
+- [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)
+- [Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)
 

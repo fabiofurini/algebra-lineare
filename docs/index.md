@@ -142,11 +142,16 @@ colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto
 
 ---
 
+Dello stesso autore:
+
+- **[Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)** — il modulo di laboratorio, con gli stessi strumenti e lo stesso stile;
+- **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)** — il modulo sui modelli a variabili intere, con gli stessi strumenti e lo stesso stile;
+- **[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)** — le dispense di analisi, con i grafici interattivi;
+- **[Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)** — problemi di programmazione lineare, simplesso, dualità e metodi avanzati, con il catalogo dei problemi;
+- **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)** — insiemi e funzioni convesse, problemi di ottimizzazione, con grafici interattivi.
+
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
-[DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma. Fa parte della
-stessa collana del [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/),
-di [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/) e di
-[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/).
+[DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
 *This website is also available in [English](https://fabiofurini.github.io/linear-algebra/).*
 
