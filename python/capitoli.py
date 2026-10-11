@@ -7,6 +7,7 @@ Ogni capitolo è una dispensa di `it/note/NOTES_IT` (italiano) o
 Lingua: LINGUA=en python3 python/... produce il sito inglese in ../en/
 """
 import os
+import tempfile
 from pathlib import Path
 
 LINGUA = os.environ.get("LINGUA", "it")
@@ -17,6 +18,9 @@ SORGENTE = NOTE / "1_PRELIMINARIES" / "1_LINEAR_ALGEBRA"
 SORGENTE_ES = SORGENTE
 IT = MODULO / LINGUA          # radice del repository della lingua (it/ o en/)
 DOCS = IT / "docs"
+# file intermedi (figure TikZ estratte, report, compilazioni delle figure): FUORI da
+# Dropbox, in BUILD (variabile d'ambiente AL_BUILD, altrimenti una cartella in /tmp)
+BUILD = Path(os.environ.get("AL_BUILD", Path(tempfile.gettempdir()) / "algebra-lineare-build")) / LINGUA
 
 REPO = "https://github.com/fabiofurini/" + ("linear-algebra" if EN else "algebra-lineare")
 SITO = "https://fabiofurini.github.io/" + ("linear-algebra/" if EN else "algebra-lineare/")
