@@ -40,4 +40,5 @@ Le dispense sono di **Fabio Furini**. Testi, figure e dati hanno licenza
 - [Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)
 - [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)
 - [Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)
+- [Algoritmi](https://fabiofurini.github.io/algoritmi/)
 

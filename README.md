@@ -59,6 +59,7 @@ The whole course is also available in English:
 - [Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)
 - [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)
 - [Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)
+- [Algoritmi](https://fabiofurini.github.io/algoritmi/)
 
 ---
 

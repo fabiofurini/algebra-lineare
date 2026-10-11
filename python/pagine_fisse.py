@@ -220,7 +220,8 @@ By the same author:
 - **[MIP Modelling](https://fabiofurini.github.io/mip-modelling/)** — the module on integer-variable models, with the same tools and the same style;
 - **[Mathematical Analysis 1](https://fabiofurini.github.io/mathematical-analysis-1/)** — the analysis lecture notes, with interactive graphs;
 - **[Linear Programming](https://fabiofurini.github.io/linear-programming/)** — linear programming problems, the simplex method, duality and advanced methods, with a catalogue of problems;
-- **[Convex Optimization](https://fabiofurini.github.io/convex-optimization/)** — convex sets and functions, optimization problems, with interactive graphs.
+- **[Convex Optimization](https://fabiofurini.github.io/convex-optimization/)** — convex sets and functions, optimization problems, with interactive graphs;
+- **[Algorithms](https://fabiofurini.github.io/algorithms/)** — number representation, pseudo-code, C++, Python and Java, sorting and searching, asymptotic notation, analysis and recursive algorithms, with interactive graphs.
 
 Teaching material by **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza University of Rome.
@@ -306,7 +307,8 @@ Dello stesso autore:
 - **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)** — il modulo sui modelli a variabili intere, con gli stessi strumenti e lo stesso stile;
 - **[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)** — le dispense di analisi, con i grafici interattivi;
 - **[Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)** — problemi di programmazione lineare, simplesso, dualità e metodi avanzati, con il catalogo dei problemi;
-- **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)** — insiemi e funzioni convesse, problemi di ottimizzazione, con grafici interattivi.
+- **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)** — insiemi e funzioni convesse, problemi di ottimizzazione, con grafici interattivi;
+- **[Algoritmi](https://fabiofurini.github.io/algoritmi/)** — rappresentazione dei numeri, pseudocodice, linguaggi C++, Python e Java, ordinamento e ricerca, notazione asintotica, analisi e algoritmi ricorsivi, con grafici interattivi.
 
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
@@ -421,6 +423,7 @@ under [CC BY 4.0]({REPO}/blob/main/LICENSE); the code of the lab under
 - [Mathematical Analysis 1](https://fabiofurini.github.io/mathematical-analysis-1/)
 - [Linear Programming](https://fabiofurini.github.io/linear-programming/)
 - [Convex Optimization](https://fabiofurini.github.io/convex-optimization/)
+- [Algorithms](https://fabiofurini.github.io/algorithms/)
 """
         scrivi("organization.md", testo)
     else:
@@ -467,6 +470,7 @@ Le dispense sono di **Fabio Furini**. Testi, figure e dati hanno licenza
 - [Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)
 - [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)
 - [Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)
+- [Algoritmi](https://fabiofurini.github.io/algoritmi/)
 """
         scrivi("organizzazione.md", testo)
 
