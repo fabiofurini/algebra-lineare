@@ -1,7 +1,7 @@
 """PDF del sito: la dispensa nel formato della collana (un solo libro).
 
 I PDF dei singoli capitoli nel formato delle note non si pubblicano più: il
-PDF è la dispensa prodotta da genera_dispensa.py (sorgenti in it/dispensa e
+PDF è la dispensa prodotta da genera_dispensa.py (sorgenti in it/volumes/lecture_notes/dispensa_1_algebra_lineare e
 en/notes, privati). Questo script resta per comodità: genera e compila la
 dispensa e la copia in docs/pdf/.
 

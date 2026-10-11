@@ -35,14 +35,14 @@ Il laboratorio è in [`docs/javascripts/algebra.js`](docs/javascripts/algebra.js
 I risultati e **ogni passo intermedio** sono verificati contro SymPy:
 
 ```bash
-python3 test/genera_casi.py     # i casi attesi, calcolati con SymPy
-node test/test_algebra.js       # oltre 46 000 controlli
+python3 python/test/genera_casi.py   # i casi attesi, calcolati con SymPy
+node python/test/test_algebra.js     # oltre 46 000 controlli
 ```
 
 ## Licenza
 
 - **Testi, figure e dati** (`docs/`): [CC BY 4.0](LICENSE).
-- **Codice** (`docs/javascripts/`, `python/`, `test/`): [MIT](LICENSE-CODE).
+- **Codice** (`docs/javascripts/`, `python/`, compresi i test in `python/test/`): [MIT](LICENSE-CODE).
 
 Per citare il materiale c'è [`CITATION.cff`](CITATION.cff).
 
