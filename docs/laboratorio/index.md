@@ -1,5 +1,7 @@
 ---
 title: Laboratorio
+hide:
+  - navigation
 ---
 
 # Il laboratorio di calcolo

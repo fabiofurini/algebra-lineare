@@ -379,6 +379,8 @@ dal telefono.""")
     scrivi(f"{LAB}/index.md", f"""
 ---
 title: {"Lab" if EN else "Laboratorio"}
+hide:
+  - navigation
 ---
 
 # {titolo}
