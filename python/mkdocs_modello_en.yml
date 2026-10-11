@@ -120,22 +120,15 @@ extra_javascript:
   - javascripts/algebra.js
   - javascripts/laboratorio.js
 
+# le pagine delle singole app non stanno nel menu: si raggiungono dall'indice del laboratorio
+not_in_nav: |
+  /lab/*.md
+  !/lab/index.md
+
 nav:
   - Home: index.md
   # NAV_PARTI
-  - Lab:
-      - lab/index.md
-      - Gaussian elimination: lab/gauss.md
-      - Rank: lab/rank.md
-      - Determinant: lab/determinant.md
-      - Inverse matrix: lab/inverse.md
-      - LU factorization: lab/lu.md
-      - Linear systems: lab/systems.md
-      - Eigenvalues and definiteness: lab/eigenvalues.md
-      - Matrix product: lab/product.md
-      - Sums and products: lab/sums.md
-      - Norms: lab/norms.md
-      - Why partial pivoting: lab/pivoting.md
+  - Lab: lab/index.md
   - Downloads: downloads.md
   - The course:
       - organization.md

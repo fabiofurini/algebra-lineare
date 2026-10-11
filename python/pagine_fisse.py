@@ -318,35 +318,64 @@ Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
     scrivi("index.md", testo)
 
 
+# icone Material delle app (chiave: strumento data-tool)
+ICONE = {"somme": "sigma", "prodotto": "table-large", "rango": "format-list-numbered", "det": "matrix",
+         "gauss": "table-row-plus-after", "pivoting": "alert-outline", "inversa": "flip-horizontal",
+         "lu": "view-split-vertical", "autovalori": "math-compass", "norme": "vector-line",
+         "sistema": "equal-box"}
+
+# gruppi dell'indice, come le parti del corso: (titolo IT, titolo EN, strumenti in ordine)
+GRUPPI = [
+    ("Somme e produttorie (capitoli 1–2)", "Sums and products (chapters 1–2)", ["somme"]),
+    ("Vettori e matrici (capitoli 3–4)", "Vectors and matrices (chapters 3–4)",
+     ["prodotto", "rango", "det", "gauss", "pivoting", "inversa", "lu", "autovalori"]),
+    ("Norme (capitolo 5)", "Norms (chapter 5)", ["norme"]),
+    ("Sistemi lineari (capitolo 6)", "Linear systems (chapter 6)", ["sistema"]),
+]
+
+
+def link_capitoli(caps):
+    """Link ai capitoli delle dispense (relativi a docs/<LAB>/), da «4.2, 6»."""
+    from capitoli import CAPITOLI, pagina
+    out = []
+    for c in [x.strip() for x in caps.split(",")]:
+        ch = [x for x in CAPITOLI if x[4] == c]
+        if ch:
+            out.append(f"[{'chapter' if EN else 'capitolo'} {c}](../{pagina(*ch[0][:3])})")
+    return out
+
+
 def laboratorio():
     titolo = "The computation lab" if EN else "Il laboratorio di calcolo"
     intro = ("""Here you do not only get the answer: you see **every step**, written the way
 you would write it by hand, with the notation of the lecture notes
 (\\(R_2 \\leftarrow R_2 - 2R_1\\)). The arithmetic is **exact**: fractions, never
-rounded decimals.
-
-Each tool has three tabs: **Compute** (the full solution), **Practice**
-(exercises generated for you, with a check), and — for Gaussian elimination —
-**Do it yourself**, where you choose each row operation and the lab checks it.
+rounded decimals. Pick a tool: each one opens full page, with tabs to **compute**,
+to **practice** on exercises generated for you, and (for Gaussian elimination) to
+**do it yourself**, choosing each row operation.
 
 Everything runs in your browser: nothing to install, no account, and it works on
 a phone.""" if EN else """Qui non trovi solo il risultato: vedi **tutti i passaggi**, scritti come li
 scriveresti a mano, con la notazione delle dispense
 (\\(R_2 \\leftarrow R_2 - 2R_1\\)). I conti sono **esatti**: frazioni, mai decimali
-arrotondati.
-
-Ogni strumento ha tre schede: **Calcola** (lo svolgimento completo),
-**Esercitati** (esercizi generati per te, con la correzione) e — per il metodo
-di Gauss — **Fallo tu**, dove scegli tu ogni operazione di riga e il laboratorio
-la controlla.
+arrotondati. Scegli uno strumento: si apre a tutta pagina, con le schede per **calcolare**,
+**esercitarti** su esercizi generati per te e (per il metodo di Gauss) **fare tu**
+ogni operazione di riga.
 
 Tutto gira nel browser: niente da installare, nessun account, e funziona anche
 dal telefono.""")
-    card = []
-    for rel, tit_it, tit_en, tool, sub_it, sub_en, caps in STRUMENTI:
-        card += [f"-   **{tit_en if EN else tit_it}**", "", "    ---", "",
-                 f"    {sub_en if EN else sub_it}", "",
-                 f"    [:octicons-arrow-right-24: {'Open the tool' if EN else 'Apri lo strumento'}]({rel}.md)", ""]
+    per_tool = {t[3]: t for t in STRUMENTI}
+    assert sorted(per_tool) == sorted(x for g in GRUPPI for x in g[2]), "gruppi e strumenti non coincidono"
+    blocchi = []
+    for g_it, g_en, tools in GRUPPI:
+        card = []
+        for tool in tools:
+            rel, tit_it, tit_en, _, sub_it, sub_en, caps = per_tool[tool]
+            card += [f"-   :material-{ICONE[tool]}: **{tit_en if EN else tit_it}**", "", "    ---", "",
+                     f"    {sub_en if EN else sub_it}", "",
+                     f"    [{'Open the app' if EN else 'Apri l’app'} →]({rel}.md)", ""]
+        blocchi.append(f"## {g_en if EN else g_it}\n\n<div class=\"grid cards\" markdown>\n\n"
+                       + "\n".join(card) + "\n</div>\n")
     scrivi(f"{LAB}/index.md", f"""
 ---
 title: {"Lab" if EN else "Laboratorio"}
@@ -356,25 +385,29 @@ title: {"Lab" if EN else "Laboratorio"}
 
 {intro}
 
-<div class="grid cards" markdown>
-
-{chr(10).join(card)}
-</div>
+{chr(10).join(blocchi)}
 """)
     for rel, tit_it, tit_en, tool, sub_it, sub_en, caps in STRUMENTI:
         tit = tit_en if EN else tit_it
         sub = sub_en if EN else sub_it
-        rif = (f"From the lecture notes, chapter {caps}." if EN else f"Dalle dispense, capitolo {caps}.")
+        rif = ", ".join(link_capitoli(caps))
+        indietro = "[← Lab](index.md)" if EN else "[← Laboratorio](index.md)"
+        dispense = (f" · {'Lecture notes' if EN else 'Dispense'}: {rif}" if rif else "")
         scrivi(f"{LAB}/{rel}.md", f"""
 ---
 title: "{tit}"
+hide:
+  - navigation
+  - toc
 ---
+
+{indietro}{dispense}
 
 # {tit}
 
-{sub} *{rif}*
+{sub}
 
-<div class="la-tool" data-tool="{tool}" data-url="1"></div>
+<div class="la-tool gi-app-intera" data-tool="{tool}" data-url="1"></div>
 """)
 
 

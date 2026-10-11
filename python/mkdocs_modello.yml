@@ -120,22 +120,15 @@ extra_javascript:
   - javascripts/algebra.js
   - javascripts/laboratorio.js
 
+# le pagine delle singole app non stanno nel menu: si raggiungono dall'indice del laboratorio
+not_in_nav: |
+  /laboratorio/*.md
+  !/laboratorio/index.md
+
 nav:
   - Home: index.md
   # NAV_PARTI
-  - Laboratorio:
-      - laboratorio/index.md
-      - Metodo di Gauss: laboratorio/gauss.md
-      - Rango: laboratorio/rango.md
-      - Determinante: laboratorio/determinante.md
-      - Matrice inversa: laboratorio/inversa.md
-      - Fattorizzazione LU: laboratorio/lu.md
-      - Sistemi lineari: laboratorio/sistemi.md
-      - Autovalori e definitezza: laboratorio/autovalori.md
-      - Prodotto di matrici: laboratorio/prodotto.md
-      - Somme e produttorie: laboratorio/somme.md
-      - Norme: laboratorio/norme.md
-      - Perché serve il pivoting: laboratorio/pivoting.md
+  - Laboratorio: laboratorio/index.md
   - Materiale scaricabile: materiale.md
   - Il corso:
       - organizzazione.md
