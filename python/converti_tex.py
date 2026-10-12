@@ -1146,14 +1146,7 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
         "",
         f'<div class="info-capitolo" markdown>',
         "",
-        ((f"**Exercises · {PARTI_ES[_parte_it(parte)][1]}** · chapter {capitolo_di(parte, num)} · with worked solutions · "
-          f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})") if EN else
-         (f"**Esercizi · {PARTI_ES[_parte_it(parte)][0]}** · capitolo {capitolo_di(parte, num)} · con le soluzioni svolte · "
-          f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})")) if esercizi else
-        (f"**{nome_parte(parte)} · Chapter {lab}** · lecture notes by {chi} · "
-         f"[:material-file-pdf-box: Lecture notes (PDF)](../pdf/{PDF_DISPENSA})" + link_slide(cid)) if EN else
-        (f"**{nome_parte(parte)} · Capitolo {lab}** · dalle dispense di {chi} · "
-         f"[:material-file-pdf-box: Dispensa (PDF)](../pdf/{PDF_DISPENSA})" + link_slide(cid)),
+        barra_esercizi(parte, cid) if esercizi else barra_capitolo(parte, num, slug, lab),
         "",
         "</div>",
         "",
@@ -1178,6 +1171,56 @@ def converti_capitolo(parte: str, num: int, slug: str, rel: str, lab: str | None
     return {"id": cid, "titolo": titolo, "figure": st.figure, "avvisi": len(st.avvisi), "autori": chi}
 
 
+# ---------------------------------------------------------------- barra in testa alle pagine
+# Come in Analisi Matematica 1: «Parte · Capitolo» con il materiale del capitolo (dispensa,
+# fogli di esercizi sul sito, slide, app del laboratorio); i fogli tornano al capitolo.
+# Il legame capitolo <-> fogli è SCHEDA_CAPITOLI in capitoli.py.
+def _titolo_pagina(rel: str, riserva: str) -> str:
+    f = DOCS / rel
+    m = re.search(r'^title: "(.*)"$', f.read_text(encoding="utf-8"), re.M) if f.exists() else None
+    return m.group(1) if m else riserva
+
+
+def link_schede(cid: str) -> list[str]:
+    from capitoli import CARTELLA_ES, ident_es, schede_del_capitolo
+    out = []
+    for e in schede_del_capitolo(cid):
+        eid = ident_es(*e[:3])
+        t = _titolo_pagina(f"{CARTELLA_ES}/{eid}.md", e[2])
+        out.append(f"[:material-pencil: {'Exercises' if EN else 'Esercizi'}: {t}](../{CARTELLA_ES}/{eid}.md)")
+    return out
+
+
+def link_app(cid: str) -> list[str]:
+    """Le app del laboratorio richiamate in fondo al capitolo (FINE di interattivi_capitoli.py)."""
+    from interattivi_capitoli import FINE
+    from pagine_fisse import LAB, STRUMENTI
+    strumenti = {s[3]: s for s in STRUMENTI}
+    out = []
+    for tool, *_ in FINE.get(ident_it(cid), []):
+        rel, tit_it, tit_en = strumenti[tool][:3]
+        out.append(f"[:material-calculator-variant: App: {tit_en if EN else tit_it}](../{LAB}/{rel}.md)")
+    return out
+
+
+def barra_capitolo(parte: str, num: int, slug: str, lab: str) -> str:
+    cid = ident(parte, num, slug)
+    testa = f"**{nome_parte(parte)} · {'Chapter' if EN else 'Capitolo'} {lab}**"
+    pdf = f"[:material-file-pdf-box: {'Lecture notes' if EN else 'Dispensa'} (PDF)](../pdf/{PDF_DISPENSA})"
+    voci = [testa, pdf] + link_schede(cid) + [link_slide(cid).lstrip(" ·")] + link_app(cid)
+    return " · ".join(v for v in voci if v)
+
+
+def barra_esercizi(parte: str, eid: str) -> str:
+    from capitoli import PARTI_ES, capitoli_della_scheda
+    testa = (f"**{'Exercises' if EN else 'Esercizi'} · {PARTI_ES[_parte_it(parte)][1 if EN else 0]}** · "
+             + ("with worked solutions" if EN else "con le soluzioni svolte"))
+    pdf = f"[:material-file-pdf-box: {'Lecture notes' if EN else 'Dispensa'} (PDF)](../pdf/{PDF_DISPENSA})"
+    caps = [f"[:material-book-open-variant: {'Chapter' if EN else 'Capitolo'} {c[4]}: "
+            f"{_titolo_pagina(pagina(*c[:3]), c[2])}](../{pagina(*c[:3])})" for c in capitoli_della_scheda(eid)]
+    return " · ".join([testa, pdf] + caps)
+
+
 def link_slide(cid: str) -> str:
     """« · Slide (PDF)» se il PDF delle slide del capitolo è sul sito."""
     from capitoli import CAPITOLI
@@ -1188,17 +1231,6 @@ def link_slide(cid: str) -> str:
             if (DOCS / "pdf" / nome).exists():
                 return f" · [:material-presentation: {'Slides' if EN else 'Slide'} (PDF)](../pdf/{nome})"
     return ""
-
-
-def capitolo_di(parte: str, num: int) -> str:
-    """«4.3 · Inversione di matrici», con il link al capitolo (dalle pagine degli esercizi)."""
-    from capitoli import CAPITOLI, etichetta
-    for c in CAPITOLI:
-        if c[0] == parte and c[1] == num:
-            p = DOCS / pagina(*c[:3])
-            t = re.search(r'^title: "(.*)"$', p.read_text(), re.M).group(1) if p.exists() else c[2]
-            return f"[{etichetta(parte, num)} · {t}](../{pagina(*c[:3])})"
-    return str(num)
 
 
 def _parte_it(parte: str) -> str:

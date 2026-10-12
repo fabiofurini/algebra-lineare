@@ -139,3 +139,30 @@ def ident_es_it(cid):
         if ident_es(*c[:3]) == cid:
             return ident_es(*ci[:3])
     return cid
+
+
+# ---------------------------------------------------------------- capitoli <-> fogli di esercizi
+# Come in Analisi Matematica 1 (2026-10-12, richiesta di Fabio): la barra in testa a ogni capitolo
+# rimanda ai suoi fogli di esercizi sul sito («Esercizi: …») e ogni foglio torna al capitolo.
+# ID italiani. Qui un foglio per capitolo, con lo stesso (parte, numero, slug); un foglio che
+# copre più capitoli si scrive a mano in questa tabella.
+SCHEDA_CAPITOLI = {ident_es(*e[:3]): [ident(*e[:3])] for e in ESERCIZI_IT}
+
+
+def _riga_cap(cid_it):
+    return next(c for c, ci in zip(CAPITOLI, CAPITOLI_IT) if ident(*ci[:3]) == cid_it)
+
+
+def _riga_es(eid_it):
+    return next(e for e, ei in zip(ESERCIZI, ESERCIZI_IT) if ident_es(*ei[:3]) == eid_it)
+
+
+def schede_del_capitolo(cid):
+    """I fogli (righe di ESERCIZI della lingua) collegati al capitolo cid (ID della lingua)."""
+    cit = ident_it(cid)
+    return [_riga_es(e) for e, caps in SCHEDA_CAPITOLI.items() if cit in caps]
+
+
+def capitoli_della_scheda(eid):
+    """I capitoli (righe di CAPITOLI della lingua) su cui si esercita il foglio eid."""
+    return [_riga_cap(c) for c in SCHEDA_CAPITOLI.get(ident_es_it(eid), [])]
