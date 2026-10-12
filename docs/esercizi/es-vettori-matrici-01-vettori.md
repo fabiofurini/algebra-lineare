@@ -6,7 +6,7 @@ title: "Vettori"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [3 · Vettori](../vettori-matrici/01-vettori.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 3: Vettori](../vettori-matrici/01-vettori.md)
 
 </div>
 

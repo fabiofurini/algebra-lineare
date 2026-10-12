@@ -6,7 +6,7 @@ title: "Produttorie"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Somme e produttorie** · capitolo [2 · Produttorie](../somme/02-produttorie.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Somme e produttorie** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 2: Produttorie](../somme/02-produttorie.md)
 
 </div>
 

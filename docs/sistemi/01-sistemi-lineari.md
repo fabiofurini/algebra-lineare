@@ -6,7 +6,7 @@ title: "Sistemi di equazioni lineari"
 
 <div class="info-capitolo" markdown>
 
-**Sistemi lineari · Capitolo 6** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-06-sistemi.pdf)
+**Sistemi lineari · Capitolo 6** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Sistemi di equazioni lineari](../esercizi/es-sistemi-01-sistemi-lineari.md) · [:material-presentation: Slide (PDF)](../pdf/slide-06-sistemi.pdf) · [:material-calculator-variant: App: Sistemi lineari](../laboratorio/sistemi.md) · [:material-calculator-variant: App: Rango](../laboratorio/rango.md)
 
 </div>
 

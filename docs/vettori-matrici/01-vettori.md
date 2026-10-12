@@ -6,7 +6,7 @@ title: "Vettori"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 3** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-03-vettori.pdf)
+**Vettori e matrici · Capitolo 3** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Vettori](../esercizi/es-vettori-matrici-01-vettori.md) · [:material-presentation: Slide (PDF)](../pdf/slide-03-vettori.pdf)
 
 </div>
 

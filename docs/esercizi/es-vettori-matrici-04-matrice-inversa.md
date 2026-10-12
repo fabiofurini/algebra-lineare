@@ -6,7 +6,7 @@ title: "Inversione di matrici"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [4.3 · Inversione di matrici](../vettori-matrici/04-matrice-inversa.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 4.3: Inversione di matrici](../vettori-matrici/04-matrice-inversa.md)
 
 </div>
 

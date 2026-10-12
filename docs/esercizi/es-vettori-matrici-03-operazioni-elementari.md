@@ -6,7 +6,7 @@ title: "Operazioni sulle matrici"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [4.2 · Operazioni sulle matrici](../vettori-matrici/03-operazioni-elementari.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 4.2: Operazioni sulle matrici](../vettori-matrici/03-operazioni-elementari.md)
 
 </div>
 

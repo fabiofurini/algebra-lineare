@@ -6,7 +6,7 @@ title: "Matrici"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [4.1 · Matrici](../vettori-matrici/02-matrici.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 4.1: Matrici](../vettori-matrici/02-matrici.md)
 
 </div>
 

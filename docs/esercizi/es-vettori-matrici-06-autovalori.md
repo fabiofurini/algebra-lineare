@@ -6,7 +6,7 @@ title: "Autovalori e autovettori"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Vettori e matrici** · capitolo [4.5 · Autovalori e autovettori](../vettori-matrici/06-autovalori.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Vettori e matrici** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo 4.5: Autovalori e autovettori](../vettori-matrici/06-autovalori.md)
 
 </div>
 

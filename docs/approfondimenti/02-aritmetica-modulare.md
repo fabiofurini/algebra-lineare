@@ -6,7 +6,7 @@ title: "Aritmetica modulare"
 
 <div class="info-capitolo" markdown>
 
-**Approfondimenti · Capitolo A.2** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-A2-aritmetica-modulare.pdf)
+**Approfondimenti · Capitolo A.2** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Aritmetica modulare](../esercizi/es-approfondimenti-02-aritmetica-modulare.md) · [:material-presentation: Slide (PDF)](../pdf/slide-A2-aritmetica-modulare.pdf)
 
 </div>
 

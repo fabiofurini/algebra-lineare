@@ -6,7 +6,7 @@ title: "Produttorie"
 
 <div class="info-capitolo" markdown>
 
-**Somme e produttorie · Capitolo 2** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-02-produttorie.pdf)
+**Somme e produttorie · Capitolo 2** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Produttorie](../esercizi/es-somme-02-produttorie.md) · [:material-presentation: Slide (PDF)](../pdf/slide-02-produttorie.pdf) · [:material-calculator-variant: App: Somme e produttorie](../laboratorio/somme.md)
 
 </div>
 

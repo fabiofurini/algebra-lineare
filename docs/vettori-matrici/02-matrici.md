@@ -6,7 +6,7 @@ title: "Matrici"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 4.1** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-04-1-matrici.pdf)
+**Vettori e matrici · Capitolo 4.1** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Matrici](../esercizi/es-vettori-matrici-02-matrici.md) · [:material-presentation: Slide (PDF)](../pdf/slide-04-1-matrici.pdf) · [:material-calculator-variant: App: Prodotto di matrici](../laboratorio/prodotto.md) · [:material-calculator-variant: App: Determinante](../laboratorio/determinante.md) · [:material-calculator-variant: App: Rango](../laboratorio/rango.md)
 
 </div>
 

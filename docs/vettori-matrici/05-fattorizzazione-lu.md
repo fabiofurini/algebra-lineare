@@ -6,7 +6,7 @@ title: "Fattorizzazione di matrici"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 4.4** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-04-4-fattorizzazione.pdf)
+**Vettori e matrici · Capitolo 4.4** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Fattorizzazione di matrici](../esercizi/es-vettori-matrici-05-fattorizzazione-lu.md) · [:material-presentation: Slide (PDF)](../pdf/slide-04-4-fattorizzazione.pdf) · [:material-calculator-variant: App: Fattorizzazione LU](../laboratorio/lu.md) · [:material-calculator-variant: App: Sistemi lineari](../laboratorio/sistemi.md)
 
 </div>
 

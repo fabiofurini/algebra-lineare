@@ -6,7 +6,7 @@ title: "Operazioni sulle matrici"
 
 <div class="info-capitolo" markdown>
 
-**Vettori e matrici · Capitolo 4.2** · dalle dispense di Fabio Furini · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-presentation: Slide (PDF)](../pdf/slide-04-2-operazioni.pdf)
+**Vettori e matrici · Capitolo 4.2** · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-pencil: Esercizi: Operazioni sulle matrici](../esercizi/es-vettori-matrici-03-operazioni-elementari.md) · [:material-presentation: Slide (PDF)](../pdf/slide-04-2-operazioni.pdf) · [:material-calculator-variant: App: Metodo di Gauss](../laboratorio/gauss.md) · [:material-calculator-variant: App: Determinante](../laboratorio/determinante.md) · [:material-calculator-variant: App: Perché serve il pivoting](../laboratorio/pivoting.md)
 
 </div>
 

@@ -6,7 +6,7 @@ title: "Aritmetica modulare"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Approfondimenti** · capitolo [A.2 · Aritmetica modulare](../approfondimenti/02-aritmetica-modulare.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Approfondimenti** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo A.2: Aritmetica modulare](../approfondimenti/02-aritmetica-modulare.md)
 
 </div>
 

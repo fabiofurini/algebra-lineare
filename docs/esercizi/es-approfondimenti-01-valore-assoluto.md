@@ -6,7 +6,7 @@ title: "Valore assoluto"
 
 <div class="info-capitolo" markdown>
 
-**Esercizi · Approfondimenti** · capitolo [A.1 · Valore assoluto](../approfondimenti/01-valore-assoluto.md) · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf)
+**Esercizi · Approfondimenti** · con le soluzioni svolte · [:material-file-pdf-box: Dispensa (PDF)](../pdf/dispense-algebra-lineare.pdf) · [:material-book-open-variant: Capitolo A.1: Valore assoluto](../approfondimenti/01-valore-assoluto.md)
 
 </div>
 
