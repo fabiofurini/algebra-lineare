@@ -3,7 +3,11 @@
 Le due lingue si generano dallo stesso file, così non divergono mai.
 Uso: python3 python/pagine_fisse.py   e   LINGUA=en python3 python/pagine_fisse.py
 """
-from capitoli import CARTELLA_ES, DOCS, EN, PARTI, REPO, SITO
+from capitoli import CARTELLA_ES, DOCS, EN, MODULO, PARTI, REPO, SITO
+
+import sys
+sys.path.insert(0, str(MODULO.parent / "QUIZ_ENGINE"))
+import integra_quiz as QZ  # noqa: E402
 
 LAB = "lab" if EN else "laboratorio"
 
@@ -321,6 +325,14 @@ Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 
 *This website is also available in [English](https://fabiofurini.github.io/linear-algebra/).*
 """
+    if (DOCS / QZ.pagina("en" if EN else "it")).exists():     # autovalutazione: pulsante e scheda
+        lingua = "en" if EN else "it"
+        lab = f"[{'Try the lab' if EN else 'Prova il laboratorio'}]({LAB}/index.md){{ .md-button }}\n"
+        testo = testo.replace(lab, lab + QZ.pulsante_home(lingua) + "\n", 1)
+        icona, nome, dove, tq, link = QZ.scheda_home(lingua)
+        es = f"[:octicons-arrow-right-24: {'The exercises' if EN else 'Gli esercizi'}]({CARTELLA_ES}/index.md)\n\n"
+        testo = testo.replace(es, es + f"-   :{icona.replace('/', '-')}: **{nome}**\n\n    ---\n\n    *{dove}*\n\n"
+                              f"    {tq}\n\n    {link}\n\n", 1)
     scrivi("index.md", testo)
 
 

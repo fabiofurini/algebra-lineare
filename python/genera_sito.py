@@ -12,7 +12,15 @@ import re
 
 from pathlib import Path
 
-from capitoli import CAPITOLI, DOCS, IT, LINGUA, PARTI, REPO, SITO, etichetta, pagina
+from capitoli import CAPITOLI, DOCS, IT, LINGUA, MODULO, PARTI, REPO, SITO, etichetta, pagina
+
+import sys
+sys.path.insert(0, str(MODULO.parent / "QUIZ_ENGINE"))
+import integra_quiz as QZ  # noqa: E402
+
+# slug dei capitoli nella banca dell'autovalutazione (quiz/README.md), nell'ordine di CAPITOLI
+QUIZ_SLUG = ["sums", "products", "vectors", "matrices", "elementary-operations", "inverse-matrix", "lu-factorization",
+             "eigenvalues", "norms", "linear-systems", "absolute-value", "modular-arithmetic"]
 
 EN = LINGUA == "en"
 
@@ -147,10 +155,18 @@ def main():
     voce_es = esercizi()
     if voce_es:
         nav_parti.append(voce_es)
+    # autovalutazione: motore e banca (<modulo>/quiz/) in docs/, pagina e voce «Quiz» dopo gli esercizi
+    assert len(QUIZ_SLUG) == len(CAPITOLI)
+    voce_quiz = QZ.integra(DOCS, MODULO / "quiz", LINGUA,
+                           capitoli={s: f"{etichetta(c[0], c[1])}. {titolo(*c[:3])}" for s, c in zip(QUIZ_SLUG, CAPITOLI)})
+    if voce_quiz:
+        nav_parti.append(voce_quiz)
 
     yml = (Path(__file__).parent / ("mkdocs_modello_en.yml" if EN else "mkdocs_modello.yml")).read_text()
     yml = yml.replace("  # NAV_PARTI", "\n".join(nav_parti))
     yml = versiona(yml)
+    if (DOCS / QZ.pagina(LINGUA)).exists():          # autovalutazione: quiz.css e quiz.js (QUIZ_ENGINE)
+        yml = QZ.voci_mkdocs(yml, DOCS)
     (IT / "mkdocs.yml").write_text(yml)
     (DOCS / "img").mkdir(exist_ok=True)
     print(f"[{LINGUA}] mkdocs.yml, indice e pagine delle parti aggiornati")

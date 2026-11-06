@@ -19,6 +19,7 @@ LU — con la stessa notazione delle dispense.
 
 [Inizia dalle somme :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
 [Prova il laboratorio](laboratorio/index.md){ .md-button }
+[:material-clipboard-check-outline: Mettiti alla prova](autovalutazione.md){ .md-button }
 [:material-download: Scarica tutte le dispense (PDF)](pdf/dispense-algebra-lineare.pdf){ .md-button }
 
 </div>
@@ -128,6 +129,16 @@ colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto
     Un foglio per capitolo, con lo svolgimento a un clic di distanza.
 
     [:octicons-arrow-right-24: Gli esercizi](esercizi/index.md)
+
+-   :material-clipboard-check-outline: **Autovalutazione**
+
+    ---
+
+    *Facsimile d'esame*
+
+    Un facsimile nuovo a ogni avvio: 13 domande, 33 punti, con la soluzione e il link alle dispense.
+
+    [:octicons-arrow-right-24: Mettiti alla prova](autovalutazione.md)
 
 -   :material-school: **Il corso**
 
