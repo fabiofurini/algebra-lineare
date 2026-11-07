@@ -9,6 +9,10 @@ hide:
 
 # Algebra Lineare
 
+<!-- collana-riga -->
+<p class="collana-riga" markdown>Un corso della collana <b>Ricerca Operativa e Matematica</b> · [tutti i corsi](#la-collana)</p>
+<!-- /collana-riga -->
+
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
@@ -17,10 +21,11 @@ soluzioni e un **laboratorio di calcolo** che mostra tutti i passaggi —
 eliminazione di Gauss, determinanti, inverse, sistemi lineari, fattorizzazione
 LU — con la stessa notazione delle dispense.
 
-[Inizia dalle somme :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
-[Prova il laboratorio](laboratorio/index.md){ .md-button }
-[:material-clipboard-check-outline: Mettiti alla prova](autovalutazione.md){ .md-button }
-[:material-download: Scarica tutte le dispense (PDF)](pdf/dispense-algebra-lineare.pdf){ .md-button }
+[Comincia :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
+[:material-pencil: Esercizi](esercizi/index.md){ .md-button }
+[:material-gesture-tap: Laboratorio](laboratorio/index.md){ .md-button }
+[:material-clipboard-check-outline: Quiz](autovalutazione.md){ .md-button }
+[:material-download: Materiale](materiale.md){ .md-button }
 
 </div>
 
@@ -78,37 +83,6 @@ un passo alla volta (oppure ▶ per vederla scorrere da sola).
 
 </div>
 
-## Come è fatto ogni capitolo
-
-Ogni capitolo è una delle dispense del corso, con gli stessi numeri e gli stessi
-colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto.
-
-<div class="grid" markdown>
-
-!!! definizione "Definizione"
-    Il significato preciso di un concetto nuovo.
-
-!!! teorema "Osservazione, Proposizione, Teorema"
-    Un risultato da ricordare, con le sue ipotesi. In queste dispense la
-    maggior parte dei risultati sono **Osservazioni**: hanno lo stesso box rosso
-    dei teoremi e spesso la loro dimostrazione.
-
-!!! esempio "Esempio"
-    Un calcolo svolto per intero, un passaggio alla volta.
-
-!!! chiave ""
-    **In verde** il punto chiave da portarsi via: regole, metodi, riepiloghi.
-
-</div>
-
-??? dimostrazione "Dimostrazione — si apre con un clic"
-    Le dimostrazioni sono tutte presenti, ma chiuse: prima si legge
-    l'enunciato, poi si apre la dimostrazione quando la si vuole studiare.
-
-!!! interattivo "Provalo nel laboratorio"
-    Nei capitoli con i calcoli, lo stesso esempio si rifà passo per passo nel
-    laboratorio: cambia la matrice e guarda come cambiano i passaggi.
-
 ## Da non perdere
 
 <div class="grid cards" markdown>
@@ -153,17 +127,55 @@ colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto
 
 ---
 
-Dello stesso autore:
+<!-- collana -->
+## La collana
 
-- **[Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)** — poliedri, algoritmo del simplesso, dualità e simplesso duale, con il laboratorio interattivo;
-- **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)** — insiemi e funzioni convesse, problemi di ottimizzazione convessa, con grafici interattivi;
-- **[Algoritmi](https://fabiofurini.github.io/algoritmi/)** — rappresentazione dei numeri, pseudocodice, ordinamento e ricerca, analisi e algoritmi ricorsivi;
-- **[Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/)** — rilassamento continuo, disuguaglianze valide, piani di taglio, branch-and-bound e branch-and-cut;
-- **[Ottimizzazione combinatoria](https://fabiofurini.github.io/ottimizzazione-combinatoria/)** — zaino, bin packing, colorazione, TSP, scheduling e lot sizing, risolti in tutti i modi;
-- **[Ottimizzazione su reti](https://fabiofurini.github.io/ottimizzazione-su-reti/)** — grafi, alberi ricoprenti, cammini minimi, flussi su reti, simplesso su reti e gestione dei progetti;
-- **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)** — modelli di programmazione lineare a variabili intere, dalla formulazione alla soluzione con i solver;
-- **[Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)** — modellazione e risoluzione di problemi di ottimizzazione con Python e i solver;
-- **[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)** — numeri reali, funzioni, limiti, derivate e serie, con i grafici interattivi.
+Dieci corsi con la stessa impostazione: dispense online e in PDF, esercizi con le soluzioni, laboratorio interattivo e quiz di autovalutazione.
+
+<div class="grid cards" markdown>
+
+-   :material-function-variant: **[Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)**
+
+    numeri reali, funzioni, limiti, derivate e serie, con i grafici interattivi
+
+-   :material-matrix: **Algebra lineare** · *questo corso*
+
+    vettori, matrici, determinanti, sistemi lineari e autovalori, con il laboratorio di calcolo
+
+-   :material-code-braces: **[Algoritmi](https://fabiofurini.github.io/algoritmi/)**
+
+    rappresentazione dei numeri, pseudocodice, ordinamento e ricerca, analisi e algoritmi ricorsivi
+
+-   :material-vector-triangle: **[Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)**
+
+    poliedri, algoritmo del simplesso, dualità e simplesso duale, con il laboratorio interattivo
+
+-   :material-dots-grid: **[Programmazione lineare intera](https://fabiofurini.github.io/programmazione-lineare-intera/)**
+
+    rilassamento continuo, disuguaglianze valide, piani di taglio, branch-and-bound e branch-and-cut
+
+-   :material-vector-curve: **[Ottimizzazione convessa](https://fabiofurini.github.io/ottimizzazione-convessa/)**
+
+    insiemi e funzioni convesse, problemi di ottimizzazione convessa, con grafici interattivi
+
+-   :material-graph-outline: **[Ottimizzazione su reti](https://fabiofurini.github.io/ottimizzazione-su-reti/)**
+
+    grafi, alberi ricoprenti, cammini minimi, flussi su reti, simplesso su reti e gestione dei progetti
+
+-   :material-hexagon-multiple-outline: **[Ottimizzazione combinatoria](https://fabiofurini.github.io/ottimizzazione-combinatoria/)**
+
+    zaino, bin packing, colorazione, TSP, scheduling e lot sizing, risolti in tutti i modi
+
+-   :material-vector-polygon: **[Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)**
+
+    modelli di programmazione lineare a variabili intere, dalla formulazione alla soluzione con i solver
+
+-   :material-chart-timeline-variant: **[Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)**
+
+    modellazione e risoluzione di problemi di ottimizzazione con Python e i solver
+
+</div>
+<!-- /collana -->
 
 Materiale didattico di **[Fabio Furini](https://fabiofurini.github.io/)** —
 [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
