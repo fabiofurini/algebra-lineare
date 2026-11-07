@@ -38,3 +38,9 @@ Una presentazione per capitolo, con la stessa numerazione della dispensa.
 - [:octicons-download-24: A.1 Valore assoluto](pdf/slide-A1-valore-assoluto.pdf)
 - [:octicons-download-24: A.2 Aritmetica modulare](pdf/slide-A2-aritmetica-modulare.pdf)
 
+<!-- banca-domande -->
+## Banca delle domande del quiz
+
+Tutte le domande dell'autovalutazione, divise per parte e capitolo, con la risposta corretta e la spiegazione; per le domande generate, che cambiano i numeri a ogni avvio, alcuni esempi.
+
+[:material-format-list-checks: Banca delle domande](quiz/elenco_domande.html){ .md-button }
