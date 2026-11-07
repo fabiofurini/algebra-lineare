@@ -158,7 +158,8 @@ def main():
     # autovalutazione: motore e banca (<modulo>/quiz/) in docs/, pagina e voce «Quiz» dopo gli esercizi
     assert len(QUIZ_SLUG) == len(CAPITOLI)
     voce_quiz = QZ.integra(DOCS, MODULO / "quiz", LINGUA,
-                           capitoli={s: f"{etichetta(c[0], c[1])}. {titolo(*c[:3])}" for s, c in zip(QUIZ_SLUG, CAPITOLI)})
+                           capitoli={s: f"{etichetta(c[0], c[1])}. {titolo(*c[:3])}" for s, c in zip(QUIZ_SLUG, CAPITOLI)},
+                           parti={s: next(p[1] for p in PARTI if p[0] == c[0]) for s, c in zip(QUIZ_SLUG, CAPITOLI)})
     if voce_quiz:
         nav_parti.append(voce_quiz)
 
