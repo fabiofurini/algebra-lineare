@@ -10,6 +10,24 @@ title: "Autovalori e autovettori"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 4.1 «Matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/02-matrici/): determinanti, matrici triangolari, simmetriche e semidefinite.
+
+    - Da questo modulo, [Capitolo 6 «Sistemi di equazioni lineari»](https://fabiofurini.github.io/algebra-lineare/sistemi/01-sistemi-lineari/): i sistemi lineari omogenei, usati per trovare gli autovettori.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - calcolare gli autovalori di una matrice dall'equazione caratteristica, e gli autovettori associati;
+
+    - leggere gli autovalori delle matrici triangolari e diagonali, e collegare traccia e determinante agli autovalori;
+
+    - decidere dagli autovalori se una matrice simmetrica è semidefinita o definita positiva;
+
+    - applicare il criterio di Sylvester con i minori principali di guida.
+
 ## 1. Autovalori
 
 <a id="box-defEigen-1"></a>
@@ -707,6 +725,18 @@ title: "Autovalori e autovettori"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="autovalori" data-matrix="2,-1;-1,2"></div>
+
+## 5. In sintesi
+
+!!! chiave "In sintesi"
+
+    - $\lambda$ è un autovalore di ${\boldsymbol A}$ se ${\boldsymbol A}{\boldsymbol x} = \lambda {\boldsymbol x}$ per qualche ${\boldsymbol x} \ne {\boldsymbol 0}$, cioè se $\det({\boldsymbol A} - \lambda {\boldsymbol I}) = 0$.
+
+    - Gli autovalori di una matrice triangolare sono i suoi elementi diagonali; la traccia è la somma degli autovalori, il determinante il loro prodotto.
+
+    - Autovettori di autovalori distinti sono linearmente indipendenti.
+
+    - Una matrice simmetrica è semidefinita (definita) positiva se e solo se i suoi autovalori sono non negativi (positivi); il criterio di Sylvester verifica la definitezza con i minori principali di guida.
 
 ## Esercizi e laboratorio
 

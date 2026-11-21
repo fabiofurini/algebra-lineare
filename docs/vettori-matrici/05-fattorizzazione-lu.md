@@ -10,6 +10,24 @@ title: "Fattorizzazione di matrici"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 4.2 «Operazioni sulle matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/03-operazioni-elementari/): l'eliminazione di Gauss e il pivoting.
+
+    - Da questo modulo, [Capitolo 4.1 «Matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/02-matrici/): matrici triangolari e di permutazione, e il determinante.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - calcolare la fattorizzazione LU di una matrice memorizzando i moltiplicatori dell'eliminazione di Gauss;
+
+    - calcolare la fattorizzazione PLU quando servono scambi di righe;
+
+    - dire quando la fattorizzazione LU esiste senza scambi di righe;
+
+    - calcolare il determinante dalla fattorizzazione PLU.
+
 ## 1. Fattorizzazione LU
 
 - La fattorizzazione LU (o decomposizione LU) è una decomposizione matriciale fondamentale che esprime una matrice come prodotto di una matrice triangolare inferiore e di una matrice triangolare superiore.
@@ -457,6 +475,18 @@ title: "Fattorizzazione di matrici"
     - Esempio [Esempio 3](#box-ex_plu-2x2-4): uno scambio di righe (\(s=1\)), quindi \(\det(\boldsymbol A) = -(1\cdot 1) = -1\). Infatti, \(\det(\boldsymbol A) = 0\cdot 1 - 1\cdot 1 = -1\).
 
     - Esempio [Esempio 4](#box-ex_plu-3x3-5): uno scambio di righe (\(s=1\)), quindi \(\det(\boldsymbol A) = -(2\cdot 4\cdot 1) = -8\). Infatti, sviluppando con Laplace lungo la prima riga, \(\det(\boldsymbol A) = 2\cdot(2-9) - 1\cdot(4+6) + 1\cdot(12+4) = -14 - 10 + 16 = -8\).
+
+## 3. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Una fattorizzazione PLU scrive ${\boldsymbol P}{\boldsymbol A} = {\boldsymbol L}{\boldsymbol U}$, con ${\boldsymbol P}$ matrice di permutazione, ${\boldsymbol L}$ triangolare inferiore con diagonale unitaria, ${\boldsymbol U}$ triangolare superiore.
+
+    - Si calcola con l'eliminazione di Gauss: ${\boldsymbol U}$ è la matrice finale, ${\boldsymbol L}$ memorizza i moltiplicatori, ${\boldsymbol P}$ registra gli scambi.
+
+    - Senza scambi di righe, ${\boldsymbol P} = {\boldsymbol I}$ e la fattorizzazione è la LU.
+
+    - Il determinante si ricava dalla diagonale di ${\boldsymbol U}$ e dal numero di scambi.
 
 ## Esercizi e laboratorio
 

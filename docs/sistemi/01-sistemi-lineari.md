@@ -10,6 +10,28 @@ title: "Sistemi di equazioni lineari"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 4.1 «Matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/02-matrici/): il rango di una matrice.
+
+    - Da questo modulo, [Capitolo 4.2 «Operazioni sulle matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/03-operazioni-elementari/): l'eliminazione di Gauss e la forma a scala.
+
+    - Da questo modulo, [Capitolo 4.4 «Fattorizzazione di matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/05-fattorizzazione-lu/): la fattorizzazione LU.
+
+    - Da questo modulo, [Capitolo 4.3 «Inversione di matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/04-matrice-inversa/): il determinante e i cofattori, usati dalla regola di Cramer.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - decidere con il teorema di Rouché–Capelli se un sistema non ha soluzioni, ne ha una o infinite;
+
+    - risolvere un sistema con l'eliminazione di Gauss, e descrivere infinite soluzioni con parametri liberi;
+
+    - risolvere i sistemi omogenei;
+
+    - risolvere un sistema con la fattorizzazione LU e con la regola di Cramer, e confrontare i costi dei metodi.
+
 ## 1. Esistenza e unicità delle soluzioni
 
 !!! chiave ""
@@ -1219,6 +1241,18 @@ title: "Sistemi di equazioni lineari"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="sistema" data-matrix="-1,1;8,2" data-b="2,19"></div>
+
+## 7. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Rouché–Capelli: ${\boldsymbol A}{\boldsymbol x} = {\boldsymbol b}$ non ha soluzioni se $\mathrm{rank}({\boldsymbol A}) < \mathrm{rank}({\boldsymbol A} \mid {\boldsymbol b})$, ne ha una se i due ranghi valgono $n$, infinite (con $n - \mathrm{rank}({\boldsymbol A})$ parametri liberi) altrimenti.
+
+    - L'eliminazione di Gauss sulla matrice aumentata arriva a una forma a scala, poi la sostituzione all'indietro dà le soluzioni.
+
+    - Un sistema omogeneo ha sempre la soluzione nulla, e altre soluzioni esattamente quando $\mathrm{rank}({\boldsymbol A}) < n$.
+
+    - Con ${\boldsymbol A} = {\boldsymbol L}{\boldsymbol U}$ il sistema diventa due sistemi triangolari; la regola di Cramer vale per piccoli sistemi quadrati con $\det({\boldsymbol A}) \ne 0$.
 
 ## Esercizi e laboratorio
 

@@ -10,6 +10,24 @@ title: "Inversione di matrici"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 4.1 «Matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/02-matrici/): la matrice inversa e il determinante.
+
+    - Da questo modulo, [Capitolo 4.2 «Operazioni sulle matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/03-operazioni-elementari/): le operazioni elementari sulle righe e l'eliminazione di Gauss.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - usare l'unicità e le proprietà della matrice inversa;
+
+    - calcolare l'inversa con il metodo di Gauss–Jordan, e riconoscere durante il metodo una matrice singolare;
+
+    - calcolare l'inversa con la matrice dei cofattori e la matrice aggiunta;
+
+    - invertire una matrice $2 \times 2$ con la regola diretta.
+
 ## 1. Proprietà della matrice inversa
 
 - Ricordiamo (si veda il capitolo sulle matrici) che una matrice quadrata \(\boldsymbol A \in \R^{n\times n}\) è <strong>invertibile</strong> se esiste una matrice \(\boldsymbol A^{-1} \in \R^{n\times n}\) tale che \(\boldsymbol A\boldsymbol A^{-1} = \boldsymbol A^{-1}\boldsymbol A = \boldsymbol I\). Una matrice quadrata non invertibile si dice <strong>singolare</strong>.
@@ -638,6 +656,18 @@ title: "Inversione di matrici"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="inversa" data-matrix="2,1;1,1"></div>
+
+## 3. In sintesi
+
+!!! chiave "In sintesi"
+
+    - L'inversa, quando esiste, è unica; $({\boldsymbol A}{\boldsymbol B})^{-1} = {\boldsymbol B}^{-1}{\boldsymbol A}^{-1}$.
+
+    - Gauss–Jordan riduce $({\boldsymbol A} \mid {\boldsymbol I})$ a $({\boldsymbol I} \mid {\boldsymbol A}^{-1})$; una riga nulla mostra che ${\boldsymbol A}$ è singolare.
+
+    - Formula dell'aggiunta: ${\boldsymbol A}^{-1} = \frac{1}{\det({\boldsymbol A})}\,\mathrm{adj}({\boldsymbol A})$, quindi ${\boldsymbol A}$ è invertibile se e solo se $\det({\boldsymbol A}) \ne 0$.
+
+    - Per una matrice $2 \times 2$: si scambiano gli elementi diagonali, si cambia segno agli altri, si divide per il determinante.
 
 ## Esercizi e laboratorio
 

@@ -10,6 +10,22 @@ title: "Vettori"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 1 «Sommatorie»](https://fabiofurini.github.io/algebra-lineare/somme/01-sommatorie/): il simbolo $\sum$, usato nel prodotto scalare.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - scrivere vettori colonna e riga di $\R^n$ e i loro trasposti;
+
+    - calcolare somme di vettori, prodotti per uno scalare e prodotti scalari, con le loro proprietà;
+
+    - decidere se dei vettori sono linearmente indipendenti;
+
+    - descrivere lo span di un insieme di vettori, una base di $\R^n$ e le coordinate rispetto a essa.
+
 ## 1. Definizione e trasposto
 
 <a id="box-defVector-1"></a>
@@ -635,6 +651,18 @@ $$
     +
     1\begin{pmatrix}1\\-1\end{pmatrix}.
     $$
+
+## 5. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Un vettore di $\R^n$ è una colonna di $n$ numeri reali; il suo trasposto è una riga.
+
+    - I vettori si sommano e si moltiplicano per uno scalare componente per componente; il prodotto scalare è ${\boldsymbol p}'{\boldsymbol w} = \sum_i p_i w_i$.
+
+    - Dei vettori sono linearmente indipendenti se solo la combinazione nulla dà il vettore nullo; più di $n$ vettori di $\R^n$ sono sempre dipendenti.
+
+    - Una base di $\R^n$ è un insieme di $n$ vettori indipendenti; ogni vettore ha coordinate uniche rispetto a essa, come con la base canonica.
 
 ## Esercizi e laboratorio
 

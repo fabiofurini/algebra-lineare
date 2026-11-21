@@ -10,6 +10,20 @@ title: "Produttorie"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 1 «Sommatorie»](https://fabiofurini.github.io/algebra-lineare/somme/01-sommatorie/): la notazione e le proprietà delle sommatorie, che le produttorie ricalcano.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - leggere e scrivere una produttoria con il simbolo $\prod$;
+
+    - usare le proprietà delle produttorie: termini e fattori costanti, prodotto di produttorie, scomposizione, cambi di indice;
+
+    - definire il fattoriale $n!$, con $0! = 1$, e calcolarlo.
+
 ## 1. Definizione
 
 <a id="box-def_product-1"></a>
@@ -207,6 +221,16 @@ title: "Produttorie"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="somme" data-f="k" data-tipo="prod"></div>
+
+## 4. In sintesi
+
+!!! chiave "In sintesi"
+
+    - La produttoria $\prod_{i=1}^n a_i$ moltiplica i termini $a_1, \dots, a_n$; un termine costante dà $c^n$.
+
+    - Le produttorie hanno le stesse regole delle sommatorie, con la moltiplicazione al posto dell'addizione; una produttoria senza fattori vale $1$.
+
+    - Il fattoriale è $n! = \prod_{j=1}^n j$, con $0! = 1$.
 
 ## Esercizi e laboratorio
 

@@ -10,6 +10,24 @@ title: "Matrici"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 3 «Vettori»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/01-vettori/): vettori, trasposto, prodotto scalare e indipendenza lineare.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - scrivere matrici, le loro trasposte, righe, colonne e minori;
+
+    - calcolare somme, prodotti per uno scalare e prodotti di matrici, con le loro proprietà;
+
+    - riconoscere le matrici identità, diagonali, simmetriche, triangolari, di permutazione, inverse e semidefinite;
+
+    - calcolare un determinante con lo sviluppo di Laplace, e usarne le proprietà;
+
+    - calcolare il rango di una matrice e collegarlo all'indipendenza lineare.
+
 ## 1. Definizione e trasposta
 
 <a id="box-defMatrix-1"></a>
@@ -1640,6 +1658,18 @@ $$
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="rango" data-matrix="1,2,3;2,4,6"></div>
+
+## 7. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Una matrice ${\boldsymbol A} \in \R^{m \times n}$ ha $m$ righe e $n$ colonne; il prodotto ${\boldsymbol A}{\boldsymbol B}$ è definito quando le dimensioni interne coincidono, e in generale ${\boldsymbol A}{\boldsymbol B} \ne {\boldsymbol B}{\boldsymbol A}$.
+
+    - Matrici quadrate particolari: identità, diagonali, simmetriche, triangolari, di permutazione, inverse e semidefinite.
+
+    - Il determinante si calcola con lo sviluppo di Laplace; per una matrice triangolare è il prodotto degli elementi diagonali, e ${\boldsymbol A}$ è invertibile se e solo se $\det({\boldsymbol A}) \ne 0$.
+
+    - Il rango è il numero massimo di colonne linearmente indipendenti.
 
 ## Esercizi e laboratorio
 

@@ -10,6 +10,24 @@ title: "Norme"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 3 «Vettori»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/01-vettori/): vettori e prodotto scalare.
+
+    - Da questo modulo, [Capitolo A.1 «Valore assoluto»](https://fabiofurini.github.io/algebra-lineare/approfondimenti/01-valore-assoluto/): il valore assoluto e la disuguaglianza triangolare.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - calcolare le norme $\ell_1$, $\ell_2$ e $\ell_\infty$ di un vettore, e la norma $\ell_2$ generalizzata;
+
+    - dimostrare per ogni norma la non negatività, l'omogeneità assoluta e la disuguaglianza triangolare;
+
+    - usare la disuguaglianza di Cauchy–Schwarz;
+
+    - confrontare le tre norme con le disuguaglianze fra di esse, e disegnarne le palle unitarie.
+
 ## 1. Introduzione alle norme
 
 - Una <strong>norma</strong> è una funzione matematica che assegna ai vettori una lunghezza (o dimensione) non negativa. Esistono molti tipi diversi di norme, ma tutte condividono tre proprietà essenziali che ne garantiscono un comportamento coerente e significativo.
@@ -1364,6 +1382,18 @@ title: "Norme"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="norme" data-x="3,-4,12"></div>
+
+## 7. In sintesi
+
+!!! chiave "In sintesi"
+
+    - $\|{\boldsymbol x}\|_1 = \sum_i |x_i|$, $\|{\boldsymbol x}\|_2 = \sqrt{\sum_i x_i^2}$, $\|{\boldsymbol x}\|_\infty = \max_i |x_i|$.
+
+    - Ogni norma è non negativa e nulla solo in ${\boldsymbol 0}$, è assolutamente omogenea e soddisfa la disuguaglianza triangolare.
+
+    - Cauchy–Schwarz: $|{\boldsymbol p}'{\boldsymbol w}| \le \|{\boldsymbol p}\|_2 \, \|{\boldsymbol w}\|_2$; da essa segue la disuguaglianza triangolare della norma $\ell_2$.
+
+    - $\|{\boldsymbol x}\|_\infty \le \|{\boldsymbol x}\|_2 \le \|{\boldsymbol x}\|_1$: le palle unitarie sono un quadrato, un disco e un rombo, l'uno dentro l'altro.
 
 ## Esercizi e laboratorio
 

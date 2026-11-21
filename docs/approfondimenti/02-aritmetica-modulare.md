@@ -10,6 +10,20 @@ title: "Aritmetica modulare"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    Nessuno: il capitolo usa solo la divisione fra numeri interi.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - enunciare la divisione euclidea e calcolare quoziente e resto;
+
+    - riconoscere multipli e fattori;
+
+    - calcolare $n \bmod m$ e decidere se due numeri sono congrui modulo $m$.
+
 ## 1. Divisione euclidea
 
 <a id="box-lem_euclid-division-1"></a>
@@ -126,6 +140,16 @@ title: "Aritmetica modulare"
 !!! esempio "Esempio 1: congruenza modulo $5$"
 
     Per esempio, $23$ e $13$ sono congruenti modulo $5$ e si ha $23 \equiv 13 \tpmod{5}$
+
+## 3. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Divisione euclidea: per interi $n$ e $m \ne 0$ esistono unici interi $q$ e $r$ con $n = q\,m + r$ e $0 \le r < |m|$.
+
+    - $m$ è un fattore di $n$, e $n$ un multiplo di $m$, quando il resto è $0$.
+
+    - $n \bmod m$ è il resto $r$; $n \equiv k \pmod m$ quando $n$ e $k$ hanno lo stesso resto.
 
 ## Esercizi e laboratorio
 

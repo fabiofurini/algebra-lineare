@@ -10,6 +10,22 @@ title: "Sommatorie"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    Nessuno: il capitolo usa solo l'aritmetica dei numeri reali.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - leggere e scrivere una sommatoria con il simbolo $\sum$, il suo indice e i suoi estremi;
+
+    - usare le proprietà delle sommatorie: termini costanti, fattori costanti, unione, scomposizione;
+
+    - traslare e riflettere l'indice di una sommatoria;
+
+    - calcolare le somme dei primi $n$ numeri naturali, pari e dispari.
+
 ## 1. Definizione
 
 <a id="box-def_sum-1"></a>
@@ -242,6 +258,18 @@ title: "Sommatorie"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="somme" data-f="k^2" data-tipo="sum"></div>
+
+## 4. In sintesi
+
+!!! chiave "In sintesi"
+
+    - La sommatoria $\sum_{i=1}^n a_i$ somma i termini $a_1, \dots, a_n$; un termine costante dà $n\,c$, un fattore costante si porta fuori.
+
+    - Una sommatoria si spezza in due sommatorie su intervalli consecutivi, o nella somma di due sommatorie di termini più semplici.
+
+    - Traslare o riflettere l'indice cambia gli estremi, non il valore.
+
+    - $\sum_{i=1}^n i = \frac{n(n+1)}{2}$, i primi $n$ numeri pari sommano $n(n+1)$, i primi $n$ dispari $n^2$.
 
 ## Esercizi e laboratorio
 

@@ -10,6 +10,20 @@ title: "Valore assoluto"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    Nessuno: il capitolo usa solo l'ordinamento dei numeri reali.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - enunciare la definizione di valore assoluto e leggere $|g - h|$ come distanza sulla retta;
+
+    - risolvere disuguaglianze della forma $|a| \le \varepsilon$;
+
+    - dimostrare e usare la disuguaglianza triangolare e la disuguaglianza triangolare inversa.
+
 ## 1. Definizione
 
 <a id="box-def_absolute-value-1"></a>
@@ -152,6 +166,16 @@ title: "Valore assoluto"
     |b\:c| = |b| \: |c|, \qquad \left| \frac{b}{c}\right|= \frac{|b|}{|c|}, \qquad |-b|=|b| \qquad \forall  b,c \in \mathbb{R} ~ (c \neq 0 {\rm ~nel~quoziente}).
     \label{ass_7}
     \end{equation}
+
+## 3. In sintesi
+
+!!! chiave "In sintesi"
+
+    - $|a| = a$ se $a \ge 0$ e $|a| = -a$ se $a < 0$; $|g - h|$ è la distanza fra $g$ e $h$.
+
+    - $|a| \le \varepsilon$ equivale a $-\varepsilon \le a \le \varepsilon$.
+
+    - Disuguaglianza triangolare: $|a + b| \le |a| + |b|$; disuguaglianza triangolare inversa: $\big||a| - |b|\big| \le |a - b|$.
 
 ## Esercizi e laboratorio
 

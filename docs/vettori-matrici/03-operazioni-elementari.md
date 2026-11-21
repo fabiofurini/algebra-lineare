@@ -10,6 +10,22 @@ title: "Operazioni sulle matrici"
 
 </div>
 
+!!! nota "Prerequisiti"
+
+    - Da questo modulo, [Capitolo 4.1 «Matrici»](https://fabiofurini.github.io/algebra-lineare/vettori-matrici/02-matrici/): matrici, determinanti, matrici triangolari e di permutazione.
+
+!!! chiave "Obiettivi"
+
+    Alla fine di questo capitolo sarai in grado di:
+
+    - applicare le tre operazioni elementari su righe e colonne;
+
+    - dire come ogni operazione elementare cambia il determinante;
+
+    - ridurre una matrice a forma a scala con l'eliminazione di Gauss, e ricavarne il determinante;
+
+    - scegliere i pivot, anche con il pivoting parziale.
+
 ## 1. Operazioni elementari di riga e di colonna
 
 - Le operazioni elementari di riga e di colonna sono strumenti fondamentali dell'algebra lineare. Sono utilizzate in molti algoritmi, tra cui l'eliminazione di Gauss, il calcolo della matrice inversa e le fattorizzazioni di matrici (come la decomposizione LU)
@@ -861,6 +877,18 @@ title: "Operazioni sulle matrici"
     lo stesso calcolo passo per passo: cambia la matrice e guarda come cambiano i passaggi.
 
 <div class="la-tool" data-tool="pivoting"></div>
+
+## 5. In sintesi
+
+!!! chiave "In sintesi"
+
+    - Le operazioni elementari sono lo scambio $R_i \leftrightarrow R_j$, la moltiplicazione $R_i \leftarrow c R_i$ e la sostituzione $R_i \leftarrow R_i - \ell R_j$.
+
+    - Uno scambio cambia il segno del determinante, $R_i \leftarrow c R_i$ lo moltiplica per $c$, una sostituzione lo lascia invariato.
+
+    - L'eliminazione di Gauss arriva a una forma a scala; allora $\det = (-1)^s \prod_i u_{ii}$, con $s$ il numero di scambi.
+
+    - Il pivoting parziale sceglie il pivot di valore assoluto massimo, per la stabilità numerica.
 
 ## Esercizi e laboratorio
 
