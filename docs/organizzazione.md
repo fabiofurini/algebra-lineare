@@ -21,7 +21,7 @@ noti.
 
 | Argomento | Dove torna |
 |---|---|
-| Sistemi lineari, rango, basi | il metodo del simplesso — [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/) |
+| Sistemi lineari, rango, basi | il metodo del simplesso e i modelli lineari — [Modellazione PL](https://fabiofurini.github.io/modellazione-pl/) |
 | Matrici definite, norma \(\ell_2\) generalizzata | modelli quadratici, portafogli di Markowitz |
 | Norme \(\ell_1\) e \(\ell_\infty\) | regressione robusta e quantile |
 | Determinanti, LU | risolvere sistemi in modo efficiente dentro un solver |
@@ -35,7 +35,8 @@ Le dispense sono di **Fabio Furini**. Testi, figure e dati hanno licenza
 
 ## Della stessa collana
 
-- [Laboratorio di Ricerca Operativa](https://fabiofurini.github.io/laboratorio-ricerca-operativa/)
+- [Modellazione PL](https://fabiofurini.github.io/modellazione-pl/)
+- [Modellazione PNL](https://fabiofurini.github.io/modellazione-pnl/)
 - [Modellazione MIP](https://fabiofurini.github.io/modellazione-mip/)
 - [Analisi Matematica 1](https://fabiofurini.github.io/analisi-matematica-1/)
 - [Programmazione lineare](https://fabiofurini.github.io/programmazione-lineare/)
