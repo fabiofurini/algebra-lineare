@@ -32,11 +32,10 @@ LU — con la stessa notazione delle dispense.
 <!-- collana-app -->
 ## Provalo subito
 
-Guarda come una matrice diventa triangolare superiore con semplici operazioni
-sulle righe: premi «Passo successivo» e gli zeri compaiono sotto la diagonale,
-un passo alla volta (oppure ▶ per vederla scorrere da sola).
+L'eliminazione di Gauss su una matrice 4×4, a metà strada: il pivot, l'operazione sulle righe del passo 4 e
+gli zeri già comparsi sotto la diagonale. «Passo successivo» prosegue fino alla forma triangolare, ▶ la fa scorrere da sola.
 
-<div class="la-tool" data-tool="demo" data-matrix="2,4,2;4,10,6;2,6,8"></div>
+<div class="la-tool" data-tool="demo" data-matrix="2,1,-1,3;4,3,0,7;-2,2,10,-2;6,2,1,8" data-vetrina="4"></div>
 
 [:material-gesture-tap: Altre app nel laboratorio](laboratorio/index.md){ .md-button }
 <!-- /collana-app -->
