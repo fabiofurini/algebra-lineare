@@ -1,5 +1,38 @@
 # Indice completo
 
+<!-- collana-organizzazione -->
+## Come è fatto ogni capitolo
+
+Ogni capitolo è una delle dispense del corso, con gli stessi numeri e gli stessi
+colori del PDF: così sul sito e sulla carta si ritrova tutto nello stesso posto.
+
+<div class="grid" markdown>
+
+!!! definizione "Definizione"
+    Il significato preciso di un concetto nuovo.
+
+!!! teorema "Osservazione, Proposizione, Teorema"
+    Un risultato da ricordare, con le sue ipotesi. In queste dispense la
+    maggior parte dei risultati sono **Osservazioni**: hanno lo stesso box rosso
+    dei teoremi e spesso la loro dimostrazione.
+
+!!! esempio "Esempio"
+    Un calcolo svolto per intero, un passaggio alla volta.
+
+!!! chiave ""
+    **In verde** il punto chiave da portarsi via: regole, metodi, riepiloghi.
+
+</div>
+
+??? dimostrazione "Dimostrazione — si apre con un clic"
+    Le dimostrazioni sono tutte presenti, ma chiuse: prima si legge
+    l'enunciato, poi si apre la dimostrazione quando la si vuole studiare.
+
+!!! interattivo "Provalo nel laboratorio"
+    Nei capitoli con i calcoli, lo stesso esempio si rifà passo per passo nel
+    laboratorio: cambia la matrice e guarda come cambiano i passaggi.
+<!-- /collana-organizzazione -->
+
 ## [Somme e produttorie](somme/index.md)
 
 - **1.** [Sommatorie](somme/01-sommatorie.md)
