@@ -1,10 +1,12 @@
 # Vettori e matrici
 
-*Parte 2 del corso, capitoli 3–4 delle dispense.* Vettori e indipendenza lineare, matrici, determinanti e rango; operazioni elementari ed eliminazione di Gauss, matrice inversa, fattorizzazione LU, autovalori e criterio di Sylvester.
+<div class="info-capitolo" markdown>
 
-[:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf){ .md-button }
+**Parte 2 · Vettori e matrici** · 6 capitoli · [:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
-[:material-calculator-variant: App: Prodotto di matrici](../laboratorio/prodotto.md) · [:material-calculator-variant: App: Determinante](../laboratorio/determinante.md) · [:material-calculator-variant: App: Rango](../laboratorio/rango.md) · [:material-calculator-variant: App: Metodo di Gauss](../laboratorio/gauss.md) · [:material-calculator-variant: App: Perché serve il pivoting](../laboratorio/pivoting.md) · [:material-calculator-variant: App: Matrice inversa](../laboratorio/inversa.md) · [:material-calculator-variant: App: Fattorizzazione LU](../laboratorio/lu.md) · [:material-calculator-variant: App: Sistemi lineari](../laboratorio/sistemi.md) · [:material-calculator-variant: App: Autovalori e definitezza](../laboratorio/autovalori.md)
+</div>
+
+Vettori e indipendenza lineare, matrici, determinanti e rango; operazioni elementari ed eliminazione di Gauss, matrice inversa, fattorizzazione LU, autovalori e criterio di Sylvester.
 
 <div class="grid cards" markdown>
 

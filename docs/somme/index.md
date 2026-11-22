@@ -1,10 +1,12 @@
 # Somme e produttorie
 
-*Parte 1 del corso, capitoli 1–2 delle dispense.* Il simbolo di sommatoria e di produttoria, le loro proprietà, le somme notevoli, il fattoriale.
+<div class="info-capitolo" markdown>
 
-[:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf){ .md-button }
+**Parte 1 · Somme e produttorie** · 2 capitoli · [:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf)
 
-[:material-calculator-variant: App: Somme e produttorie](../laboratorio/somme.md)
+</div>
+
+Il simbolo di sommatoria e quello di produttoria, le loro proprietà, la traslazione e la riflessione dell'indice. Le somme notevoli (dei primi numeri naturali, pari e dispari) e il fattoriale, con esercizi svolti passo per passo.
 
 <div class="grid cards" markdown>
 

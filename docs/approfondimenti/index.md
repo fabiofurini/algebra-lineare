@@ -1,8 +1,12 @@
 # Approfondimenti
 
-*Parte 5 del corso, appendice delle dispense.* Valore assoluto e aritmetica modulare.
+<div class="info-capitolo" markdown>
 
-[:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf){ .md-button }
+**Parte 5 · Approfondimenti** · 2 capitoli · [:material-file-pdf-box: Dispense (PDF)](../pdf/dispense-algebra-lineare.pdf)
+
+</div>
+
+Due strumenti che tornano in tutto il corso: il valore assoluto, con le sue proprietà e la disuguaglianza triangolare, e l'aritmetica modulare, con la divisione euclidea e le congruenze.
 
 <div class="grid cards" markdown>
 
