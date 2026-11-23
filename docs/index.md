@@ -7,6 +7,10 @@ hide:
 
 <div class="hero" markdown>
 
+![Lavori in corso: sito e materiale didattico sono ancora in costruzione](img/cantiere.svg){ width="560" }
+
+**Sito in costruzione.** Il materiale del corso è in fase di completamento.
+
 # Algebra Lineare
 
 <!-- collana-riga -->
