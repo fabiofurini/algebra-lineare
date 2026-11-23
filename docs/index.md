@@ -19,9 +19,6 @@ associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma
 Il corso presenta l'algebra lineare: sommatorie e produttorie, vettori e matrici con le loro operazioni,
 l'inversione e la fattorizzazione LU, autovalori e autovettori, le norme e i sistemi lineari.
 
-Ogni capitolo ha definizioni, esempi svolti ed esercizi con le soluzioni; il **laboratorio di calcolo**
-mostra tutti i passaggi con la stessa notazione delle dispense.
-
 [Comincia :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
 [:material-pencil: Esercizi](esercizi/index.md){ .md-button }
 [:material-gesture-tap: Laboratorio](laboratorio/index.md){ .md-button }
