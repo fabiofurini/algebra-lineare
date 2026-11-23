@@ -16,10 +16,11 @@ hide:
 Materiale didattico ideato e sviluppato da **[Fabio Furini](https://fabiofurini.github.io/)**, professore
 associato al [DIAG](https://www.diag.uniroma1.it/), Sapienza Università di Roma.
 
-**Le dispense del corso, online**: definizioni, esempi svolti, esercizi con le
-soluzioni e un **laboratorio di calcolo** che mostra tutti i passaggi —
-eliminazione di Gauss, determinanti, inverse, sistemi lineari, fattorizzazione
-LU — con la stessa notazione delle dispense.
+Il corso presenta l'algebra lineare: sommatorie e produttorie, vettori e matrici con le loro operazioni,
+l'inversione e la fattorizzazione LU, autovalori e autovettori, le norme e i sistemi lineari.
+
+Ogni capitolo ha definizioni, esempi svolti ed esercizi con le soluzioni; il **laboratorio di calcolo**
+mostra tutti i passaggi con la stessa notazione delle dispense.
 
 [Comincia :material-arrow-right:](somme/index.md){ .md-button .md-button--primary }
 [:material-pencil: Esercizi](esercizi/index.md){ .md-button }
