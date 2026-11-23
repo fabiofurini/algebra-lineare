@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.1](../vettori-matrici/02-matrici.md)
+[← Laboratorio](index.md) · Capitolo: [Matrici](../vettori-matrici/02-matrici.md)
 
 # Rango
 

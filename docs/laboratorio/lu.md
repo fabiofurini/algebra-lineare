@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.4](../vettori-matrici/05-fattorizzazione-lu.md)
+[← Laboratorio](index.md) · Capitolo: [Fattorizzazione di matrici](../vettori-matrici/05-fattorizzazione-lu.md)
 
 # Fattorizzazione LU
 

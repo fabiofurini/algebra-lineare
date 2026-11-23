@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 6](../sistemi/01-sistemi-lineari.md)
+[← Laboratorio](index.md) · Capitolo: [Sistemi di equazioni lineari](../sistemi/01-sistemi-lineari.md)
 
 # Sistemi lineari
 

@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.1](../vettori-matrici/02-matrici.md), [capitolo 4.2](../vettori-matrici/03-operazioni-elementari.md)
+[← Laboratorio](index.md) · Capitolo: [Matrici](../vettori-matrici/02-matrici.md), [Operazioni sulle matrici](../vettori-matrici/03-operazioni-elementari.md)
 
 # Determinante
 

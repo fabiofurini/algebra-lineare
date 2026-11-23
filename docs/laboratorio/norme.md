@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 5](../norme/01-norme.md)
+[← Laboratorio](index.md) · Capitolo: [Norme](../norme/01-norme.md)
 
 # Norme
 

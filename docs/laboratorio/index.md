@@ -4,19 +4,13 @@ hide:
   - navigation
 ---
 
-# Il laboratorio di calcolo
+# Laboratorio interattivo
 
-Qui non trovi solo il risultato: vedi **tutti i passaggi**, scritti come li
-scriveresti a mano, con la notazione delle dispense
-(\(R_2 \leftarrow R_2 - 2R_1\)). I conti sono **esatti**: frazioni, mai decimali
-arrotondati. Scegli uno strumento: si apre a tutta pagina, con le schede per **calcolare**,
-**esercitarti** su esercizi generati per te e (per il metodo di Gauss) **fare tu**
-ogni operazione di riga.
+Ogni app svolge un calcolo del corso passo per passo, con la notazione delle dispense
+e in frazioni esatte. Scegli un'app: si apre a tutta pagina.
+Dove previste, le schede «Esercitati» e «Fallo tu» propongono esercizi generati a caso.
 
-Tutto gira nel browser: niente da installare, nessun account, e funziona anche
-dal telefono.
-
-## Somme e produttorie (capitoli 1–2)
+## Somme e produttorie
 
 <div class="grid cards" markdown>
 
@@ -30,7 +24,7 @@ dal telefono.
 
 </div>
 
-## Vettori e matrici (capitoli 3–4)
+## Vettori e matrici
 
 <div class="grid cards" markdown>
 
@@ -100,7 +94,7 @@ dal telefono.
 
 </div>
 
-## Norme (capitolo 5)
+## Norme
 
 <div class="grid cards" markdown>
 
@@ -114,7 +108,7 @@ dal telefono.
 
 </div>
 
-## Sistemi lineari (capitolo 6)
+## Sistemi lineari
 
 <div class="grid cards" markdown>
 

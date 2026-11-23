@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.3](../vettori-matrici/04-matrice-inversa.md)
+[← Laboratorio](index.md) · Capitolo: [Inversione di matrici](../vettori-matrici/04-matrice-inversa.md)
 
 # Matrice inversa
 

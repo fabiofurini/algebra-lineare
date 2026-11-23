@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.5](../vettori-matrici/06-autovalori.md)
+[← Laboratorio](index.md) · Capitolo: [Autovalori e autovettori](../vettori-matrici/06-autovalori.md)
 
 # Autovalori e definitezza
 

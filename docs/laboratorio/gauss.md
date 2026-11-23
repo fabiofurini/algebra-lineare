@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 4.2](../vettori-matrici/03-operazioni-elementari.md), [capitolo 6](../sistemi/01-sistemi-lineari.md)
+[← Laboratorio](index.md) · Capitolo: [Operazioni sulle matrici](../vettori-matrici/03-operazioni-elementari.md), [Sistemi di equazioni lineari](../sistemi/01-sistemi-lineari.md)
 
 # Metodo di Gauss
 

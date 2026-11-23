@@ -5,7 +5,7 @@ hide:
   - toc
 ---
 
-[← Laboratorio](index.md) · Dispense: [capitolo 1](../somme/01-sommatorie.md), [capitolo 2](../somme/02-produttorie.md)
+[← Laboratorio](index.md) · Capitolo: [Sommatorie](../somme/01-sommatorie.md), [Produttorie](../somme/02-produttorie.md)
 
 # Somme e produttorie
 
